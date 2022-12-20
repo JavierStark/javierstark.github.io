@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.62d6f923.css",
-    "main.js": "/static/js/main.6ab0d9a5.js",
+    "main.css": "/static/css/main.84d6756c.css",
+    "main.js": "/static/js/main.7227bd77.js",
     "static/media/Me.png": "/static/media/Me.bd22b55afdd2c6bae361.png",
     "static/media/ChargedParticlesSimulator.jpeg": "/static/media/ChargedParticlesSimulator.b2d8fa6696095568d30f.jpeg",
     "static/media/DinoRunRoyale.webp": "/static/media/DinoRunRoyale.8115f1956d8aa09add16.webp",
@@ -11,11 +11,11 @@
     "static/media/BrutalBounce.webp": "/static/media/BrutalBounce.71399a91a8804fd4e9b1.webp",
     "index.html": "/index.html",
     "static/media/cv.pdf": "/static/media/cv.31d6cfe0d16ae931b73c.pdf",
-    "main.62d6f923.css.map": "/static/css/main.62d6f923.css.map",
-    "main.6ab0d9a5.js.map": "/static/js/main.6ab0d9a5.js.map"
+    "main.84d6756c.css.map": "/static/css/main.84d6756c.css.map",
+    "main.7227bd77.js.map": "/static/js/main.7227bd77.js.map"
   },
   "entrypoints": [
-    "static/css/main.62d6f923.css",
-    "static/js/main.6ab0d9a5.js"
+    "static/css/main.84d6756c.css",
+    "static/js/main.7227bd77.js"
   ]
 }
