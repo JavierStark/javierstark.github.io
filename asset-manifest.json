@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.84d6756c.css",
-    "main.js": "/static/js/main.d466b6c9.js",
+    "main.js": "/static/js/main.39677e2f.js",
     "static/media/Me.png": "/static/media/Me.bd22b55afdd2c6bae361.png",
     "static/media/ChargedParticlesSimulator.jpeg": "/static/media/ChargedParticlesSimulator.b2d8fa6696095568d30f.jpeg",
     "static/media/DinoRunRoyale.webp": "/static/media/DinoRunRoyale.8115f1956d8aa09add16.webp",
     "static/media/MeBg.jpeg": "/static/media/MeBg.63c25ed85c43724c525d.jpeg",
+    "static/media/Il2222.jpg": "/static/media/Il2222.451461f79689434769ba.jpg",
     "static/media/CallOfMonkeys.png": "/static/media/CallOfMonkeys.1d6c1c1f028ee50be588.png",
     "static/media/LoadClicker.png": "/static/media/LoadClicker.92d9e1c16ad117cbbcfb.png",
     "static/media/BrutalBounce.webp": "/static/media/BrutalBounce.71399a91a8804fd4e9b1.webp",
     "index.html": "/index.html",
     "static/media/cv.pdf": "/static/media/cv.31d6cfe0d16ae931b73c.pdf",
     "main.84d6756c.css.map": "/static/css/main.84d6756c.css.map",
-    "main.d466b6c9.js.map": "/static/js/main.d466b6c9.js.map"
+    "main.39677e2f.js.map": "/static/js/main.39677e2f.js.map"
   },
   "entrypoints": [
     "static/css/main.84d6756c.css",
-    "static/js/main.d466b6c9.js"
+    "static/js/main.39677e2f.js"
   ]
 }
