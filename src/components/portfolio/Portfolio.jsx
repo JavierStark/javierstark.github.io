@@ -1,29 +1,42 @@
 import React from 'react';
 import './portfolio.css'
-import IMG1 from '../../assets/Me.jpeg'
+import IMG1 from '../../assets/BrutalBounce.webp'
+import IMG2 from '../../assets/CallOfMonkeys.png'
+import IMG3 from '../../assets/DinoRunRoyale.webp'
+import IMG4 from '../../assets/LoadClicker.png'
+import IMG5 from '../../assets/ChargedParticlesSimulator.jpeg'
 
 const data = [
   {
-    id: 1,
     image: IMG1,
-    title: 'Project',
-    github: 'https://github.com',
-    demo: 'https://github.com'
+    title: 'Brutal Bounce (Not available)',
+    github: 'https://github.com/JavierStark/Brutal-Bounce',
+    demo: 'https://play.google.com/store/apps/details?id=com.recinostudio.BrutalBounce'
   },
   {
-    id: 3,
-    image: IMG1,
-    title: 'Project',
-    github: 'https://github.com',
-    demo: 'https://github.com'
+    image: IMG2,
+    title: 'Call of the Monkeys',
+    github: 'https://github.com/JavierStark/SpainGameJamProject',
+    demo: 'https://javierstark.itch.io/call-of-monkeys'
   },
   {
-    id: 3,
-    image: IMG1,
-    title: 'Project',
-    github: 'https://github.com',
-    demo: 'https://github.com'
+    image: IMG3,
+    title: 'DinoRun Royale',
+    github: 'https://github.com/JavierStark/ProjectDinoRoyale',
+    demo: 'https://play.google.com/store/apps/details?id=com.JTGameStudio.DinoRunRoyale&pli=1'
   },
+  {
+    image: IMG4,
+    title: 'Load Clicker',
+    github: '',
+    demo: 'https://javierstark.itch.io/load-clicker'
+  },
+  {
+    image: IMG5,
+    title: 'Charged Particles Simulator',
+    github: 'https://github.com/JavierStark/ChargedParticlesSimulator',
+    demo: 'https://javierstark.github.io/ChargedParticlesSimulator/'
+  }
 ]
 
 const Portfolio = () => {
@@ -33,7 +46,7 @@ const Portfolio = () => {
       <h2>Portfolio</h2>
       <div className="container portfolio__container">
         {
-          data.map(({id, image, title, github, demo}) => {
+          data.reverse().map(({image, title, github, demo}, index) => {
             return (
               <article className={'portfolio__item'}>
                 <div className="portfolio__item-image">
@@ -41,8 +54,8 @@ const Portfolio = () => {
                 </div>
                 <h3>{title}</h3>
                 <div className="portfolio__item-cta">
-                  <a href={github} className={'btn'} target={'_blank'}>Github</a>
-                  <a href={demo} className={'btn btn-primary'} target={'_blank'}>Live Demo</a>
+                  {github && <a href={github} className={'btn'} target={'_blank'}>Github</a>}
+                  {demo && <a href={demo} className={'btn btn-primary'} target={'_blank'}>App</a>}
                 </div>
               </article>)
           })

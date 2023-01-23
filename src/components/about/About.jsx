@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.css';
-import Me from '../../assets/Me.jpeg';
+import Me from '../../assets/MeBg.jpeg';
 import {FaAward} from "react-icons/fa";
 import {FiUsers} from "react-icons/fi";
 import {AiFillFolderOpen} from "react-icons/ai";
@@ -19,32 +19,39 @@ const About = () => {
         </div>
         <div className="about__content">
           <div className="about__cards">
-            <article className="about__card">
-              <FaAward className={'about__icon'}/>
-              <h5>Experience</h5>
-              <small>5+ Years programming</small>
-            </article>
+            <a href={'#experience'}>
+              <article className="about__card">
+                <FaAward className={'about__icon'}/>
+                <h5>Experience</h5>
+                <small>5+ Years programming</small>
+              </article>
+            </a>
 
-            <article className="about__card">
-              <FiUsers className={'about__icon'}/>
-              <h5>Clients</h5>
-              <small>1 Client Worldwide</small>
-            </article>
+            <a href={'#testimonials'}>
+              <article className="about__card">
+                <FiUsers className={'about__icon'}/>
+                <h5>Lessons</h5>
+                <small>20+ lessons taught</small>
+              </article>
+            </a>
 
-            <article className="about__card">
-              <AiFillFolderOpen className={'about__icon'}/>
-              <h5>Projects</h5>
-              <small>20+ Completed</small>
-            </article>
+            <a href={'#portfolio'}>
+              <article className="about__card">
+                <AiFillFolderOpen className={'about__icon'}/>
+                <h5>Projects</h5>
+                <small>20+ Completed</small>
+              </article>
+            </a>
           </div>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum
-          </p>
+            Self taught programmer with more than 5 years learning countless technologies from game
+            development to machine learning.</p>
+          <p>Experienced in team work and leadership managing game development international teams and publishing in
+            Google Play.</p>
+          <p>Eager to learn new technologies, languages and frameworks as well as to teach others the way I would have
+            wanted to be taught</p>
+
           <a href="#contact" className={'btn btn-primary'}>Let's Talk</a>
         </div>
       </div>

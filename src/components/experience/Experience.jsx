@@ -11,23 +11,22 @@ const Experience = () => {
 
       <div className="container experience__container">
         <div className="experience__off">
-          <h3>Game Development</h3>
+          <h3>Languages</h3>
           <div className="experience__content">
             <Skill Name={'C#'} Proficiency={'Advanced'}/>
-            <Skill Name={'Unity'} Proficiency={'Advanced'}/>
-            <Skill Name={'C++'} Proficiency={'Intermediate'}/>
+            <Skill Name={'C++'} Proficiency={'Advanced'}/>
             <Skill Name={'C'} Proficiency={'Intermediate'}/>
-            <Skill Name={'P5.js'} Proficiency={'Advanced'}/>
+            <Skill Name={'Python'} Proficiency={'Intermediate'}/>
+            <Skill Name={'JavaScript'} Proficiency={'Intermediate'}/>
           </div>
         </div>
         <div className="experience__on">
-          <h3>Others</h3>
+          <h3>Frameworks and Software</h3>
           <div className="experience__content">
-            <Skill Name={'C#'} Proficiency={'Advanced'}/>
             <Skill Name={'Unity'} Proficiency={'Advanced'}/>
-            <Skill Name={'C++'} Proficiency={'Intermediate'}/>
-            <Skill Name={'C'} Proficiency={'Intermediate'}/>
             <Skill Name={'P5.js'} Proficiency={'Advanced'}/>
+            <Skill Name={'React'} Proficiency={'Intermediate'}/>
+            <Skill Name={'Node'} Proficiency={'Basic'}/>
           </div>
         </div>
       </div>

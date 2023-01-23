@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.css';
-import {FaDiscord} from "react-icons/fa";
+import {FaDiscord, FaGithub} from "react-icons/fa";
 import {FaLinkedin} from "react-icons/fa";
 
 const Footer = () => {
@@ -19,8 +19,9 @@ const Footer = () => {
       </ul>
 
       <div className="footer__socials">
-        <a href="https://discord.com"><FaDiscord/></a>
-        <a href="https://linkedin.com"><FaLinkedin/></a>
+        <a href="https://discordapp.com/users/449292174996013067"><FaDiscord/></a>
+        <a href="https://www.linkedin.com/in/javier-torralbo-0ab132220"><FaLinkedin/></a>
+        <a href="https://github.com/JavierStark"><FaGithub/></a>
       </div>
 
       <div className="footer__copyright">

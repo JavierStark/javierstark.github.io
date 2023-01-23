@@ -1,10 +1,9 @@
 import React from 'react';
-import CV from '../../assets/cv.pdf';
 
 const CTA = () => {
   return (
     <div className={'cta'}>
-      <a href={CV} download className={'btn'}>Download CV</a>
+      <a href={'https://resume.io/r/Ve6r9r2Vs'} className={'btn'}>Download CV</a>
       <a href="#contact" className={'btn btn-primary'}>Contact</a>
     </div>
   );

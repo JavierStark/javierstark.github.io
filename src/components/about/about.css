@@ -14,6 +14,7 @@
 }
 
 .about__me-image {
+    background: #1f1f38;
     border-radius: 2rem;
     overflow: hidden;
     transform: rotate(10deg);

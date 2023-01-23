@@ -1,6 +1,7 @@
 import React from 'react';
 import './testimonials.css';
-import IMG from '../../assets/Me.jpeg';
+import GABRIEL from '../../assets/Gabriel.jpg';
+import LL2222 from '../../assets/Il2222.jpg';
 
 // import Swiper core and required modules
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -12,32 +13,14 @@ import 'swiper/css/pagination';
 
 const data = [
   {
-    avatar: IMG,
-    name: 'Someone',
-    review: 'dasfadasfadasfadasfadasfadasf \n' +
-      'adasfadasfadasfadasfadasfadasfadasfa \n' +
-      'dasfadasfadasfadasfa'
+    avatar: GABRIEL,
+    name: 'Gabriel',
+    review: 'Javier has been able to convey the knowledge in a clear and concise way. I recommend him'
   },
   {
-    avatar: IMG,
-    name: 'Someone',
-    review: 'dasfadasfadasfadasfadasfada\n' +
-      'sfadasfadasfadasfadasfadasfadasfa\n' +
-      'dasfadasfadasfadasfadasfa'
-  },
-  {
-    avatar: IMG,
-    name: 'Someone',
-    review: 'dasfadasfadasfadas\n' +
-      'fadasfadasfadasfadasfadasfadasfadas\n' +
-      'fadasfadasfadasfadasfadasfadasfa'
-  },
-  {
-    avatar: IMG,
-    name: 'Someone',
-    review: 'dasfadasfadasfadasfa\n' +
-      'dasfadasfadasfadasfadasfadasfadasfad\n' +
-      'asfadasfadasfadasfadasfadasfa'
+    avatar: LL2222,
+    name: 'll2222',
+    review: 'I had a class with Javier about basic javascript and it was great! His explanations are very clear and give examples for a good understanding, without a doubt, I\'ll have more classes with him'
   }
 ]
 
@@ -57,7 +40,7 @@ const Testimonials = () => {
             return (
               <SwiperSlide key={index} className="testimonial">
                 <div className="client__avatar">
-                  <img src={IMG} alt={name}/>
+                  <img src={avatar} alt={name}/>
                 </div>
                 <h5 className={'client__name'}>{name}</h5>
                 <small className={'client__review'}>{review}</small>

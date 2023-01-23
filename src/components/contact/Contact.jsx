@@ -5,6 +5,7 @@ import './contact.css';
 import {MdOutlineEmail} from "react-icons/md";
 import {FaDiscord} from "react-icons/fa";
 import {FaLinkedin} from "react-icons/fa";
+import {SiFiverr} from "react-icons/si";
 
 const Contact = () => {
   const form = useRef();
@@ -31,14 +32,20 @@ const Contact = () => {
           <article className={'contact__option'}>
             <FaDiscord className={'contact__option-icon'}/>
             <h4>Discord</h4>
-            <h5>javiertorralbocortes@gmail.com</h5>
-            <a href="https://discord.com" target={'_blank'}>Send a message</a>
+            <h5>JavierStark#9956</h5>
+            <a href="https://discordapp.com/users/449292174996013067" target={'_blank'}>Send DM</a>
           </article>
           <article className={'contact__option'}>
             <FaLinkedin className={'contact__option-icon'}/>
             <h4>Linkedin</h4>
-            <h5>javiertorralbocortes@gmail.com</h5>
-            <a href="https://linkedin.com" target={'_blank'}>Send a message</a>
+            <h5>Javier Torralbo</h5>
+            <a href="https://linkedin.com/in/javier-torralbo-0ab132220" target={'_blank'}>Connect with me</a>
+          </article>
+          <article className={'contact__option'}>
+            <SiFiverr className={'contact__option-icon'}/>
+            <h4>Fiverr</h4>
+            <h5>Javier Torralbo</h5>
+            <a href="h https://es.fiverr.com/javierstark" target={'_blank'}>Check my gigs</a>
           </article>
         </div>
 
