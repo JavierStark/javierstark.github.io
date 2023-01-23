@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.84d6756c.css",
-    "main.js": "/static/js/main.4f91083b.js",
+    "main.js": "/static/js/main.322b8a66.js",
     "static/media/Me.png": "/static/media/Me.bd22b55afdd2c6bae361.png",
     "static/media/ChargedParticlesSimulator.jpeg": "/static/media/ChargedParticlesSimulator.b2d8fa6696095568d30f.jpeg",
     "static/media/DinoRunRoyale.webp": "/static/media/DinoRunRoyale.8115f1956d8aa09add16.webp",
@@ -11,12 +11,11 @@
     "static/media/LoadClicker.png": "/static/media/LoadClicker.92d9e1c16ad117cbbcfb.png",
     "static/media/BrutalBounce.webp": "/static/media/BrutalBounce.71399a91a8804fd4e9b1.webp",
     "index.html": "/index.html",
-    "static/media/cv.pdf": "/static/media/cv.31d6cfe0d16ae931b73c.pdf",
     "main.84d6756c.css.map": "/static/css/main.84d6756c.css.map",
-    "main.4f91083b.js.map": "/static/js/main.4f91083b.js.map"
+    "main.322b8a66.js.map": "/static/js/main.322b8a66.js.map"
   },
   "entrypoints": [
     "static/css/main.84d6756c.css",
-    "static/js/main.4f91083b.js"
+    "static/js/main.322b8a66.js"
   ]
 }
