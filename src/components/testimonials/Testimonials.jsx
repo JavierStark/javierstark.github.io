@@ -2,6 +2,7 @@ import React from 'react';
 import './testimonials.css';
 import GABRIEL from '../../assets/Gabriel.jpg';
 import LL2222 from '../../assets/Il2222.jpg';
+import ALEJANDRO from '../../assets/Alejandro.jpg'
 
 // import Swiper core and required modules
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -21,7 +22,12 @@ const data = [
     avatar: LL2222,
     name: 'll2222',
     review: 'I had a class with Javier about basic javascript and it was great! His explanations are very clear and give examples for a good understanding, without a doubt, I\'ll have more classes with him'
-  }
+  },
+  {
+    avatar: ALEJANDRO,
+    name: 'Alejandro',
+    review: 'Javier understands the limitations and pros of each person, allowing the learning process to be faster or slower based on your ability to overcome obstacles. Furthermore, on a personal note, it\'s very helpful to be able to speak in your own language with someone about programming.',
+  },
 ]
 
 const Testimonials = () => {
