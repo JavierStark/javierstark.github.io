@@ -45,7 +45,7 @@ const Contact = () => {
             <SiFiverr className={'contact__option-icon'}/>
             <h4>Fiverr</h4>
             <h5>Javier Torralbo</h5>
-            <a href="h https://es.fiverr.com/javierstark" target={'_blank'}>Check my gigs</a>
+            <a href="https://es.fiverr.com/javierstark" target={'_blank'}>Check my gigs</a>
           </article>
         </div>
 
