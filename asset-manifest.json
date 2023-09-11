@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.84d6756c.css",
-    "main.js": "/static/js/main.0d2a7f41.js",
+    "main.js": "/static/js/main.e6983987.js",
     "static/media/Me.png": "/static/media/Me.bd22b55afdd2c6bae361.png",
     "static/media/Minesweeper.jpeg": "/static/media/Minesweeper.c734dbd30a39bba05fca.jpeg",
     "static/media/MinecraftClone.png": "/static/media/MinecraftClone.3eb3ad8dad93dd2c3290.png",
@@ -17,10 +17,10 @@
     "static/media/BrutalBounce.webp": "/static/media/BrutalBounce.71399a91a8804fd4e9b1.webp",
     "index.html": "/index.html",
     "main.84d6756c.css.map": "/static/css/main.84d6756c.css.map",
-    "main.0d2a7f41.js.map": "/static/js/main.0d2a7f41.js.map"
+    "main.e6983987.js.map": "/static/js/main.e6983987.js.map"
   },
   "entrypoints": [
     "static/css/main.84d6756c.css",
-    "static/js/main.0d2a7f41.js"
+    "static/js/main.e6983987.js"
   ]
 }
