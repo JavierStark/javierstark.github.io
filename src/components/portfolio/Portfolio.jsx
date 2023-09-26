@@ -9,6 +9,7 @@ import IMG6 from '../../assets/TheGameOfLife.jpeg'
 import IMG7 from '../../assets/Minesweeper.jpeg'
 import IMG8 from '../../assets/MinecraftClone.png'
 import IMG9 from '../../assets/AQWAC.jpg'
+import IMG10 from '../../assets/apagalo.png'
 
 
 const data = [
@@ -65,6 +66,12 @@ const data = [
     title: 'AQWATC - Horror Game  (Unity / Cancelled)',
     github: 'https://github.com/JavierStark/A-Quiet-Walk-Around-The-Castle',
     demo: 'https://javierstark.github.io/AQuietWalkAroundTheCastle-PostMortem/'
+  },
+  {
+    image: IMG10,
+    title: '¡APÁGALO!  (C# / Godot) [Spanish]',
+    // github: 'https://github.com/JavierStark/A-Quiet-Walk-Around-The-Castle',
+    demo: 'https://javierstark.itch.io/apagalo'
   },
 ]
 
