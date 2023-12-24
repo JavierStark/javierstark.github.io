@@ -39,7 +39,7 @@ const Contact = () => {
             <FaLinkedin className={'contact__option-icon'}/>
             <h4>Linkedin</h4>
             <h5>Javier Torralbo</h5>
-            <a href="https://linkedin.com/in/javier-torralbo-0ab132220" target={'_blank'}>Connect with me</a>
+            <a href="https://linkedin.com/in/javiertorralbocortes" target={'_blank'}>Connect with me</a>
           </article>
           <article className={'contact__option'}>
             <SiFiverr className={'contact__option-icon'}/>
