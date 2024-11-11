@@ -20,15 +20,9 @@ const About = () => {
         <div className="about__content">
           <div className="about__cards">
           </div>
-
-          <p>
-            Self taught programmer with more than 5 years learning countless technologies from game
-            development to machine learning.</p>
-          <p>Experienced in team work and leadership managing game development international teams and publishing in
-            Google Play.</p>
-          <p>Eager to learn new technologies, languages and frameworks as well as to teach others the way I would have
-            wanted to be taught</p>
-
+          <p>Hello! I'm a computer science student at the University of Málaga with extensive experience in competitive programming, game development, and software engineering. I specialize in backend development, using .Net with a Agile practices and CI/CD pipelines.</p>
+          <p>Throughout my academic journey, I've actively participated in various programming competitions, winning the Ada Byron Programming Tournament and the Excellence Award in Development and Best Practices during Malackathon.</p>
+          <p>When I'm not coding, I enjoy teaching programming to others, offering private lessons and helping classmates strengthen their technical skills.</p>
           <a href="#contact" className={'btn btn-primary'}>Let's Talk</a>
         </div>
       </div>
