@@ -1,33 +1,29 @@
-name: Deploy Vite React App
+name: Deploy React App to gh-pages
 
 on:
   push:
     branches:
-      - master
+      - main  # Adjust to your default branch if it's not `main`
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      CI: false
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Git user
-        run: |
-          git config --global user.name "JavierStark"
-          git config --global user.email "javiertorralbocortes@gmail.com"
+        uses: actions/checkout@v4  # Using v4 for checkout
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # Using v4 for Node.js setup
         with:
-          node-version: '16'  # Or whatever version of Node.js you're using
+          node-version: '16'  # Change to your Node.js version if different
 
       - name: Install dependencies
         run: npm install
 
-      - name: Deploy
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to gh-pages
         run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to authenticate the push
