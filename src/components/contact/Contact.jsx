@@ -41,12 +41,6 @@ const Contact = () => {
             <h5>Javier Torralbo</h5>
             <a href="https://linkedin.com/in/javiertorralbocortes" target={'_blank'}>Connect with me</a>
           </article>
-          <article className={'contact__option'}>
-            <SiFiverr className={'contact__option-icon'}/>
-            <h4>Fiverr</h4>
-            <h5>Javier Torralbo</h5>
-            <a href="https://es.fiverr.com/javierstark" target={'_blank'}>Check my gigs</a>
-          </article>
         </div>
 
         <form ref={form} onSubmit={sendEmail}>

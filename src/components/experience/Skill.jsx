@@ -1,15 +1,14 @@
 import React from 'react';
 import {BsFillPatchCheckFill} from "react-icons/bs";
 
-const Skill = ({Name, Proficiency}) => {
+const Skill = ({children}) => {
   return (
-    <article className={'experience__details'}>
-      <BsFillPatchCheckFill className={'experience__details-icon'}/>
-      <div>
-        <h4>{Name}</h4>
-        <small className={'text-light'}>{Proficiency}</small>
-      </div>
-    </article>
+    <li>
+      <span style={{ display: 'inline-block', marginRight: '10px' }}>
+        <BsFillPatchCheckFill />
+      </span>
+      {children}
+    </li>
   );
 };
 

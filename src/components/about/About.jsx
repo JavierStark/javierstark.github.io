@@ -19,29 +19,6 @@ const About = () => {
         </div>
         <div className="about__content">
           <div className="about__cards">
-            <a href={'#experience'}>
-              <article className="about__card">
-                <FaAward className={'about__icon'}/>
-                <h5>Experience</h5>
-                <small>5+ Years programming</small>
-              </article>
-            </a>
-
-            <a href={'#testimonials'}>
-              <article className="about__card">
-                <FiUsers className={'about__icon'}/>
-                <h5>Lessons</h5>
-                <small>20+ lessons taught</small>
-              </article>
-            </a>
-
-            <a href={'#portfolio'}>
-              <article className="about__card">
-                <AiFillFolderOpen className={'about__icon'}/>
-                <h5>Projects</h5>
-                <small>20+ Completed</small>
-              </article>
-            </a>
           </div>
 
           <p>
