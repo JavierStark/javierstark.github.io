@@ -3,7 +3,7 @@ name: Deploy React App to gh-pages
 on:
   push:
     branches:
-      - main  # Adjust to your default branch if it's not `main`
+      - master  # Adjust to your default branch if it's not `main`
 
 jobs:
   deploy:
