@@ -50,6 +50,12 @@ input, textarea {
     border: 2px solid var(--color-primary-variant);
     resize: none;
     color: var(--color-white);
+    .contact__options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
 }
 
 /*Media Queries*/
@@ -58,6 +64,12 @@ input, textarea {
     .container.contact__container {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    .contact__options {
+        flex-direction: column;
+    }
+    h5{
+        font-size: 0.8em;
     }
 }
 
