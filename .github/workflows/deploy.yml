@@ -8,7 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
+    env:
+      CI: false
+    steps:      
       - name: Checkout code
         uses: actions/checkout@v4  # Using v4 for checkout
 
