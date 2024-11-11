@@ -5,7 +5,7 @@ import Skill from "./Skill";
 
 const Experience = () => {
   return (
-    <section id={'section'}>
+    <section id={'skills'}>
       <h5>Skills I have</h5>
       <h2>Main Skills</h2>
 
