@@ -4,27 +4,94 @@ import Me from '../../assets/MeBg.jpeg';
 import {FaAward} from "react-icons/fa";
 import {FiUsers} from "react-icons/fi";
 import {AiFillFolderOpen} from "react-icons/ai";
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
     <section id={'about'}>
-      <h5>Get To Know</h5>
-      <h2>About Me</h2>
+      <motion.h5
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Get To Know
+      </motion.h5>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        About Me
+      </motion.h2>
 
       <div className="container about__container">
-        <div className="about__me">
+        <motion.div 
+          className="about__me"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
           <div className="about__me-image">
             <img src={Me} alt="About image"/>
           </div>
-        </div>
-        <div className="about__content">
+        </motion.div>
+        <motion.div 
+          className="about__content"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           <div className="about__cards">
           </div>
-          <p>Hello! I'm a computer science student at the University of Málaga with extensive experience in competitive programming, game development, and software engineering. I specialize in backend development, using .Net with a Agile practices and CI/CD pipelines.</p>
-          <p>Throughout my academic journey, I've actively participated in various programming competitions, winning the Ada Byron Programming Tournament and the Excellence Award in Development and Best Practices during Malackathon.</p>
-          <p>When I'm not coding, I enjoy teaching programming to others, offering private lessons and helping classmates strengthen their technical skills.</p>
-          <a href="#contact" className={'btn btn-primary'}>Let's Talk</a>
-        </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            Computer Engineering student at the University of Málaga with a strong focus on <strong>scalable backend development</strong>, <strong>cloud architectures</strong>, and the emerging intersection between computing and life sciences. I specialize in <strong>.NET/C#</strong>, <strong>ASP.NET</strong>, and cloud platforms including <strong>Azure</strong> and <strong>Oracle Cloud</strong>.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            My work emphasizes robust engineering practices—<strong>TDD</strong>, <strong>CI/CD</strong>, <strong>clean code</strong>, <strong>refactoring</strong>, and architectural clarity—to build production-ready systems. I've deployed full-stack applications to Azure and Oracle Cloud, always prioritizing maintainability, performance, and reliability.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
+            I thrive in fast-paced, competitive environments, having twice won the <strong>Ada Byron Regional Programming Tournament</strong> and receiving awards at <strong>Malackathon</strong> (Excellence in Development - INDRA) and <strong>Málaga Jam</strong> for software quality, innovation, and rapid development under pressure.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            Currently expanding into <strong>bioinformatics and synthetic biology</strong> as a member of <strong>iGEM UMA</strong>, complementing my research internship at <strong>Karunya University</strong>, where I built a cloud-backed EEG processing pipeline for epilepsy prediction using deep learning. As <strong>President of IAESTE Computer Science Málaga</strong>, I help students access international opportunities and cultivate a collaborative tech ecosystem.
+          </motion.p>
+          <motion.a 
+            href="#contact" 
+            className={'btn btn-primary'}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Let's Talk
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

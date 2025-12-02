@@ -2,31 +2,162 @@ import React from 'react';
 import './experience.css'
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import Skill from "./Skill";
+import { motion } from 'framer-motion';
 
 const Experience = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.4
+      }
+    }
+  };
+
   return (
     <section id={'skills'}>
-      <h5>Skills I have</h5>
-      <h2>Main Skills</h2>
+      <motion.h5
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Technical Expertise
+      </motion.h5>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Skills & Technologies
+      </motion.h2>
 
       <div className="container experience__container">
-        <div className="experience__off">
-          <div className="experience__content">
-            <Skill><strong>C#/.NET</strong> Development</Skill>
-            <Skill><strong>Backend</strong> Development with Cloud Deployment (ASP.NET, Azure)</Skill>
-            <Skill><strong>Game Development</strong> (Unity, Godot)</Skill>
-            <Skill><strong>Basic Frontend Development</strong> (React, Flutter)</Skill>
-          </div>
-        </div>
-        <div className="experience__on">
-          <div className="experience__content">            
-            <Skill><strong>Unit Testing</strong> & TDD</Skill>
-            <Skill><strong>Code Refactoring</strong> & <strong>Clean Code</strong> Practices</Skill>
-            <Skill><strong>XP & Agile</strong> Methodologies (Pair/Mob Programming)</Skill>
-            <Skill><strong>Competitive Programming</strong> (C++)</Skill>
-            <Skill><strong>Communicative</strong>/Teaching skills</Skill>
-          </div>
-        </div>
+        <motion.div 
+          className="experience__off"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h3>Backend & .NET</h3>
+          <motion.div 
+            className="experience__content"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <Skill><strong>C# & .NET</strong> Development</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>ASP.NET</strong> Core & Web APIs</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Azure</strong> Cloud Platform</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>TDD</strong> & Unit Testing (xUnit)</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Clean Code</strong> & Refactoring</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>CI/CD</strong> Pipelines</Skill>
+            </motion.div>
+          </motion.div>
+          
+          <h3 style={{ marginTop: '2rem' }}>Software Engineering</h3>
+          <motion.div 
+            className="experience__content"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Agile</strong> & XP Methodologies</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Pair/Mob</strong> Programming</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>SCRUM</strong> Framework</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Code Reviews</strong> & Quality</Skill>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+        
+        <motion.div 
+          className="experience__on"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3>Cloud & Infrastructure</h3>
+          <motion.div 
+            className="experience__content"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Oracle Cloud</strong> Infrastructure</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Oracle APEX</strong></Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Firebase</strong> Platform</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill>Cloud-backed <strong>Scalable Systems</strong></Skill>
+            </motion.div>
+          </motion.div>
+          
+          <h3 style={{ marginTop: '2rem' }}>Programming & Tools</h3>
+          <motion.div 
+            className="experience__content"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={itemVariants}>
+              <Skill><strong>C++</strong> (Competitive Programming)</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Python</strong> (Deep Learning, Data)</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>React</strong> & Flutter</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Unity</strong> & Godot</Skill>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <Skill><strong>Teaching</strong> & Mentoring</Skill>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

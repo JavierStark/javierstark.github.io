@@ -1,11 +1,11 @@
 import React from 'react';
-import {BsFillPatchCheckFill} from "react-icons/bs";
+import {HiChevronDoubleRight} from "react-icons/hi";
 
 const Skill = ({children}) => {
   return (
     <li>
       <span style={{ display: 'inline-block', marginRight: '10px' }}>
-        <BsFillPatchCheckFill />
+        <HiChevronDoubleRight />
       </span>
       {children}
     </li>

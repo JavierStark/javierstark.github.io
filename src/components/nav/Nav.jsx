@@ -4,6 +4,7 @@ import {BsHouse} from "react-icons/bs";
 import {AiOutlineUser, AiOutlinePhone} from "react-icons/ai";
 import {BiBookBookmark} from 'react-icons/bi'
 import {MdOutlineWorkOutline, MdLightbulbOutline} from 'react-icons/md'
+import {FaTrophy} from 'react-icons/fa'
 import {useState} from "react";
 
 const Nav = () => {
@@ -23,6 +24,14 @@ const Nav = () => {
          className={activeNav === '#skills' ? 'active' : ''}
          onClick={() => setActiveNav('#skills')}
       ><MdLightbulbOutline/></a>
+      <a href="#experience"
+         className={activeNav === '#experience' ? 'active' : ''}
+         onClick={() => setActiveNav('#experience')}
+      ><MdOutlineWorkOutline/></a>
+      <a href="#achievements"
+         className={activeNav === '#achievements' ? 'active' : ''}
+         onClick={() => setActiveNav('#achievements')}
+      ><FaTrophy/></a>
       <a href="#portfolio"
          className={activeNav === '#portfolio' ? 'active' : ''}
          onClick={() => setActiveNav('#portfolio')}

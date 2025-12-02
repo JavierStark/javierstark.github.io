@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.23.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
@@ -17,13 +18,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "predeploy": "npm run build",
-  "deploy": "echo 'javiertorralbo.dev' > build/CNAME && git add ./build && git commit -m 'Deploy to gh-pages' && git push origin `git subtree split --prefix build master`:gh-pages --force",
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+    "predeploy": "npm run build",
+    "deploy": "echo 'javiertorralbo.dev' > build/CNAME && git add ./build && git commit -m 'Deploy to gh-pages' && git push origin `git subtree split --prefix build master`:gh-pages --force",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
