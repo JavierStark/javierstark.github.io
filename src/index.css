@@ -30,7 +30,20 @@ html {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-variant);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-variant);
 }
 
 body {
@@ -38,6 +51,8 @@ body {
     background: var(--color-bg);
     color: var(--color-white);
     line-height: 1.7;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-bg-variant) var(--color-bg);
 }
 
 /*General Styles*/
