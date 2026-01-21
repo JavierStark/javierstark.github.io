@@ -1,50 +1,25 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "homepage": "https://javierstark.github.io",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "emailjs-com": "^3.2.0",
-    "framer-motion": "^12.23.25",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "react-router-dom": "^6.4.5",
-    "react-scripts": "5.0.1",
-    "swiper": "^8.4.5",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "javierstark-astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "echo 'javiertorralbo.dev' > build/CNAME && git add ./build && git commit -m 'Deploy to gh-pages' && git push origin `git subtree split --prefix build master`:gh-pages --force",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "astro build && echo 'javiertorralbo.dev' > dist/CNAME && gh-pages -d dist"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "astro": "^5.16.11",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.27.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0",
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^6.3.0"
   }
 }

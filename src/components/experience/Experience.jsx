@@ -21,7 +21,7 @@ const Experience = () => {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.4
+        duration: 0.3
       }
     }
   };
@@ -32,7 +32,7 @@ const Experience = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
       >
         Technical Expertise
       </motion.h5>
@@ -40,7 +40,7 @@ const Experience = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
       >
         Skills & Technologies
       </motion.h2>
@@ -51,7 +51,7 @@ const Experience = () => {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           <h3>Backend & .NET</h3>
           <motion.div 
@@ -109,7 +109,7 @@ const Experience = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
         >
           <h3>Cloud & Infrastructure</h3>
           <motion.div 

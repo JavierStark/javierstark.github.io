@@ -11,8 +11,8 @@ const WorkExperience = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.2,
-        duration: 0.6,
+        delay: i * 0.1,
+        duration: 0.3,
         ease: "easeOut"
       }
     })
@@ -24,7 +24,7 @@ const WorkExperience = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
       >
         My Journey
       </motion.h5>
@@ -32,7 +32,7 @@ const WorkExperience = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
       >
         Professional Experience
       </motion.h2>

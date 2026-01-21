@@ -1,7 +1,7 @@
 import React from 'react';
 import './achievements.css';
 import { FaTrophy, FaAward, FaGamepad } from "react-icons/fa";
-import { SiAzuredevops } from "react-icons/si";
+import { VscAzureDevops } from "react-icons/vsc";
 import { motion } from 'framer-motion';
 
 const Achievements = () => {
@@ -11,8 +11,8 @@ const Achievements = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.2,
-        duration: 0.6,
+        delay: i * 0.1,
+        duration: 0.3,
         ease: "easeOut"
       }
     })
@@ -24,7 +24,7 @@ const Achievements = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3 }}
       >
         Recognition
       </motion.h5>
@@ -32,7 +32,7 @@ const Achievements = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
       >
         Achievements & Awards
       </motion.h2>
@@ -74,7 +74,7 @@ const Achievements = () => {
           whileHover={{ scale: 1.03 }}
         >
           <div className="achievement__icon">
-            <SiAzuredevops />
+            <VscAzureDevops />
           </div>
           <div className="achievement__content">
             <h3>Excellence Award in Development and Best Practices (INDRA)</h3>

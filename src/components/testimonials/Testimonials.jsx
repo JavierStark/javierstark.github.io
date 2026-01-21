@@ -1,8 +1,8 @@
 import React from 'react';
 import './testimonials.css';
-import GABRIEL from '../../assets/Gabriel.jpg';
-import LL2222 from '../../assets/Il2222.jpg';
-import ALEJANDRO from '../../assets/Alejandro.jpg'
+const GABRIEL = '/assets/Gabriel.jpg';
+const LL2222 = '/assets/Il2222.jpg';
+const ALEJANDRO = '/assets/Alejandro.jpg';
 
 // import Swiper core and required modules
 import {Swiper, SwiperSlide} from 'swiper/react';

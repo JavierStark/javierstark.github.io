@@ -1,17 +1,17 @@
 import React from 'react';
 import './portfolio.css'
-import IMG1 from '../../assets/BrutalBounce.webp'
-import IMG2 from '../../assets/CallOfMonkeys.png'
-import IMG3 from '../../assets/DinoRunRoyale.webp'
-import IMG4 from '../../assets/LoadClicker.png'
-import IMG5 from '../../assets/ChargedParticlesSimulator.jpeg'
-import IMG6 from '../../assets/TheGameOfLife.jpeg'
-import IMG7 from '../../assets/Minesweeper.jpeg'
-import IMG8 from '../../assets/MinecraftClone.png'
-import IMG9 from '../../assets/AQWAC.jpg'
-import IMG10 from '../../assets/apagalo.png'
-import IMG11 from '../../assets/DiseaseMutationApp.png'
-import IMG12 from '../../assets/Cudeca.png'
+const IMG1 = '/assets/BrutalBounce.webp';
+const IMG2 = '/assets/CallOfMonkeys.png';
+const IMG3 = '/assets/DinoRunRoyale.webp';
+const IMG4 = '/assets/LoadClicker.png';
+const IMG5 = '/assets/ChargedParticlesSimulator.jpeg';
+const IMG6 = '/assets/TheGameOfLife.jpeg';
+const IMG7 = '/assets/Minesweeper.jpeg';
+const IMG8 = '/assets/MinecraftClone.png';
+const IMG9 = '/assets/AQWAC.jpg';
+const IMG10 = '/assets/apagalo.png';
+const IMG11 = '/assets/DiseaseMutationApp.png';
+const IMG12 = '/assets/Cudeca.png';
 
 
 const data = [

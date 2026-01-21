@@ -12,6 +12,8 @@ nav {
     gap: 0.8rem;
     border-radius: 3rem;
     backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 nav a {
@@ -19,8 +21,11 @@ nav a {
     padding: 0.8rem;
     border-radius: 50%;
     display: flex;
+    justify-content: center; /* Center icon horizontally */
+    align-items: center; /* Center icon vertically */
     color: var(--color-light);
     font-size: 1.1rem;
+    aspect-ratio: 1/1; /* Force perfect circle */
 }
 
 nav a:hover {

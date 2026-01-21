@@ -5,27 +5,32 @@
 }
 
 .portfolio__item {
-    background: var(--color-bg-variant);
+    background: rgba(44, 44, 108, 0.4); /* Dark glass effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 1.5rem;
     border-radius: 2rem;
-    border: 1px solid transparent;
+    border: 1px solid rgba(77, 181, 255, 0.1);
     transition: var(--transition);
     display: flex;
     gap: 2rem;
     align-items: center;
+    box-shadow: var(--shadow-soft);
 }
 
 .portfolio__item:hover {
     border-color: var(--color-primary-variant);
     background: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(77, 181, 255, 0.15); /* Blue/Red tint glow */
 }
 
 .portfolio__item-image {
     border-radius: 1.5rem;
     overflow: hidden;
     flex-shrink: 0;
-    width: 350px;
-    height: auto;
+    width: 300px; /* Reduced fixed width */
+    height: 200px; /* Fixed height for consistency */
 }
 
 .portfolio__item-image img {

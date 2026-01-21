@@ -16,8 +16,9 @@
 .experience__container > div:hover {
     background: transparent;
     border-color: var(--color-primary-variant);
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(232, 123, 123, 0.3);
+}
     cursor: default;
 }
 
