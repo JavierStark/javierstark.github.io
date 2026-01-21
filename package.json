@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "astro build && echo 'javiertorralbo.dev' > dist/CNAME && echo > dist/.nojekyll && gh-pages -d dist"
+    "deploy": "astro build && gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
