@@ -38,9 +38,7 @@ const canonical = 'https://javiertorralbo.dev/';
       }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-      // "More" disclosures: animated open/close everywhere; on mouse devices hovering a card
-      // opens it after a short intent delay and clicking the toggle pins it open.
-      // Always animated (owner preference). With reduced motion the panel still eases open, but without
+      // "More" disclosures open on click only, always animated (owner preference). With reduced motion the panel still eases open, but without
       // the slide, so it is a calm height + fade transition rather than movement.
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const setOpen = (details: HTMLDetailsElement, open: boolean) => {
@@ -78,45 +76,16 @@ const canonical = 'https://javiertorralbo.dev/';
           .map((c) => c.querySelector<HTMLDetailsElement>('details.more'))
           .filter((d): d is HTMLDetailsElement => !!d);
       };
-      const pinned = new WeakSet<HTMLDetailsElement>();
       const setRow = (row: HTMLDetailsElement[], open: boolean) => row.forEach((d) => {
         if (open && !d.open) setOpen(d, true);
         if (!open && d.open) setOpen(d, false);
       });
-      const hoverMode = matchMedia('(hover: hover) and (pointer: fine)').matches;
-      let enterTimer: number | undefined;
-      let leaveTimer: number | undefined;
-      let hoverRow: HTMLDetailsElement[] = [];
-      const closeIfUnpinned = (row: HTMLDetailsElement[]) => { if (!row.some((d) => pinned.has(d))) setRow(row, false); };
-
       document.querySelectorAll<HTMLDetailsElement>('details.more').forEach((details) => {
         const summary = details.querySelector('summary');
-        const card = details.closest('.card');
         if (!summary) return;
         summary.addEventListener('click', (e) => {
           e.preventDefault();
-          const row = rowOf(details);
-          if (hoverMode && details.open && !pinned.has(details)) {   // opened by hover: click keeps the row open
-            row.forEach((d) => pinned.add(d));
-            return;
-          }
-          const next = !details.open;
-          row.forEach((d) => (next ? pinned.add(d) : pinned.delete(d)));
-          setRow(row, next);
-        });
-        if (!hoverMode || !card) return;
-        card.addEventListener('mouseenter', () => {
-          window.clearTimeout(leaveTimer);
-          const row = rowOf(details);
-          if (hoverRow.length && !hoverRow.includes(details)) closeIfUnpinned(hoverRow);  // moved to another row
-          hoverRow = row;
-          window.clearTimeout(enterTimer);
-          enterTimer = window.setTimeout(() => setRow(row, true), 220);
-        });
-        card.addEventListener('mouseleave', () => {
-          window.clearTimeout(enterTimer);
-          const row = rowOf(details);
-          leaveTimer = window.setTimeout(() => { closeIfUnpinned(row); if (hoverRow === row) hoverRow = []; }, 180);
+          setRow(rowOf(details), !details.open);
         });
       });
     </script>

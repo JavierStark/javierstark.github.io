@@ -23,7 +23,7 @@ const years = (p: { start?: string | null; end?: string | null; status?: string 
         const hasMore = Boolean(rest || p.my_contribution || p.highlights.length > 0);
         const more = hasMore && (
           <details class={`more ${i === 0 ? 'project__more--wide' : ''}`}>
-            <summary>More details</summary>
+            <summary>See details</summary>
             <div class="more__body">
               {rest && <p class="project__summary">{rest}</p>}
               {p.my_contribution && <p class="project__role">{p.my_contribution}</p>}
