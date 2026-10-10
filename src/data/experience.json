@@ -27,7 +27,8 @@
       "Spec-Driven Development",
       "AI-Assisted Software Development",
       "Scrum"
-    ]
+    ],
+    "projects": []
   },
   {
     "id": "role-2025-iaeste-malaga-president",
@@ -41,19 +42,24 @@
     "end": null,
     "current": true,
     "tier": "primary",
-    "summary": "President and treasurer of IAESTE Málaga's Computer Science section; moved local and national websites off WordPress, automated paperless member onboarding and is building an internship-outreach CRM.",
+    "summary": "President and treasurer of IAESTE Málaga's Computer Science section; rebuilt the local and national websites in React, automated paperless, GDPR-compliant member onboarding and is building an internship-outreach CRM.",
     "highlights": [
-      "Migrated the IAESTE Spain national website and the IAESTE LC Málaga website off WordPress, cutting recurring costs by €400 per year for the national site and nearly €200 per year for the local site, a large saving for a student-run organization.",
-      "Made member onboarding fully paperless and automated the onboarding and registration emails for the local committee.",
+      "Rebuilt the IAESTE Spain national website and the IAESTE LC Málaga website in React, moving them off WordPress and cutting recurring costs by €400 per year for the national site and nearly €200 per year for the local site, a large saving for a student-run organization.",
+      "Made onboarding for around 50 new members a year fully paperless and GDPR-compliant end to end, automating registration and onboarding emails with JavaScript and Google Sheets and removing paper forms and wet signatures.",
       "Building a custom CRM to track the companies the committee contacts to secure internship offers."
     ],
-    "tech_stack": []
+    "tech_stack": [
+      "React",
+      "JavaScript",
+      "Google Sheets"
+    ],
+    "projects": []
   },
   {
     "id": "role-2025-igem-uma",
     "title": "Team Member · Sole Software Developer",
     "organization": "iGEM UMA",
-    "organization_url": null,
+    "organization_url": "https://2026.igem.wiki/uma-malaga",
     "employment_type": "volunteer",
     "location": "Málaga, Spain",
     "work_mode": "hybrid",
@@ -75,6 +81,13 @@
       "Blazor",
       "Docker",
       "Bioinformatics"
+    ],
+    "projects": [
+      {
+        "title": "Diana, precision guide RNA design (iGEM UMA-Malaga 2026 software)",
+        "href": "#project-diana",
+        "external": false
+      }
     ]
   },
   {
@@ -100,6 +113,29 @@
       "Deep Learning",
       "TensorFlow",
       "Google Cloud Platform"
-    ]
+    ],
+    "projects": []
+  },
+  {
+    "id": "role-2020-freelance-cs-tutor",
+    "title": "Freelance Computer Science Tutor",
+    "organization": "Self-employed",
+    "organization_url": null,
+    "employment_type": "contract",
+    "location": "Spain",
+    "work_mode": "remote",
+    "start": "2020",
+    "end": "2024",
+    "current": false,
+    "tier": "primary",
+    "summary": "Taught programming and computer science to more than 15 recurring students, most of them across several classes over a full course.",
+    "highlights": [
+      "Taught computer science and programming privately to more than 15 recurring students, most of whom returned for several classes over an academic course."
+    ],
+    "tech_stack": [
+      "Teaching & Mentoring",
+      "JavaScript"
+    ],
+    "projects": []
   }
 ]

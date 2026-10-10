@@ -1,0 +1,57 @@
+---
+import writing from '../data/writing.json';
+import Icon from './Icon.astro';
+import { fmtDate } from '../lib/format';
+---
+{writing.length > 0 && (
+  <section id="writing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Writing</p>
+        <h2>Articles</h2>
+        <p>I'm writing my Bachelor's thesis in the open, as a series of technical articles on Canton Network.</p>
+      </div>
+      <div class="articles">
+        {writing.map((w, i) => (
+          <a class={`card article reveal ${i === 0 ? 'article--lead' : ''}`} href={w.url} target="_blank" rel="noopener">
+            <div class="article__art" aria-hidden="true">
+              <span class="article__series">The Canton Series</span>
+              <span class="article__grid">
+                {Array.from({ length: 24 }).map((_, k) => <i class={k % 5 === 0 ? 'on' : k % 7 === 0 ? 'alt' : ''}></i>)}
+              </span>
+            </div>
+            <div class="article__body">
+              <p class="muted small"><Icon name="book" /> {fmtDate(w.date)} · {w.venue}</p>
+              <h3>{w.title}</h3>
+              <p class="muted">{w.summary}</p>
+              <span class="link">Read the article <Icon name="external" /></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .articles { display: grid; gap: 16px; }
+  .article { display: grid; grid-template-columns: 300px 1fr; overflow: hidden; transition: transform .2s, border-color .2s; }
+  .article:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .article__art {
+    position: relative; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    background: linear-gradient(135deg, #12162e, #1b2347);
+  }
+  .article__series { font-family: var(--font-head); font-weight: 700; color: #f2b84b; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .article__grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .article__grid i { aspect-ratio: 1; border-radius: 4px; background: rgba(124, 131, 255, 0.35); }
+  .article__grid i.on { background: #f2b84b; }
+  .article__grid i.alt { background: #22b8a0; }
+  .article__body { padding: 26px; display: flex; flex-direction: column; gap: 10px; }
+  .article h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+  .small { font-size: 0.85rem; display: flex; gap: 6px; align-items: center; }
+  .link { margin-top: auto; display: inline-flex; gap: 6px; align-items: center; }
+  @media (max-width: 760px) {
+    .article { grid-template-columns: 1fr; }
+    .article__art { min-height: 160px; }
+  }
+</style>

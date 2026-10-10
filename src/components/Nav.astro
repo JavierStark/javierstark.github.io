@@ -1,7 +1,7 @@
 ---
 import profile from '../data/profile.json';
 const links = [
-  ['#about', 'About'], ['#experience', 'Experience'], ['#speaking', 'Speaking'],
+  ['#about', 'About'], ['#experience', 'Experience'], ['#writing', 'Writing'], ['#speaking', 'Speaking'],
   ['#projects', 'Projects'], ['#awards', 'Awards'], ['#skills', 'Skills'], ['#contact', 'Contact'],
 ];
 ---
@@ -20,6 +20,7 @@ const links = [
   .nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--line); }
   .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
   .nav__brand { font-family: var(--font-head); font-weight: 700; white-space: nowrap; }
+  nav { min-width: 0; }
   ul { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
   ul::-webkit-scrollbar { display: none; }
   ul a { font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; transition: color .2s; }
@@ -27,6 +28,7 @@ const links = [
   @media (max-width: 720px) {
     .nav__brand { display: none; }
     .nav__inner { justify-content: flex-start; }
-    ul { gap: 18px; }
+    nav { flex: 1; }
+    ul { gap: 18px; padding-right: 24px; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
   }
 </style>

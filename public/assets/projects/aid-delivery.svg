@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t">
+  <title id="t">Aid package arrival detected over Bluetooth and recorded on-chain for donors</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16122a"/><stop offset="1" stop-color="#2a1530"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.3" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#ed4d6d" stop-opacity="0.2"/><stop offset="1" stop-color="#ed4d6d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- package -->
+  <g transform="translate(330 420)">
+    <polygon points="0,-150 170,-70 170,110 0,190 -170,110 -170,-70" fill="#c98a4b"/>
+    <polygon points="0,-150 170,-70 0,10 -170,-70" fill="#e0a868"/>
+    <polygon points="0,10 170,-70 170,110 0,190" fill="#a8703a"/>
+    <polygon points="-85,-110 85,-30 85,5 -85,-75" fill="#f5d5a8" opacity="0.6"/>
+    <g transform="translate(-85 70)" fill="#ffffff"><rect x="-14" y="-40" width="28" height="80" rx="4"/><rect x="-40" y="-14" width="80" height="28" rx="4"/></g>
+  </g>
+
+  <!-- BLE waves -->
+  <g fill="none" stroke="#7c83ff" stroke-width="10" stroke-linecap="round">
+    <path d="M560 360 a90 90 0 0 1 0 120" stroke-opacity="0.9"/>
+    <path d="M600 320 a150 150 0 0 1 0 200" stroke-opacity="0.6"/>
+    <path d="M640 280 a210 210 0 0 1 0 280" stroke-opacity="0.35"/>
+  </g>
+  <text x="600" y="620" fill="#a3a7c2" font-family="Inter, sans-serif" font-size="26" text-anchor="middle">open BLE network</text>
+
+  <!-- chain of blocks -->
+  <g font-family="ui-monospace, Consolas, monospace" font-size="22" text-anchor="middle">
+    <g fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="6"><line x1="900" y1="420" x2="960" y2="420"/><line x1="1120" y1="420" x2="1180" y2="420"/></g>
+    <rect x="760" y="340" width="140" height="160" rx="18" fill="#1c1d38" stroke="#7c83ff" stroke-width="4"/>
+    <text x="830" y="410" fill="#c9cbe0">#1041</text><text x="830" y="445" fill="#7d81a3">0x9f…</text>
+    <rect x="960" y="340" width="160" height="160" rx="18" fill="#1c1d38" stroke="#7c83ff" stroke-width="4"/>
+    <text x="1040" y="410" fill="#c9cbe0">#1042</text><text x="1040" y="445" fill="#7d81a3">0x3a…</text>
+    <rect x="1180" y="320" width="200" height="200" rx="22" fill="#ed4d6d" fill-opacity="0.15" stroke="#ed4d6d" stroke-width="5"/>
+    <text x="1280" y="400" fill="#ffffff" font-family="Space Grotesk, Inter, sans-serif" font-size="28" font-weight="700">Delivered</text>
+    <path d="M1240 440 l28 28 l56 -56" fill="none" stroke="#3ddc84" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- donor confirmation -->
+  <g transform="translate(1280 660)">
+    <circle r="44" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+    <path d="M0 18 c-30 -22 -38 -34 -38 -48 a19 19 0 0 1 38 -6 a19 19 0 0 1 38 6 c0 14 -8 26 -38 48z" transform="translate(0 6) scale(0.8)" fill="#ed4d6d"/>
+    <text x="70" y="10" fill="#c9cbe0" font-family="Inter, sans-serif" font-size="24">donor sees proof</text>
+  </g>
+
+  <text x="80" y="820" fill="#ffffff" fill-opacity="0.9" font-family="Space Grotesk, Inter, sans-serif" font-size="72" font-weight="700">Proof of delivery</text>
+  <text x="80" y="860" fill="#c9cbe0" font-family="Inter, sans-serif" font-size="26">Blockchain For Good Hackathon · 24 hours · team of 3</text>
+</svg>

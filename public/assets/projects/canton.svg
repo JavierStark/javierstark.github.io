@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t">
+  <title id="t">Canton Network: participants with private views coordinated by a synchronizer</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101225"/><stop offset="1" stop-color="#16223a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.5">
+      <stop offset="0" stop-color="#7c83ff" stop-opacity="0.25"/><stop offset="1" stop-color="#7c83ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- links: participants to synchronizer -->
+  <g stroke="#7c83ff" stroke-opacity="0.55" stroke-width="5" stroke-dasharray="14 10" fill="none">
+    <path d="M800 420 L 330 230"/><path d="M800 420 L 1270 230"/><path d="M800 420 L 800 720"/>
+  </g>
+  <!-- sub-transaction tree between two participants (private) -->
+  <g stroke="#ed4d6d" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M400 250 C 600 120, 1000 120, 1200 250"/>
+  </g>
+  <g fill="#ed4d6d"><circle cx="800" cy="155" r="14"/><circle cx="650" cy="175" r="9"/><circle cx="950" cy="175" r="9"/></g>
+  <text x="800" y="110" fill="#ed4d6d" font-family="Inter, sans-serif" font-size="26" font-weight="600" text-anchor="middle">DvP settlement · need-to-know sub-transactions</text>
+
+  <!-- synchronizer hub -->
+  <g transform="translate(800 420)">
+    <circle r="120" fill="#1c1d38" stroke="#7c83ff" stroke-width="5"/>
+    <circle r="88" fill="none" stroke="#7c83ff" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="6 8"/>
+    <text y="-8" fill="#ffffff" font-family="Space Grotesk, Inter, sans-serif" font-size="30" font-weight="700" text-anchor="middle">Synchronizer</text>
+    <text y="30" fill="#a3a7c2" font-family="Inter, sans-serif" font-size="22" text-anchor="middle">sequencer · mediator</text>
+  </g>
+
+  <!-- participants with private ledgers (padlocks) -->
+  <g font-family="Space Grotesk, Inter, sans-serif">
+    <g transform="translate(330 230)">
+      <rect x="-130" y="-70" width="260" height="140" rx="22" fill="#1c1d38" stroke="#ed4d6d" stroke-width="4"/>
+      <text y="-12" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">Issuer</text>
+      <text y="26" fill="#a3a7c2" font-size="22" text-anchor="middle" font-family="Inter, sans-serif">participant</text>
+      <g transform="translate(95 -88)"><rect x="-18" y="0" width="36" height="28" rx="6" fill="#ed4d6d"/><path d="M-10 0 v-10 a10 10 0 0 1 20 0 v10" fill="none" stroke="#ed4d6d" stroke-width="5"/></g>
+    </g>
+    <g transform="translate(1270 230)">
+      <rect x="-130" y="-70" width="260" height="140" rx="22" fill="#1c1d38" stroke="#ed4d6d" stroke-width="4"/>
+      <text y="-12" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">Investor</text>
+      <text y="26" fill="#a3a7c2" font-size="22" text-anchor="middle" font-family="Inter, sans-serif">participant</text>
+      <g transform="translate(95 -88)"><rect x="-18" y="0" width="36" height="28" rx="6" fill="#ed4d6d"/><path d="M-10 0 v-10 a10 10 0 0 1 20 0 v10" fill="none" stroke="#ed4d6d" stroke-width="5"/></g>
+    </g>
+    <g transform="translate(800 720)">
+      <rect x="-130" y="-70" width="260" height="140" rx="22" fill="#1c1d38" stroke="#7c83ff" stroke-width="4"/>
+      <text y="-12" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">Regulator</text>
+      <text y="26" fill="#a3a7c2" font-size="22" text-anchor="middle" font-family="Inter, sans-serif">sees only its branch</text>
+    </g>
+  </g>
+
+  <!-- bond token -->
+  <g transform="translate(1290 640)">
+    <rect x="-110" y="-60" width="220" height="120" rx="16" fill="#ed4d6d" fill-opacity="0.14" stroke="#ed4d6d" stroke-width="3"/>
+    <text y="-8" fill="#ffffff" font-family="Space Grotesk, Inter, sans-serif" font-size="30" font-weight="700" text-anchor="middle">BOND</text>
+    <text y="30" fill="#c9cbe0" font-family="ui-monospace, Consolas, monospace" font-size="20" text-anchor="middle">CIP-056 · Daml</text>
+  </g>
+
+  <text x="80" y="820" fill="#ffffff" fill-opacity="0.9" font-family="Space Grotesk, Inter, sans-serif" font-size="80" font-weight="700">Canton</text>
+  <text x="80" y="860" fill="#c9cbe0" font-family="Inter, sans-serif" font-size="26">Tokenized digital bonds · privacy by design</text>
+</svg>

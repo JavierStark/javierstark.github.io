@@ -48,7 +48,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
+ul, ol { list-style: none; }
 h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.2; letter-spacing: -0.01em; }
 
 .wrap { width: min(var(--max), 100% - 32px); margin-inline: auto; }
@@ -79,3 +79,20 @@ section { padding: 88px 0 0; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Progressive disclosure: native <details>, no JS. */
+.more { margin-top: 10px; }
+.more > summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.88rem; font-weight: 600; color: var(--accent); user-select: none;
+}
+.more > summary::-webkit-details-marker { display: none; }
+.more > summary::before {
+  content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg); transition: transform .2s;
+}
+.more[open] > summary::before { transform: rotate(45deg); }
+.more > summary:hover { text-decoration: underline; }
+.more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.more__body { margin-top: 12px; }
+figcaption { font-size: 0.8rem; color: var(--text-muted); }

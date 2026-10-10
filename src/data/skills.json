@@ -35,11 +35,11 @@
     "last_used": "2026-07"
   },
   {
-    "name": "TypeScript",
+    "name": "JavaScript",
     "category": "language",
     "level": null,
     "core": false,
-    "last_used": "2026-10"
+    "last_used": "current"
   },
   {
     "name": "SQL",
@@ -54,13 +54,6 @@
     "level": null,
     "core": false,
     "last_used": "current"
-  },
-  {
-    "name": "Solidity",
-    "category": "language",
-    "level": null,
-    "core": false,
-    "last_used": "2026-10"
   },
   {
     "name": "ASP.NET Core",
@@ -91,11 +84,11 @@
     "last_used": "2025-12"
   },
   {
-    "name": "Next.js",
+    "name": "React",
     "category": "framework",
     "level": null,
     "core": false,
-    "last_used": "2026-10"
+    "last_used": "current"
   },
   {
     "name": "Flutter",
@@ -193,7 +186,7 @@
     "category": "devops",
     "level": null,
     "core": false,
-    "last_used": "2026-10"
+    "last_used": "2026-05"
   },
   {
     "name": "OpenTelemetry",
@@ -236,6 +229,13 @@
     "level": null,
     "core": false,
     "last_used": "2025-09"
+  },
+  {
+    "name": "Google Sheets",
+    "category": "tool",
+    "level": null,
+    "core": false,
+    "last_used": "current"
   },
   {
     "name": "Oracle Database",

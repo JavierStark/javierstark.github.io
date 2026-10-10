@@ -4,6 +4,9 @@ import talks from '../data/talks.json';
 import projects from '../data/projects.json';
 import awards from '../data/awards.json';
 import certifications from '../data/certifications.json';
+import { fmtDate } from '../lib/format';
+
+const photoTalk = talks.find((t) => t.image === 'javier-speaking.jpg');
 
 // Every figure below is counted from the generated data, never typed by hand.
 const stats = [
@@ -24,7 +27,12 @@ const stats = [
         {profile.summary.map((p) => <p>{p}</p>)}
       </div>
       <aside class="about__side">
-        <img class="about__photo card" src="/assets/javier-speaking.jpg" alt={`${profile.name} presenting F# code during a talk`} width="1170" height="1200" loading="lazy" />
+        {photoTalk && (
+          <figure class="about__fig">
+            <img class="about__photo card" src="/assets/javier-speaking.jpg" alt={`${profile.name} presenting ${photoTalk.title}`} width="1170" height="1200" loading="lazy" />
+            <figcaption>{photoTalk.title} · {photoTalk.venue.split(',')[0]} · {fmtDate(photoTalk.date)}</figcaption>
+          </figure>
+        )}
         <dl class="stats">
           {stats.map(([n, label]) => <div class="card stat"><dt>{n}</dt><dd>{label}</dd></div>)}
         </dl>
@@ -43,7 +51,9 @@ const stats = [
   .about__text p { color: var(--text-muted); font-size: 1.05rem; }
   .about__text p + p { margin-top: 16px; }
   .about__text p:first-child { color: var(--text); }
-  .about__photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 55% 25%; margin-bottom: 12px; padding: 0; }
+  .about__fig { margin-bottom: 12px; }
+  .about__photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 55% 25%; padding: 0; }
+  .about__fig figcaption { margin-top: 6px; }
   .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .stat { padding: 18px; }
   .stat dt { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--accent); }

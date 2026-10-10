@@ -5,7 +5,7 @@
     "title": "Aspire: orchestration, DevEx and observability with built-in AI",
     "venue": "OpenSouthCode 2026, La Térmica, Málaga",
     "date": "2026-06-26",
-    "url": null,
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7477719132122206208/",
     "summary": "45-minute talk on .NET Aspire as the glue for distributed architectures, covering multi-agent AI systems, polyglot services, full OpenTelemetry observability and deployment to Kubernetes/AKS. My most attended talk to date, with a full room.",
     "featured": true,
     "image": "opensouthcode-2026-audience.jpg",
@@ -17,7 +17,7 @@
     "title": "DevOps & Cloud Course (1st edition), co-organizer and speaker",
     "venue": "ETSI Informática, University of Málaga",
     "date": "2026-04",
-    "url": null,
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7460569690021629952/",
     "summary": "Four weekly sessions on Docker, Kubernetes, AWS/Azure, GitHub Actions and platform engineering, with industry guest speakers; final session open to the public with GitHub Community España.",
     "featured": true,
     "image": "devops-course-docker-session.jpg",
@@ -29,10 +29,10 @@
     "title": "Workshop: taking a C# Minimal API to production with GitHub Actions and Azure",
     "venue": "Hackers Week, ETSI Informática, University of Málaga (with Alejandro Cerezo Contreras)",
     "date": "2026-03",
-    "url": null,
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7439671435201064960/",
     "summary": "Hands-on CI/CD workshop closing the gap between code that runs locally and professionally deployed software. Full classroom.",
     "featured": true,
-    "image": null,
+    "image": "hackers-week-2026-workshop.jpg",
     "audience": "40 students"
   },
   {
@@ -41,10 +41,10 @@
     "title": "Data Science with F#",
     "venue": "dotnetMÁLAGA community meetup, hosted at Verisk, Málaga",
     "date": "2026-01-21",
-    "url": null,
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7420046300596871168/",
     "summary": "My first technical community talk. How F#'s strong typing and functional pipelines make data analysis safer and faster than typical Python workflows, with examples from iGEM UMA biological data analysis.",
     "featured": true,
-    "image": null,
+    "image": "javier-speaking.jpg",
     "audience": null
   }
 ]

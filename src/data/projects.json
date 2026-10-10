@@ -5,7 +5,7 @@
     "title": "Diana, precision guide RNA design (iGEM UMA-Malaga 2026 software)",
     "kind": "research",
     "order": 1,
-    "image": "DiseaseMutationApp.png",
+    "image": "projects/diana.svg",
     "summary": "Web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNA spacers, flag restriction sites, export order-ready oligos and plan combinatorial guide pooling on 96/384-well plates. Official software deliverable of iGEM team UMA-Malaga 2026.",
     "my_contribution": "Sole developer, building the software for the team's scientists.",
     "start": "2025-10",
@@ -21,6 +21,7 @@
     ],
     "links": {
       "repo": "https://gitlab.igem.org/2026/software/uma-malaga/diana-grna-designer",
+      "writeup": "https://2026.igem.wiki/uma-malaga/software",
       "other": [
         "https://github.com/JavierStark/DiseaseMutationsApp"
       ]
@@ -39,7 +40,7 @@
     "title": "Tokenized digital bond platform on Canton Network (UMA Blockchain Technologies × ioBuilders)",
     "kind": "academic",
     "order": 2,
-    "image": null,
+    "image": "projects/canton.svg",
     "summary": "Final project of the University of Málaga Blockchain Technologies course (run by NICS Lab; 18 students in 6 teams mentored by industry partners), built with ioBuilders. A Dockerized Canton network running a CIP-056 tokenized bond contract in Daml, a Go REST backend over the gRPC Ledger API, a web frontend to issue, transfer, burn and settle bonds with DvP allocations, a ledger event listener and a full observability stack.",
     "my_contribution": "Owned the Canton, blockchain and Daml layer, the system architecture, .NET Aspire orchestration and telemetry.",
     "start": "2026-05",
@@ -105,7 +106,7 @@
     "title": "DevOps & Cloud Course, 1st edition (ETSI Informática, University of Málaga)",
     "kind": "volunteer",
     "order": 4,
-    "image": null,
+    "image": "projects/devops-course.svg",
     "summary": "Four-week, four-session practical course for computer engineering students, co-organized and co-taught with Alejandro Cerezo Contreras. Covered containerization with Docker, Kubernetes orchestration, cloud deployment on AWS and Azure, GitHub Actions and platform engineering, with industry guest speakers (Docker Sevilla community organizer, a platform engineering module with Azure and Terraform, a Formula 1 digital-twin cloud case study). The final session was opened to the public with GitHub Community España.",
     "my_contribution": "Co-organizer and speaker (curriculum, sessions, guest speakers, course website).",
     "start": "2026-04",
@@ -131,22 +132,16 @@
     "title": "Aid-delivery verification on-chain, Blockchain For Good Hackathon 2026",
     "kind": "hackathon",
     "order": 5,
-    "image": null,
+    "image": "projects/aid-delivery.svg",
     "summary": "24-hour hackathon organized by Cátedra Fintech and Fundación Kareema. Team of three built a donation-tracking system that detects, through an open BLE network, when a humanitarian aid package physically arrives and records the proof on-chain so donors can verify their impact. Javier was the team's blockchain lead; teammates had no prior blockchain background.",
-    "my_contribution": "Blockchain lead; prepared an agent-ready EVM hackathon starter (Scaffold-ETH 2, Foundry, Next.js, CI/CD, gated deploys).",
+    "my_contribution": "Blockchain lead, guiding two teammates new to blockchain through smart contracts and tokens during the 24 hours.",
     "start": "2026-09",
     "end": "2026-10",
     "status": "completed",
     "tech_stack": [
-      "Solidity",
-      "Next.js",
-      "TypeScript",
-      "GitHub Actions",
       "Blockchain / DLT"
     ],
-    "links": {
-      "repo": "https://github.com/JavierStark/HackathonBlockchain4Good"
-    },
+    "links": {},
     "highlights": [
       "Built in 24 hours, with a team of three, a system that detects humanitarian aid package arrival over an open BLE network and records proof of delivery on-chain for donors; onboarded two teammates with no prior blockchain experience."
     ]
