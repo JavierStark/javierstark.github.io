@@ -1,5 +1,7 @@
 ---
 import skills from '../data/skills.json';
+import TechIcon from './TechIcon.astro';
+import { skillIcon } from '../lib/icons';
 
 // Display groups over the database skill categories; core skills first within each group.
 const groups: [string, string[]][] = [
@@ -26,7 +28,7 @@ const byGroup = groups
       {byGroup.map(([label, list]) => (
         <div class="card group reveal">
           <h3>{label}</h3>
-          <div class="chips">{list.map((s) => <span class={`chip ${s.core ? '' : 'muted'}`}>{s.name}</span>)}</div>
+          <div class="chips">{list.map((s) => <span class={`chip skill ${s.core ? 'core' : 'muted'}`}><TechIcon icon={skillIcon(s.name)} />{s.name}</span>)}</div>
         </div>
       ))}
     </div>
@@ -37,4 +39,6 @@ const byGroup = groups
   .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
   .group { padding: 22px; }
   .group h3 { font-size: 1rem; margin-bottom: 12px; }
+  .skill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; }
+  .skill.core { border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
 </style>

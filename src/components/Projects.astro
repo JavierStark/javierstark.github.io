@@ -18,34 +18,40 @@ const years = (p: { start?: string | null; end?: string | null; status?: string 
       <h2>Selected work</h2>
     </div>
     <div class="projects">
-      {projects.map((p, i) => (
-        <article id={`project-${p.slug}`} class={`card project reveal ${i === 0 ? 'project--lead' : ''}`}>
-          {p.image
-            ? <img class="project__img" src={`/assets/${p.image}`} alt={p.title} loading="lazy" />
-            : <div class="project__img project__img--blank" aria-hidden="true"><span>{p.title.split(/[ ,(]/)[0]}</span></div>}
-          <div class="project__body">
-            <p class="muted small">{years(p)}</p>
-            <h3>{p.title}</h3>
-            <p class="project__summary">{firstSentence(p.summary ?? '')}</p>
-            <div class="chips">{p.tech_stack.slice(0, 8).map((t) => <span class="chip muted">{t}</span>)}</div>
-            {(p.my_contribution || p.highlights.length > 0) && (
-              <details class="more">
-                <summary>More details</summary>
-                <div class="more__body">
-                  {(p.summary ?? '').length > firstSentence(p.summary ?? '').length && <p class="project__summary">{(p.summary ?? '').slice(firstSentence(p.summary ?? '').length).trim()}</p>}
-                  {p.my_contribution && <p class="project__role">{p.my_contribution}</p>}
-                  {p.highlights.length > 0 && <ul class="project__hl">{p.highlights.map((h) => <li>{h}</li>)}</ul>}
-                </div>
-              </details>
-            )}
-            <div class="project__links">
-              {Object.entries(p.links).filter(([k, v]) => typeof v === 'string').map(([k, v]) => (
-                <a class="link" href={v as string} target="_blank" rel="noopener">{label(k, v as string)} <Icon name="external" /></a>
-              ))}
+      {projects.map((p, i) => {
+        const rest = (p.summary ?? '').slice(firstSentence(p.summary ?? '').length).trim();
+        const hasMore = Boolean(rest || p.my_contribution || p.highlights.length > 0);
+        const more = hasMore && (
+          <details class={`more ${i === 0 ? 'project__more--wide' : ''}`}>
+            <summary>More details</summary>
+            <div class="more__body">
+              {rest && <p class="project__summary">{rest}</p>}
+              {p.my_contribution && <p class="project__role">{p.my_contribution}</p>}
+              {p.highlights.length > 0 && <ul class="project__hl">{p.highlights.map((h) => <li>{h}</li>)}</ul>}
             </div>
-          </div>
-        </article>
-      ))}
+          </details>
+        );
+        return (
+          <article id={`project-${p.slug}`} class={`card project reveal ${i === 0 ? 'project--lead' : ''}`}>
+            {p.image
+              ? <img class="project__img" src={`/assets/${p.image}`} alt={p.title} loading="lazy" />
+              : <div class="project__img project__img--blank" aria-hidden="true"><span>{p.title.split(/[ ,(]/)[0]}</span></div>}
+            <div class="project__body">
+              <p class="muted small">{years(p)}</p>
+              <h3>{p.title}</h3>
+              <p class="project__summary">{firstSentence(p.summary ?? '')}</p>
+              <div class="chips">{p.tech_stack.slice(0, 8).map((t) => <span class="chip muted">{t}</span>)}</div>
+              {i !== 0 && more}
+              <div class="project__links">
+                {Object.entries(p.links).filter(([k, v]) => typeof v === 'string').map(([k, v]) => (
+                  <a class="link" href={v as string} target="_blank" rel="noopener">{label(k, v as string)} <Icon name="external" /></a>
+                ))}
+              </div>
+            </div>
+            {i === 0 && more}
+          </article>
+        );
+      })}
     </div>
   </div>
 </section>
@@ -55,7 +61,12 @@ const years = (p: { start?: string | null; end?: string | null; status?: string 
   .project { overflow: hidden; display: flex; flex-direction: column; scroll-margin-top: 80px; }
   .project:target { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow); }
   .project--lead { grid-column: 1 / -1; flex-direction: row; }
-  .project--lead .project__img { width: 52%; flex-shrink: 0; aspect-ratio: 16 / 9; align-self: center; object-fit: contain; border-bottom: 0; }
+  .project--lead { align-items: flex-start; flex-wrap: wrap; }
+  .project--lead .project__body { flex: 1; min-width: 0; }
+  .project__more--wide { flex-basis: 100%; margin: 0; padding: 14px 26px 22px; border-top: 1px solid var(--line); }
+  .project__more--wide .project__hl { grid-template-columns: repeat(2, 1fr); column-gap: 28px; }
+  @media (max-width: 860px) { .project__more--wide .project__hl { grid-template-columns: 1fr; } }
+  .project--lead .project__img { width: 52%; flex-shrink: 0; aspect-ratio: 16 / 9; align-self: flex-start; object-fit: contain; border-bottom: 0; }
   .project__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--line); }
   .project__img--blank { display: grid; place-items: center; background: linear-gradient(135deg, var(--accent-soft), rgba(124, 131, 255, 0.18)); }
   .project__img--blank span { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; opacity: 0.8; }

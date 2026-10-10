@@ -1,0 +1,21 @@
+---
+import type { IconData } from '../lib/icons';
+interface Props { icon: IconData | null; size?: 'sm' | 'md' }
+const { icon, size = 'sm' } = Astro.props;
+---
+{icon && (icon.path
+  ? <svg class={`ti ti--${size}`} viewBox="0 0 24 24" role="img" aria-label={icon.title} style={icon.color ? `--brand:${icon.color}` : undefined}><path d={icon.path} /></svg>
+  : <span class={`ti ti--${size} ti--mono`} aria-hidden="true">{icon.monogram}</span>)}
+
+<style>
+  .ti { flex-shrink: 0; fill: var(--brand, currentColor); }
+  .ti--sm { width: 14px; height: 14px; }
+  .ti--md { width: 26px; height: 26px; }
+  .ti--mono {
+    display: inline-grid; place-items: center; border-radius: 4px; font-family: var(--font-head); font-weight: 700;
+    background: var(--accent-soft); color: var(--text); border: 1px solid var(--line); line-height: 1;
+  }
+  .ti--sm.ti--mono { font-size: 0.5rem; }
+  .ti--md.ti--mono { font-size: 0.72rem; border-radius: 7px; }
+  @media (prefers-color-scheme: light) { .ti { fill: currentColor; } }
+</style>

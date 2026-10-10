@@ -5,6 +5,8 @@ import certifications from '../data/certifications.json';
 import { fmtDate, year } from '../lib/format';
 
 import { existsSync } from 'node:fs';
+import TechIcon from './TechIcon.astro';
+import { issuerIcon } from '../lib/icons';
 
 const today = new Date().toISOString().slice(0, 7);
 const featured = awards.find((a) => a.image && existsSync(`public/assets/${a.image}`));
@@ -42,7 +44,7 @@ const eduYears = (e: { start?: string | null; end?: string | null }) =>
         <div class="card block reveal">
           <h3>Certifications</h3>
           <ul class="list">
-            {certifications.map((c) => <li><span class="yr">{year(c.date)}</span><span>{c.name}<br /><small class="muted">{c.issuer}</small></span></li>)}
+            {certifications.map((c) => <li class="cert"><TechIcon icon={issuerIcon(c.issuer)} size="md" /><span>{c.name}<br /><small class="muted">{c.issuer} · {year(c.date)}</small></span></li>)}
           </ul>
         </div>
       </div>
@@ -61,6 +63,7 @@ const eduYears = (e: { start?: string | null; end?: string | null }) =>
   .block h3 { font-size: 1.1rem; margin-bottom: 14px; }
   .list { display: grid; gap: 12px; }
   .list li { display: grid; grid-template-columns: 52px 1fr; gap: 10px; font-size: 0.93rem; }
+  .cert { grid-template-columns: 34px 1fr !important; align-items: center; }
   .yr { font-family: var(--font-head); font-weight: 700; color: var(--accent); }
   .edu__deg { font-weight: 600; }
   .edu__hl { margin-top: 10px; display: grid; gap: 6px; }

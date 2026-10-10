@@ -4,9 +4,6 @@ import talks from '../data/talks.json';
 import projects from '../data/projects.json';
 import awards from '../data/awards.json';
 import certifications from '../data/certifications.json';
-import { fmtDate } from '../lib/format';
-
-const photoTalk = talks.find((t) => t.image === 'javier-speaking-wide.jpg');
 
 // Every figure below is counted from the generated data, never typed by hand.
 const stats = [
@@ -23,45 +20,49 @@ const stats = [
       <h2>I build software, then teach it.</h2>
     </div>
     <div class="about__grid">
-      <div class="about__text">
-        {profile.summary.map((p) => <p>{p}</p>)}
-      </div>
       <aside class="about__side">
-        {photoTalk && (
-          <figure class="about__fig">
-            <img class="about__photo card" src="/assets/javier-speaking.jpg" alt={`${profile.name} presenting ${photoTalk.title}`} width="1170" height="1200" loading="lazy" />
-            <figcaption>{photoTalk.title} · {photoTalk.venue.split(',')[0]} · {fmtDate(photoTalk.date)}</figcaption>
-          </figure>
-        )}
-        <dl class="stats">
-          {stats.map(([n, label]) => <div class="card stat"><dt>{n}</dt><dd>{label}</dd></div>)}
-        </dl>
+        <img class="about__photo" src="/assets/about-portrait.jpg" alt={`Portrait of ${profile.full_name}`} width="800" height="800" loading="lazy" />
         <div class="card avail">
           <h3>Availability</h3>
           <ul>{profile.availability.map((a) => <li>{a}</li>)}</ul>
           <p class="muted langs">{profile.languages.map((l) => `${l.language} (${l.proficiency.replace('-', ' ')})`).join(' · ')}</p>
         </div>
       </aside>
+      <div class="about__text">
+        {profile.summary.map((p) => <p>{p}</p>)}
+      </div>
     </div>
+    <dl class="stats">
+      {stats.map(([n, label]) => <div class="card stat"><dt>{n}</dt><dd>{label}</dd></div>)}
+    </dl>
   </div>
 </section>
 
 <style>
-  .about__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .about__grid { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; }
+  .about__photo { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 18px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .avail { padding: 16px; margin-top: 12px; }
+  .avail h3 { font-size: 0.95rem; margin-bottom: 8px; }
+  .avail li { font-size: 0.85rem; padding-left: 14px; position: relative; }
+  .avail li + li { margin-top: 4px; }
+  .avail li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .langs { font-size: 0.8rem; margin-top: 10px; }
+  .about__text { max-width: 68ch; }
   .about__text p { color: var(--text-muted); font-size: 1.05rem; }
   .about__text p + p { margin-top: 16px; }
-  .about__text p:first-child { color: var(--text); }
-  .about__fig { margin-bottom: 12px; }
-  .about__photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 55% 25%; padding: 0; }
-  .about__fig figcaption { margin-top: 6px; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .stat { padding: 18px; }
-  .stat dt { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--accent); }
-  .stat dd { color: var(--text-muted); font-size: 0.85rem; }
-  .avail { padding: 18px; margin-top: 12px; }
-  .avail h3 { font-size: 1rem; margin-bottom: 8px; }
-  .avail li { font-size: 0.9rem; padding-left: 14px; position: relative; }
-  .avail li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  .langs { font-size: 0.85rem; margin-top: 10px; }
-  @media (max-width: 860px) { .about__grid { grid-template-columns: 1fr; } }
+  .about__text p:first-child { color: var(--text); font-size: 1.15rem; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 32px; }
+  .stat { padding: 16px 18px; display: flex; align-items: baseline; gap: 12px; }
+  .stat dt { font-family: var(--font-head); font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat dd { color: var(--text-muted); font-size: 0.85rem; line-height: 1.3; }
+  @media (max-width: 860px) {
+    .about__grid { grid-template-columns: 1fr; gap: 24px; }
+    .about__side { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: center; }
+    .avail { margin-top: 0; }
+    .stats { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 420px) {
+    .about__side { grid-template-columns: 1fr; }
+    .about__photo { max-width: 200px; }
+  }
 </style>

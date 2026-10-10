@@ -8,12 +8,17 @@ import { linkUrl } from '../lib/format';
     <div class="card contact reveal">
       <p class="eyebrow">Contact</p>
       <h2>Let's build something.</h2>
-      <p class="muted">The fastest way to reach me is email. I reply to every message.</p>
+      <p class="muted">Email is the fastest way to reach me.</p>
+      <p class="contact__email" id="contact-email">{profile.email}</p>
       <div class="contact__cta">
-        <a class="btn primary" href={`mailto:${profile.email}`}><Icon name="mail" /> {profile.email}</a>
+        <button type="button" class="btn primary copy" data-copy={profile.email} aria-describedby="contact-email">
+          <span class="copy__idle"><Icon name="copy" /> Copy email</span>
+          <span class="copy__done" aria-hidden="true"><Icon name="check" /> Copied!</span>
+        </button>
         {profile.links.linkedin && <a class="btn" href={linkUrl(profile.links.linkedin)} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>}
         {profile.links.github && <a class="btn" href={linkUrl(profile.links.github)} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>}
       </div>
+      <p class="copy__status" role="status" aria-live="polite"></p>
     </div>
   </div>
 </section>
@@ -21,9 +26,53 @@ import { linkUrl } from '../lib/format';
   <small class="muted">© {new Date().getFullYear()} {profile.full_name}</small>
 </footer>
 
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.copy');
+  const status = document.querySelector<HTMLElement>('.copy__status');
+  const emailEl = document.getElementById('contact-email');
+  let reset: number | undefined;
+  btn?.addEventListener('click', async () => {
+    const email = btn.dataset.copy ?? '';
+    let hold = 2200;
+    try {
+      await navigator.clipboard.writeText(email);
+      btn.classList.add('is-copied');
+      if (status) status.textContent = `${email} copied to clipboard`;
+    } catch {
+      // Clipboard blocked (permissions / insecure context): select the address so it can be copied manually.
+      if (emailEl) {
+        const range = document.createRange();
+        range.selectNodeContents(emailEl);
+        const sel = window.getSelection();
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+      }
+      if (status) status.textContent = 'Press Ctrl+C (or ⌘C) to copy the selected address';
+      hold = 6000;
+    }
+    window.clearTimeout(reset);
+    reset = window.setTimeout(() => {
+      btn.classList.remove('is-copied');
+      if (status) status.textContent = '';
+    }, hold);
+  });
+</script>
+
 <style>
+  /* Last section: tall enough that the nav link can align it to the top like the others. */
+  #contact { min-height: calc(100svh - 104px); }
   .contact { padding: 48px 32px; text-align: center; background: linear-gradient(135deg, var(--accent-soft), rgba(124, 131, 255, 0.1)), var(--bg-card); }
   .contact h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 8px 0 10px; }
-  .contact__cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .contact__email { font-family: var(--font-head); font-size: clamp(1.05rem, 2.6vw, 1.35rem); font-weight: 600; margin-top: 14px; word-break: break-all; user-select: all; }
+  .contact__cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+  .copy { cursor: pointer; font: inherit; font-weight: 600; position: relative; display: inline-grid; }
+  .copy > span { grid-area: 1 / 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: opacity .25s ease, transform .25s ease; }
+  .copy__done { opacity: 0; transform: translateY(6px); }
+  .copy.is-copied { background: #2fb36d; }
+  .copy.is-copied .copy__idle { opacity: 0; transform: translateY(-6px); }
+  .copy.is-copied .copy__done { opacity: 1; transform: none; }
+  .copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .copy__status { min-height: 1.4em; margin-top: 12px; font-size: 0.85rem; color: var(--text-muted); }
   .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 40px 0; }
+  @media (prefers-reduced-motion: reduce) { .copy > span { transition: none; } }
 </style>

@@ -38,23 +38,53 @@ const canonical = 'https://javiertorralbo.dev/';
       }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-      // On mouse devices, hovering a card opens its "more" disclosure; clicking the toggle pins it.
-      // Touch devices keep native tap-to-open (no hover there).
-      if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        document.querySelectorAll('.card').forEach((card) => {
-          const details = card.querySelector('details.more');
-          const summary = details?.querySelector('summary');
-          if (!details || !summary) return;
-          let timer: number | undefined;
-          let pinned = false;
-          card.addEventListener('mouseenter', () => { timer = window.setTimeout(() => { details.open = true; }, 120); });
-          card.addEventListener('mouseleave', () => { window.clearTimeout(timer); if (!pinned) details.open = false; });
-          summary.addEventListener('click', (e) => {
-            if (details.open && !pinned) { e.preventDefault(); pinned = true; }  // opened by hover: click keeps it open
-            else { pinned = !details.open; }                                   // otherwise behave as a normal toggle
-          });
+      // "More" disclosures: animated open/close everywhere; on mouse devices hovering a card
+      // opens it after a short intent delay and clicking the toggle pins it open.
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const setOpen = (details: HTMLDetailsElement, open: boolean) => {
+        const body = details.querySelector<HTMLElement>('.more__body');
+        if (!body || reduceMotion) { details.open = open; return; }
+        body.getAnimations().forEach((a) => a.cancel());
+        if (open) {
+          details.open = true;
+          const h = body.scrollHeight;
+          body.animate(
+            [{ height: '0px', opacity: 0, transform: 'translateY(-6px)' }, { height: `${h}px`, opacity: 1, transform: 'none' }],
+            { duration: 380, easing: 'cubic-bezier(0.22, 0.61, 0.36, 1)' },
+          );
+        } else if (details.open) {
+          const h = body.scrollHeight;
+          const anim = body.animate(
+            [{ height: `${h}px`, opacity: 1 }, { height: '0px', opacity: 0 }],
+            { duration: 260, easing: 'cubic-bezier(0.4, 0, 0.6, 1)' },
+          );
+          anim.onfinish = () => { details.open = false; };
+        }
+      };
+      const hoverMode = matchMedia('(hover: hover) and (pointer: fine)').matches;
+      document.querySelectorAll<HTMLDetailsElement>('details.more').forEach((details) => {
+        const summary = details.querySelector('summary');
+        const card = details.closest('.card');
+        if (!summary) return;
+        let pinned = false;
+        summary.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (hoverMode && details.open && !pinned) { pinned = true; return; }  // opened by hover: click keeps it open
+          pinned = !details.open;
+          setOpen(details, pinned);
         });
-      }
+        if (!hoverMode || !card) return;
+        let enter: number | undefined;
+        let leave: number | undefined;
+        card.addEventListener('mouseenter', () => {
+          window.clearTimeout(leave);
+          enter = window.setTimeout(() => { if (!details.open) setOpen(details, true); }, 220);
+        });
+        card.addEventListener('mouseleave', () => {
+          window.clearTimeout(enter);
+          leave = window.setTimeout(() => { if (!pinned) setOpen(details, false); }, 180);
+        });
+      });
     </script>
   </body>
 </html>

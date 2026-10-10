@@ -22,7 +22,7 @@ const latest = writing[0];
       </ul>
       {latest && <a class="hero__article" href="#writing"><span class="chip">New article</span> {latest.title} →</a>}
       <div class="hero__cta">
-        <a class="btn primary" href={`mailto:${profile.email}`}><Icon name="mail" /> Get in touch</a>
+        <a class="btn primary" href="#contact"><Icon name="mail" /> Get in touch</a>
         {profile.links.linkedin && <a class="btn" href={linkUrl(profile.links.linkedin)} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>}
         {profile.links.github && <a class="btn" href={linkUrl(profile.links.github)} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>}
       </div>

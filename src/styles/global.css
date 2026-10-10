@@ -34,7 +34,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html { scroll-behavior: smooth; scroll-padding-top: 0; }  /* sections carry 88px top padding; the 60px sticky nav sits over it */
 body {
   font-family: var(--font-body);
   background-color: var(--bg);
@@ -91,11 +91,9 @@ section { padding: 88px 0 0; }
   content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
   transform: rotate(-45deg); transition: transform .2s;
 }
+.more > summary::before { transition: transform .35s cubic-bezier(0.22, 0.61, 0.36, 1); }
 .more[open] > summary::before { transform: rotate(45deg); }
 .more > summary:hover { text-decoration: underline; }
 .more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-.more__body { margin-top: 12px; }
+.more__body { padding-top: 12px; overflow: hidden; }
 figcaption { font-size: 0.8rem; color: var(--text-muted); }
-.more[open] > .more__body { animation: more-in .22s ease; }
-@keyframes more-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .more[open] > .more__body { animation: none; } }
