@@ -73,7 +73,7 @@
     "title": "CUDECA WATT, donation and event platform (case study for Fundación Cudeca)",
     "kind": "academic",
     "order": 3,
-    "image": "Cudeca.png",
+    "image": "projects/cudeca.jpg",
     "summary": "Course project for \"Análisis y Diseño de Aplicaciones\" (University of Málaga) built on a real use case for Fundación Cudeca, a palliative-care charity. Donations with tax certificates, event ticketing with QR validation, memberships and an admin panel. Not a commercial or production system.",
     "my_contribution": "Responsible for the backend, CI/CD and architecture.",
     "start": "2025-10",
