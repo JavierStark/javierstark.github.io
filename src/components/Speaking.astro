@@ -29,13 +29,13 @@ const ordered = [...talks.filter((t) => photo(t.image)), ...talks.filter((t) => 
             <h3>{t.title}</h3>
             <p class="talk__venue">{t.venue}</p>
             {t.audience && <p class="talk__aud">{t.audience}</p>}
+            {t.url && <a class="link small post" href={t.url} target="_blank" rel="noopener">Read the post on LinkedIn <Icon name="external" /></a>}
             {t.summary && (
               <details class="more">
                 <summary>About this {label[t.type]?.toLowerCase() ?? 'talk'}</summary>
                 <p class="muted small more__body">{t.summary}</p>
               </details>
             )}
-            {t.url && <a class="link small post" href={t.url} target="_blank" rel="noopener">Read the post on LinkedIn <Icon name="external" /></a>}
           </div>
         </article>
       ))}

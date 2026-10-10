@@ -41,12 +41,12 @@ const years = (p: { start?: string | null; end?: string | null; status?: string 
               <h3>{p.title}</h3>
               <p class="project__summary">{firstSentence(p.summary ?? '')}</p>
               <div class="chips">{p.tech_stack.slice(0, 8).map((t) => <span class="chip muted">{t}</span>)}</div>
-              {i !== 0 && more}
               <div class="project__links">
                 {Object.entries(p.links).filter(([k, v]) => typeof v === 'string').map(([k, v]) => (
                   <a class="link" href={v as string} target="_blank" rel="noopener">{label(k, v as string)} <Icon name="external" /></a>
                 ))}
               </div>
+              {i !== 0 && more}
             </div>
             {i === 0 && more}
           </article>
@@ -78,7 +78,8 @@ const years = (p: { start?: string | null; end?: string | null; status?: string 
   .project__hl { display: grid; gap: 6px; }
   .project__hl li { padding-left: 18px; position: relative; font-size: 0.9rem; }
   .project__hl li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
-  .project__links { display: flex; gap: 16px; margin-top: auto; padding-top: 6px; }
+  .project__links { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 2px; }
+  .project__links:empty { display: none; }
   .small { font-size: 0.85rem; }
   @media (max-width: 860px) {
     .projects { grid-template-columns: 1fr; }

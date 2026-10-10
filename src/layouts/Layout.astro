@@ -40,16 +40,20 @@ const canonical = 'https://javiertorralbo.dev/';
 
       // "More" disclosures: animated open/close everywhere; on mouse devices hovering a card
       // opens it after a short intent delay and clicking the toggle pins it open.
+      // Always animated (owner preference). With reduced motion the panel still eases open, but without
+      // the slide, so it is a calm height + fade transition rather than movement.
       const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       const setOpen = (details: HTMLDetailsElement, open: boolean) => {
         const body = details.querySelector<HTMLElement>('.more__body');
-        if (!body || reduceMotion) { details.open = open; return; }
+        if (!body || document.hidden) { details.open = open; return; }  // hidden tabs freeze animation clocks
         body.getAnimations().forEach((a) => a.cancel());
         if (open) {
           details.open = true;
           const h = body.scrollHeight;
           body.animate(
-            [{ height: '0px', opacity: 0, transform: 'translateY(-6px)' }, { height: `${h}px`, opacity: 1, transform: 'none' }],
+            reduceMotion
+              ? [{ height: '0px', opacity: 0 }, { height: `${h}px`, opacity: 1 }]
+              : [{ height: '0px', opacity: 0, transform: 'translateY(-6px)' }, { height: `${h}px`, opacity: 1, transform: 'none' }],
             { duration: 380, easing: 'cubic-bezier(0.22, 0.61, 0.36, 1)' },
           );
         } else if (details.open) {
@@ -61,28 +65,58 @@ const canonical = 'https://javiertorralbo.dev/';
           anim.onfinish = () => { details.open = false; };
         }
       };
+      // Cards sharing a row in a multi-column grid (Projects, Speaking) open and close together so
+      // the row stays balanced. Single-column layouts and full-width cards act alone.
+      const rowOf = (details: HTMLDetailsElement): HTMLDetailsElement[] => {
+        const card = details.closest<HTMLElement>('.card');
+        const grid = card?.parentElement;
+        if (!card || !grid) return [details];
+        const cols = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+        if (cols < 2) return [details];
+        return [...grid.children]
+          .filter((c): c is HTMLElement => c instanceof HTMLElement && c.classList.contains('card') && c.offsetTop === card.offsetTop)
+          .map((c) => c.querySelector<HTMLDetailsElement>('details.more'))
+          .filter((d): d is HTMLDetailsElement => !!d);
+      };
+      const pinned = new WeakSet<HTMLDetailsElement>();
+      const setRow = (row: HTMLDetailsElement[], open: boolean) => row.forEach((d) => {
+        if (open && !d.open) setOpen(d, true);
+        if (!open && d.open) setOpen(d, false);
+      });
       const hoverMode = matchMedia('(hover: hover) and (pointer: fine)').matches;
+      let enterTimer: number | undefined;
+      let leaveTimer: number | undefined;
+      let hoverRow: HTMLDetailsElement[] = [];
+      const closeIfUnpinned = (row: HTMLDetailsElement[]) => { if (!row.some((d) => pinned.has(d))) setRow(row, false); };
+
       document.querySelectorAll<HTMLDetailsElement>('details.more').forEach((details) => {
         const summary = details.querySelector('summary');
         const card = details.closest('.card');
         if (!summary) return;
-        let pinned = false;
         summary.addEventListener('click', (e) => {
           e.preventDefault();
-          if (hoverMode && details.open && !pinned) { pinned = true; return; }  // opened by hover: click keeps it open
-          pinned = !details.open;
-          setOpen(details, pinned);
+          const row = rowOf(details);
+          if (hoverMode && details.open && !pinned.has(details)) {   // opened by hover: click keeps the row open
+            row.forEach((d) => pinned.add(d));
+            return;
+          }
+          const next = !details.open;
+          row.forEach((d) => (next ? pinned.add(d) : pinned.delete(d)));
+          setRow(row, next);
         });
         if (!hoverMode || !card) return;
-        let enter: number | undefined;
-        let leave: number | undefined;
         card.addEventListener('mouseenter', () => {
-          window.clearTimeout(leave);
-          enter = window.setTimeout(() => { if (!details.open) setOpen(details, true); }, 220);
+          window.clearTimeout(leaveTimer);
+          const row = rowOf(details);
+          if (hoverRow.length && !hoverRow.includes(details)) closeIfUnpinned(hoverRow);  // moved to another row
+          hoverRow = row;
+          window.clearTimeout(enterTimer);
+          enterTimer = window.setTimeout(() => setRow(row, true), 220);
         });
         card.addEventListener('mouseleave', () => {
-          window.clearTimeout(enter);
-          leave = window.setTimeout(() => { if (!pinned) setOpen(details, false); }, 180);
+          window.clearTimeout(enterTimer);
+          const row = rowOf(details);
+          leaveTimer = window.setTimeout(() => { closeIfUnpinned(row); if (hoverRow === row) hoverRow = []; }, 180);
         });
       });
     </script>
