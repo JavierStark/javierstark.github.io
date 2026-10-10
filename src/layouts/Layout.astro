@@ -37,6 +37,24 @@ const canonical = 'https://javiertorralbo.dev/';
         entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      // On mouse devices, hovering a card opens its "more" disclosure; clicking the toggle pins it.
+      // Touch devices keep native tap-to-open (no hover there).
+      if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        document.querySelectorAll('.card').forEach((card) => {
+          const details = card.querySelector('details.more');
+          const summary = details?.querySelector('summary');
+          if (!details || !summary) return;
+          let timer: number | undefined;
+          let pinned = false;
+          card.addEventListener('mouseenter', () => { timer = window.setTimeout(() => { details.open = true; }, 120); });
+          card.addEventListener('mouseleave', () => { window.clearTimeout(timer); if (!pinned) details.open = false; });
+          summary.addEventListener('click', (e) => {
+            if (details.open && !pinned) { e.preventDefault(); pinned = true; }  // opened by hover: click keeps it open
+            else { pinned = !details.open; }                                   // otherwise behave as a normal toggle
+          });
+        });
+      }
     </script>
   </body>
 </html>
