@@ -2,6 +2,10 @@
 import profile from '../data/profile.json';
 import Icon from './Icon.astro';
 import { linkUrl } from '../lib/format';
+import { existsSync } from 'node:fs';
+
+const CV = 'Javier-Torralbo-CV.pdf';
+const hasCv = existsSync(`public/${CV}`);
 ---
 <section id="contact">
   <div class="wrap">
@@ -15,6 +19,7 @@ import { linkUrl } from '../lib/format';
           <span class="copy__idle"><Icon name="copy" /> Copy email</span>
           <span class="copy__done" aria-hidden="true"><Icon name="check" /> Copied!</span>
         </button>
+        {hasCv && <a class="btn" href={`/${CV}`} download={CV}><Icon name="download" /> Download CV</a>}
         {profile.links.linkedin && <a class="btn" href={linkUrl(profile.links.linkedin)} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>}
         {profile.links.github && <a class="btn" href={linkUrl(profile.links.github)} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>}
       </div>
