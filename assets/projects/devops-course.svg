@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t">
+  <title id="t">DevOps and Cloud course: containers, orchestration, cloud and CI/CD</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11132a"/><stop offset="1" stop-color="#132a3a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#3ddc84" stop-opacity="0.16"/><stop offset="1" stop-color="#3ddc84" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- course topics (order not implied) -->
+  <g font-family="Space Grotesk, Inter, sans-serif" font-weight="700" text-anchor="middle">
+    <g stroke="#ffffff" stroke-opacity="0.25" stroke-width="6" stroke-linecap="round">
+      <line x1="290" y1="250" x2="530" y2="250"/><line x1="690" y1="250" x2="930" y2="250"/><line x1="1090" y1="250" x2="1330" y2="250"/>
+    </g>
+    <g>
+      <circle cx="210" cy="250" r="80" fill="#1c1d38" stroke="#7c83ff" stroke-width="5"/>
+      <text x="210" y="240" fill="#ffffff" font-size="24">Containers</text><text x="210" y="275" fill="#a3a7c2" font-size="22" font-family="Inter, sans-serif" font-weight="500">Docker</text>
+      <circle cx="610" cy="250" r="80" fill="#1c1d38" stroke="#7c83ff" stroke-width="5"/>
+      <text x="610" y="240" fill="#ffffff" font-size="26">Cloud</text><text x="610" y="275" fill="#a3a7c2" font-size="22" font-family="Inter, sans-serif" font-weight="500">AWS · Azure</text>
+      <circle cx="1010" cy="250" r="80" fill="#1c1d38" stroke="#7c83ff" stroke-width="5"/>
+      <text x="1010" y="240" fill="#ffffff" font-size="22">Orchestration</text><text x="1010" y="275" fill="#a3a7c2" font-size="22" font-family="Inter, sans-serif" font-weight="500">Kubernetes</text>
+      <circle cx="1410" cy="250" r="80" fill="#1c1d38" stroke="#ed4d6d" stroke-width="5"/>
+      <text x="1410" y="240" fill="#ffffff" font-size="24">Automation</text><text x="1410" y="275" fill="#a3a7c2" font-size="22" font-family="Inter, sans-serif" font-weight="500">GitHub Actions</text>
+    </g>
+  </g>
+
+  <!-- container stack -->
+  <g transform="translate(150 430)">
+    <rect x="0" y="120" width="300" height="70" rx="10" fill="#7c83ff" fill-opacity="0.85"/>
+    <rect x="0" y="40" width="140" height="70" rx="10" fill="#7c83ff" fill-opacity="0.6"/>
+    <rect x="160" y="40" width="140" height="70" rx="10" fill="#7c83ff" fill-opacity="0.6"/>
+    <rect x="80" y="-40" width="140" height="70" rx="10" fill="#7c83ff" fill-opacity="0.4"/>
+    <g stroke="#11132a" stroke-width="4"><line x1="75" y1="120" x2="75" y2="190"/><line x1="150" y1="120" x2="150" y2="190"/><line x1="225" y1="120" x2="225" y2="190"/></g>
+  </g>
+
+  <!-- kubernetes wheel -->
+  <g transform="translate(800 560)" stroke="#ed4d6d" stroke-width="10" fill="none" stroke-linecap="round">
+    <polygon points="0,-120 94,-75 117,27 52,108 -52,108 -117,27 -94,-75" fill="#ed4d6d" fill-opacity="0.12"/>
+    <circle r="34"/>
+    <line x1="0" y1="-34" x2="0" y2="-90"/><line x1="27" y1="21" x2="70" y2="56"/><line x1="-27" y1="21" x2="-70" y2="56"/>
+    <line x1="33" y1="-8" x2="88" y2="-20"/><line x1="-33" y1="-8" x2="-88" y2="-20"/><line x1="15" y1="31" x2="39" y2="81"/><line x1="-15" y1="31" x2="-39" y2="81"/>
+  </g>
+
+  <!-- cloud -->
+  <g transform="translate(1260 560)">
+    <path d="M-150 60 a70 70 0 0 1 10 -138 a95 95 0 0 1 180 -20 a75 75 0 0 1 110 70 a62 62 0 0 1 -10 88 z" fill="#3ddc84" fill-opacity="0.12" stroke="#3ddc84" stroke-width="6"/>
+    <text x="0" y="20" fill="#ffffff" font-family="Space Grotesk, Inter, sans-serif" font-size="30" font-weight="700" text-anchor="middle">Azure · AWS</text>
+  </g>
+
+  <text x="80" y="820" fill="#ffffff" fill-opacity="0.9" font-family="Space Grotesk, Inter, sans-serif" font-size="74" font-weight="700">DevOps &amp; Cloud</text>
+  <text x="80" y="860" fill="#c9cbe0" font-family="Inter, sans-serif" font-size="26">Four sessions · ETSI Informática, University of Málaga</text>
+</svg>
