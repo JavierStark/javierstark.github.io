@@ -1,11 +1,34 @@
 ---
 import '../styles/global.css';
 import profile from '../data/profile.json';
-import { firstSentence } from '../lib/format';
+import experience from '../data/experience.json';
+import education from '../data/education.json';
+import skills from '../data/skills.json';
+import { linkUrl } from '../lib/format';
 
-const title = `${profile.name} · ${profile.headline?.split('·')[0]?.trim() ?? 'Software Engineer'}`;
-const description = firstSentence(profile.summary[0]);
-const canonical = 'https://javiertorralbo.dev/';
+const site = 'https://javiertorralbo.dev/';
+const role = profile.headline?.split('·')[0]?.trim() ?? 'Software Engineer';
+const title = `${profile.name} · ${role}`;
+// ~155 chars: what LinkedIn, Google and Slack show under the title.
+const clip = (s: string, n = 155) => (s.length <= n ? s : `${s.slice(0, s.lastIndexOf(' ', n - 1))}…`);
+const description = clip(profile.summary[0] ?? '');
+const ogImage = `${site}og-image.png`;
+const ogAlt = `${profile.name}, ${profile.headline}`;
+// schema.org Person: helps search engines connect the site with LinkedIn and GitHub.
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.full_name,
+  alternateName: profile.name,
+  url: site,
+  image: `${site}assets/about-portrait.jpg`,
+  description: profile.headline,
+  address: { '@type': 'PostalAddress', addressLocality: 'Málaga', addressCountry: 'ES' },
+  sameAs: Object.entries(profile.links).filter(([k]) => k !== 'website').map(([, v]) => linkUrl(v as string)),
+  worksFor: experience.filter((r) => r.current && r.employment_type !== 'volunteer').map((r) => ({ '@type': 'Organization', name: r.organization })),
+  alumniOf: education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.institution })),
+  knowsAbout: skills.filter((s) => s.core).map((s) => s.name),
+};
 ---
 
 <!DOCTYPE html>
@@ -15,14 +38,32 @@ const canonical = 'https://javiertorralbo.dev/';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    <meta name="author" content={profile.full_name} />
+    <link rel="canonical" href={site} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0f1020" />
+    <!-- Link previews (LinkedIn, WhatsApp, Slack, Discord, Facebook) -->
     <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content={profile.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={site} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={`${canonical}assets/opensouthcode-2026-podium.jpg`} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta property="profile:first_name" content={profile.full_name.split(' ')[0]} />
+    <meta property="profile:last_name" content={profile.full_name.split(' ').slice(1).join(' ')} />
+    <!-- X / Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
