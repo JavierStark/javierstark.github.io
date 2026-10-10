@@ -1,0 +1,40 @@
+---
+import skills from '../data/skills.json';
+
+// Display groups over the database skill categories; core skills first within each group.
+const groups: [string, string[]][] = [
+  ['Languages', ['language']],
+  ['.NET, frameworks & libraries', ['framework', 'library']],
+  ['Cloud, DevOps & platform', ['cloud', 'devops', 'platform']],
+  ['Data & AI', ['data', 'ml-ai']],
+  ['Practices', ['methodology']],
+  ['Domains', ['domain']],
+  ['Communication', ['communication', 'leadership']],
+];
+const byGroup = groups
+  .map(([label, cats]) => [label, skills.filter((s) => cats.includes(s.category)).sort((a, b) => Number(b.core) - Number(a.core))] as const)
+  .filter(([, list]) => list.length > 0);
+---
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Skills</p>
+      <h2>Toolbox</h2>
+      <p>Only skills backed by work listed on this page. Highlighted ones are my core stack.</p>
+    </div>
+    <div class="skills">
+      {byGroup.map(([label, list]) => (
+        <div class="card group reveal">
+          <h3>{label}</h3>
+          <div class="chips">{list.map((s) => <span class={`chip ${s.core ? '' : 'muted'}`}>{s.name}</span>)}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .group { padding: 22px; }
+  .group h3 { font-size: 1rem; margin-bottom: 12px; }
+</style>

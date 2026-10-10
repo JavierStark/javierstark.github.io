@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pub-2025-malackathon-honorable-mention",
+    "type": "award",
+    "title": "Honorable Mention, Malackathon 2025",
+    "venue": "University of Málaga",
+    "date": "2025-10",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2025-ada-byron-national",
+    "type": "award",
+    "title": "Qualified for the Ada Byron 2025 national final (team Turing Incomplete)",
+    "venue": "Universidad Complutense de Madrid",
+    "date": "2025-07",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2025-ada-byron",
+    "type": "award",
+    "title": "1st Place, Ada Byron Regional Programming Contest (Andalusia category) and overall winner at UMA",
+    "venue": "University of Málaga",
+    "date": "2025-04",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2024-malackathon-indra-award",
+    "type": "award",
+    "title": "Excellence Award in Development and Best Practices (Quality), sponsored by Indra, Malackathon 2024",
+    "venue": "University of Málaga",
+    "date": "2024-10",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": "malackathon-2024-indra-award.jpg",
+    "audience": null
+  },
+  {
+    "id": "pub-2024-malaga-jam-special-award",
+    "type": "award",
+    "title": "Special Award, Málaga Jam Weekend 16",
+    "venue": "Polo Nacional de Contenidos Digitales, Málaga",
+    "date": "2024-06",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2024-ada-byron",
+    "type": "award",
+    "title": "1st Place, Ada Byron Regional Programming Contest (Andalusia category) and overall winner at UMA",
+    "venue": "University of Málaga",
+    "date": "2024-04",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  }
+]

@@ -1,0 +1,68 @@
+---
+import talks from '../data/talks.json';
+import writing from '../data/writing.json';
+import Icon from './Icon.astro';
+import { fmtDate } from '../lib/format';
+import { existsSync } from 'node:fs';
+
+const label: Record<string, string> = { talk: 'Talk', course: 'Course' };
+// Only render photos that exist in public/assets (no broken images if a file is missing).
+const photo = (name?: string | null) => (name && existsSync(`public/assets/${name}`) ? `/assets/${name}` : null);
+// Talks with photos first; within each group, newest first (data is already date-sorted).
+const ordered = [...talks.filter((t) => photo(t.image)), ...talks.filter((t) => !photo(t.image))];
+---
+<section id="speaking">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Speaking, teaching & writing</p>
+      <h2>Sharing what I learn</h2>
+      <p>Conference talks, hands-on workshops and a university course I co-founded, plus a technical article series that doubles as my Bachelor's thesis.</p>
+    </div>
+    <div class="talks">
+      {ordered.map((t) => (
+        <article class={`card talk reveal ${photo(t.image) ? 'talk--photo' : ''}`}>
+          {photo(t.image) && <img class="talk__img" src={photo(t.image)} alt={`${t.title}, ${t.venue}`} loading="lazy" />}
+          <div class="talk__body">
+            <div class="talk__top">
+              <span class="chip"><Icon name="mic" /> {label[t.type] ?? 'Talk'}</span>
+              <span class="muted small">{fmtDate(t.date)}</span>
+            </div>
+            <h3>{t.title}</h3>
+            <p class="talk__venue">{t.venue}</p>
+            {t.audience && <p class="talk__aud">{t.audience}</p>}
+            {t.summary && <p class="muted small">{t.summary}</p>}
+          </div>
+        </article>
+      ))}
+    </div>
+    {writing.length > 0 && (
+      <div class="writing reveal">
+        {writing.map((w) => (
+          <a class="card article" href={w.url} target="_blank" rel="noopener">
+            <span class="chip"><Icon name="book" /> Article · {fmtDate(w.date)}</span>
+            <h3>{w.title} <Icon name="external" /></h3>
+            <p class="muted">{w.summary}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .talks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .talk { display: flex; flex-direction: column; overflow: hidden; }
+  .talk__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--line); }
+  .talk__body { padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .talk__top { display: flex; justify-content: space-between; align-items: center; }
+  .talk h3 { font-size: 1.08rem; }
+  .talk__venue { font-size: 0.9rem; color: var(--accent); font-weight: 500; }
+  .talk__aud { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; }
+  .small { font-size: 0.86rem; }
+  .writing { margin-top: 16px; }
+  .article { display: block; padding: 24px; border-left: 3px solid var(--accent); transition: transform .2s; }
+  .article:hover { transform: translateY(-2px); }
+  .article h3 { margin: 10px 0 6px; font-size: 1.2rem; display: flex; gap: 8px; align-items: center; }
+  .chip :global(svg) { vertical-align: -2px; }
+  @media (max-width: 760px) { .talks { grid-template-columns: 1fr; } }
+</style>

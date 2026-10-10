@@ -1,0 +1,70 @@
+---
+import awards from '../data/awards.json';
+import education from '../data/education.json';
+import certifications from '../data/certifications.json';
+import { fmtDate, year } from '../lib/format';
+
+import { existsSync } from 'node:fs';
+
+const today = new Date().toISOString().slice(0, 7);
+const featured = awards.find((a) => a.image && existsSync(`public/assets/${a.image}`));
+const eduYears = (e: { start?: string | null; end?: string | null }) =>
+  e.end && e.end > today ? `${year(e.start)} – expected ${fmtDate(e.end)}` : `${year(e.start)} – ${year(e.end)}`;
+---
+<section id="awards">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Recognition & credentials</p>
+      <h2>Awards, education and certifications</h2>
+    </div>
+    <div class="grid">
+      <div class="card block reveal awards">
+        {featured && (
+          <figure class="award__photo">
+            <img src={`/assets/${featured.image}`} alt={featured.title} loading="lazy" />
+            <figcaption class="muted">{featured.title}</figcaption>
+          </figure>
+        )}
+        <h3>Awards</h3>
+        <ul class="list">
+          {awards.map((a) => <li><span class="yr">{year(a.date)}</span><span>{a.title}<br /><small class="muted">{a.venue}</small></span></li>)}
+        </ul>
+      </div>
+      <div class="col">
+        {education.map((e) => (
+          <div class="card block reveal">
+            <h3>Education</h3>
+            <p class="edu__deg">{[e.degree, e.field].filter(Boolean).join(' in ')}</p>
+            <p class="muted">{e.institution} · {eduYears(e)}</p>
+            <ul class="edu__hl">{(e.highlights ?? []).map((h) => <li>{h.replace(/\s*Source:.*$/, '')}</li>)}</ul>
+          </div>
+        ))}
+        <div class="card block reveal">
+          <h3>Certifications</h3>
+          <ul class="list">
+            {certifications.map((c) => <li><span class="yr">{year(c.date)}</span><span>{c.name}<br /><small class="muted">{c.issuer}</small></span></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .col { display: grid; gap: 16px; }
+  .block { padding: 24px; }
+  .awards { overflow: hidden; }
+  .award__photo { margin: -24px -24px 20px; }
+  .award__photo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 35%; }
+  .award__photo figcaption { font-size: 0.8rem; padding: 8px 24px 0; }
+  .block h3 { font-size: 1.1rem; margin-bottom: 14px; }
+  .list { display: grid; gap: 12px; }
+  .list li { display: grid; grid-template-columns: 52px 1fr; gap: 10px; font-size: 0.93rem; }
+  .yr { font-family: var(--font-head); font-weight: 700; color: var(--accent); }
+  .edu__deg { font-weight: 600; }
+  .edu__hl { margin-top: 10px; display: grid; gap: 6px; }
+  .edu__hl li { font-size: 0.9rem; padding-left: 18px; position: relative; }
+  .edu__hl li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+</style>

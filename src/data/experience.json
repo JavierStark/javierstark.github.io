@@ -1,0 +1,105 @@
+[
+  {
+    "id": "role-2026-verisk-software-engineering-intern",
+    "title": "Software Developer Intern",
+    "organization": "Verisk Specialty Business Solutions",
+    "organization_url": "https://www.verisk.com",
+    "employment_type": "internship",
+    "location": "Málaga, Spain",
+    "work_mode": "hybrid",
+    "start": "2026-07",
+    "end": null,
+    "current": true,
+    "tier": "primary",
+    "summary": "Software developer intern on Verisk's Impact team, modernizing legacy .NET CI/CD, containerizing apps and test-runner infrastructure, and building a new product with spec-driven, AI-led development.",
+    "highlights": [
+      "Modernizing legacy .NET CI/CD pipelines in Azure DevOps and moving applications onto newer .NET technologies and .NET Aspire.",
+      "Containerizing applications with Docker and Podman and building the infrastructure for the test-runner environments.",
+      "Developing a new product from scratch using spec-driven development with OpenSpec and AI-led engineering techniques."
+    ],
+    "tech_stack": [
+      "C#",
+      "ASP.NET Core",
+      ".NET Aspire",
+      "Docker",
+      "Podman",
+      "Azure DevOps",
+      "Spec-Driven Development",
+      "AI-Assisted Software Development",
+      "Scrum"
+    ]
+  },
+  {
+    "id": "role-2025-iaeste-malaga-president",
+    "title": "President & Treasurer, Computer Science section",
+    "organization": "IAESTE LC Málaga",
+    "organization_url": "https://iaeste.org",
+    "employment_type": "volunteer",
+    "location": "Málaga, Spain",
+    "work_mode": "hybrid",
+    "start": "2025-03",
+    "end": null,
+    "current": true,
+    "tier": "primary",
+    "summary": "President and treasurer of IAESTE Málaga's Computer Science section; moved local and national websites off WordPress, automated paperless member onboarding and is building an internship-outreach CRM.",
+    "highlights": [
+      "Migrated the IAESTE Spain national website and the IAESTE LC Málaga website off WordPress, cutting recurring costs by €400 per year for the national site and nearly €200 per year for the local site, a large saving for a student-run organization.",
+      "Made member onboarding fully paperless and automated the onboarding and registration emails for the local committee.",
+      "Building a custom CRM to track the companies the committee contacts to secure internship offers."
+    ],
+    "tech_stack": []
+  },
+  {
+    "id": "role-2025-igem-uma",
+    "title": "Team Member · Sole Software Developer",
+    "organization": "iGEM UMA",
+    "organization_url": null,
+    "employment_type": "volunteer",
+    "location": "Málaga, Spain",
+    "work_mode": "hybrid",
+    "start": "2025-03",
+    "end": null,
+    "current": true,
+    "tier": "primary",
+    "summary": "Sole developer of Diana, the iGEM team's guide RNA design software, whose designed guides were ordered and tested in the wet lab.",
+    "highlights": [
+      "Built Diana as sole developer, a Blazor Server (.NET 9) app, F# library and CLI that convert disease variants (HGVS or rsID) into ranked CRISPR-Cas13 guide RNA spacers scored by GC content, homopolymers, Bowtie off-target alignments and ViennaRNA RNA folding.",
+      "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
+      "Implemented combinatorial guide pooling (2D fragmented, 2D matrix and 3D models) onto 96/384-well plates, decoding positive wells back to the implicated guides and flagging ambiguous collisions.",
+      "Added restriction-site flagging (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) and an order-ready oligo CSV export so designs go straight to synthesis.",
+      "Containerized Diana with a two-image Docker build that checksum-verifies and bakes in the GRCh38 index and runs as non-root with a health check, avoiding the more than 10x alignment slowdown of a mounted index."
+    ],
+    "tech_stack": [
+      "C#",
+      "F#",
+      "Blazor",
+      "Docker",
+      "Bioinformatics"
+    ]
+  },
+  {
+    "id": "role-2025-karunya-research-intern",
+    "title": "Research Intern",
+    "organization": "Karunya Institute of Technology and Sciences",
+    "organization_url": "https://www.karunya.edu",
+    "employment_type": "internship",
+    "location": "Coimbatore, India",
+    "work_mode": "onsite",
+    "start": "2025-07",
+    "end": "2025-09",
+    "current": false,
+    "tier": "primary",
+    "summary": "International research internship in India building a cloud-backed deep learning pipeline for pre-ictal epileptic seizure prediction on EEG data.",
+    "highlights": [
+      "Selected through the IAESTE international exchange for a paid 8-week research internship at Karunya Institute of Technology and Sciences (India), supported by a recommendation from a UMA full professor.",
+      "Developed a CNN-based deep learning pipeline for pre-ictal epileptic seizure prediction on real patient EEG recordings (CHB-MIT dataset).",
+      "Designed Google Cloud-backed workflows for scalable EEG preprocessing and model training."
+    ],
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "TensorFlow",
+      "Google Cloud Platform"
+    ]
+  }
+]

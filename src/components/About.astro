@@ -1,0 +1,57 @@
+---
+import profile from '../data/profile.json';
+import talks from '../data/talks.json';
+import projects from '../data/projects.json';
+import awards from '../data/awards.json';
+import certifications from '../data/certifications.json';
+
+// Every figure below is counted from the generated data, never typed by hand.
+const stats = [
+  [talks.length, 'talks, workshops & courses'],
+  [projects.length, 'featured projects'],
+  [awards.length, 'awards & distinctions'],
+  [certifications.length, 'certifications'],
+];
+---
+<section id="about">
+  <div class="wrap about reveal">
+    <div class="section-head">
+      <p class="eyebrow">About</p>
+      <h2>I build software, then teach it.</h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__text">
+        {profile.summary.map((p) => <p>{p}</p>)}
+      </div>
+      <aside class="about__side">
+        <img class="about__photo card" src="/assets/javier-speaking.jpg" alt={`${profile.name} presenting F# code during a talk`} width="1170" height="1200" loading="lazy" />
+        <dl class="stats">
+          {stats.map(([n, label]) => <div class="card stat"><dt>{n}</dt><dd>{label}</dd></div>)}
+        </dl>
+        <div class="card avail">
+          <h3>Availability</h3>
+          <ul>{profile.availability.map((a) => <li>{a}</li>)}</ul>
+          <p class="muted langs">{profile.languages.map((l) => `${l.language} (${l.proficiency.replace('-', ' ')})`).join(' · ')}</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .about__text p { color: var(--text-muted); font-size: 1.05rem; }
+  .about__text p + p { margin-top: 16px; }
+  .about__text p:first-child { color: var(--text); }
+  .about__photo { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 55% 25%; margin-bottom: 12px; padding: 0; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat { padding: 18px; }
+  .stat dt { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat dd { color: var(--text-muted); font-size: 0.85rem; }
+  .avail { padding: 18px; margin-top: 12px; }
+  .avail h3 { font-size: 1rem; margin-bottom: 8px; }
+  .avail li { font-size: 0.9rem; padding-left: 14px; position: relative; }
+  .avail li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .langs { font-size: 0.85rem; margin-top: 10px; }
+  @media (max-width: 860px) { .about__grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "proj-disease-mutations-app",
+    "slug": "diana",
+    "title": "Diana, precision guide RNA design (iGEM UMA-Malaga 2026 software)",
+    "kind": "research",
+    "order": 1,
+    "image": "DiseaseMutationApp.png",
+    "summary": "Web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNA spacers, flag restriction sites, export order-ready oligos and plan combinatorial guide pooling on 96/384-well plates. Official software deliverable of iGEM team UMA-Malaga 2026.",
+    "my_contribution": "Sole developer, building the software for the team's scientists.",
+    "start": "2025-10",
+    "end": null,
+    "status": "active",
+    "tech_stack": [
+      "C#",
+      "F#",
+      "Blazor",
+      "Docker",
+      "Python",
+      "Bioinformatics"
+    ],
+    "links": {
+      "repo": "https://gitlab.igem.org/2026/software/uma-malaga/diana-grna-designer",
+      "other": [
+        "https://github.com/JavierStark/DiseaseMutationsApp"
+      ]
+    },
+    "highlights": [
+      "Built Diana as sole developer, a Blazor Server (.NET 9) app, F# library and CLI that convert disease variants (HGVS or rsID) into ranked CRISPR-Cas13 guide RNA spacers scored by GC content, homopolymers, Bowtie off-target alignments and ViennaRNA RNA folding.",
+      "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
+      "Implemented combinatorial guide pooling (2D fragmented, 2D matrix and 3D models) onto 96/384-well plates, decoding positive wells back to the implicated guides and flagging ambiguous collisions.",
+      "Added restriction-site flagging (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) and an order-ready oligo CSV export so designs go straight to synthesis.",
+      "Containerized Diana with a two-image Docker build that checksum-verifies and bakes in the GRCh38 index and runs as non-root with a health check, avoiding the more than 10x alignment slowdown of a mounted index."
+    ]
+  },
+  {
+    "id": "proj-canton-bond-platform",
+    "slug": "canton-bond-platform",
+    "title": "Tokenized digital bond platform on Canton Network (UMA Blockchain Technologies × ioBuilders)",
+    "kind": "academic",
+    "order": 2,
+    "image": null,
+    "summary": "Final project of the University of Málaga Blockchain Technologies course (run by NICS Lab; 18 students in 6 teams mentored by industry partners), built with ioBuilders. A Dockerized Canton network running a CIP-056 tokenized bond contract in Daml, a Go REST backend over the gRPC Ledger API, a web frontend to issue, transfer, burn and settle bonds with DvP allocations, a ledger event listener and a full observability stack.",
+    "my_contribution": "Owned the Canton, blockchain and Daml layer, the system architecture, .NET Aspire orchestration and telemetry.",
+    "start": "2026-05",
+    "end": "2026-07",
+    "status": "completed",
+    "tech_stack": [
+      "Daml",
+      "Canton Network",
+      "Go",
+      ".NET Aspire",
+      "Docker",
+      "OpenTelemetry",
+      "Prometheus",
+      "Grafana",
+      "Playwright",
+      "Blockchain / DLT"
+    ],
+    "links": {
+      "repo": "https://github.com/JavierStark/Project-CantonDaml-IoBuilders-UMA"
+    },
+    "highlights": [
+      "Designed the architecture and built the Canton/Daml layer of a tokenized bond platform on a local Canton network (sequencer, mediator, synchronizer, three participants) with a CIP-056 Daml contract and issue, transfer, burn and DvP settlement flows exposed through a Go REST backend over the gRPC Ledger API.",
+      "Orchestrated the platform with .NET Aspire and instrumented it with OpenTelemetry, Prometheus, Tempo and Grafana; the bond lifecycle is covered by Playwright end-to-end tests.",
+      "Led to a Bachelor's thesis on Canton Network developed in collaboration with ioBuilders."
+    ]
+  },
+  {
+    "id": "proj-cudeca-watt",
+    "slug": "cudeca-watt",
+    "title": "CUDECA WATT, donation and event platform (case study for Fundación Cudeca)",
+    "kind": "academic",
+    "order": 3,
+    "image": "Cudeca.png",
+    "summary": "Course project for \"Análisis y Diseño de Aplicaciones\" (University of Málaga) built on a real use case for Fundación Cudeca, a palliative-care charity. Donations with tax certificates, event ticketing with QR validation, memberships and an admin panel. Not a commercial or production system.",
+    "my_contribution": "Responsible for the backend, CI/CD and architecture.",
+    "start": "2025-10",
+    "end": "2025-12",
+    "status": "completed",
+    "tech_stack": [
+      "C#",
+      "ASP.NET Core",
+      "Supabase",
+      "PostgreSQL",
+      "Stripe",
+      "Docker",
+      "Microsoft Azure",
+      "GitHub Actions",
+      "Angular",
+      "Scrum"
+    ],
+    "links": {
+      "repo": "https://github.com/JavierStark/Proyecto-ADAp-WATT"
+    },
+    "highlights": [
+      "Owned the backend, CI/CD and architecture of CUDECA WATT, a full-stack donation and event platform built for a real charity use case (ASP.NET Core 9 Minimal API, Supabase, Stripe, QuestPDF tax certificates, QR tickets).",
+      "After months of requirements analysis and architecture design, the team completed the full implementation in 23 days under Scrum.",
+      "Set up GitHub Actions CI/CD that deployed every backend and frontend change automatically to Azure Web Apps from day one, and kept Swagger/Scalar API docs live so the frontend team never blocked on API changes."
+    ]
+  },
+  {
+    "id": "proj-devops-cloud-course",
+    "slug": "devops-cloud-course",
+    "title": "DevOps & Cloud Course, 1st edition (ETSI Informática, University of Málaga)",
+    "kind": "volunteer",
+    "order": 4,
+    "image": null,
+    "summary": "Four-week, four-session practical course for computer engineering students, co-organized and co-taught with Alejandro Cerezo Contreras. Covered containerization with Docker, Kubernetes orchestration, cloud deployment on AWS and Azure, GitHub Actions and platform engineering, with industry guest speakers (Docker Sevilla community organizer, a platform engineering module with Azure and Terraform, a Formula 1 digital-twin cloud case study). The final session was opened to the public with GitHub Community España.",
+    "my_contribution": "Co-organizer and speaker (curriculum, sessions, guest speakers, course website).",
+    "start": "2026-04",
+    "end": "2026-05",
+    "status": "completed",
+    "tech_stack": [
+      "Docker",
+      "Kubernetes",
+      "Microsoft Azure",
+      "GitHub Actions",
+      "Teaching & Mentoring"
+    ],
+    "links": {
+      "demo": "https://javiertorralbo.dev/CursoDevopsCloud/"
+    },
+    "highlights": [
+      "Co-founded, organized and taught the first DevOps & Cloud course at the University of Málaga's School of Computer Engineering, a four-week program on Docker, Kubernetes, AWS/Azure deployment, GitHub Actions and platform engineering, bringing in industry guest speakers."
+    ]
+  },
+  {
+    "id": "proj-blockchain4good-hackathon",
+    "slug": "blockchain4good-hackathon",
+    "title": "Aid-delivery verification on-chain, Blockchain For Good Hackathon 2026",
+    "kind": "hackathon",
+    "order": 5,
+    "image": null,
+    "summary": "24-hour hackathon organized by Cátedra Fintech and Fundación Kareema. Team of three built a donation-tracking system that detects, through an open BLE network, when a humanitarian aid package physically arrives and records the proof on-chain so donors can verify their impact. Javier was the team's blockchain lead; teammates had no prior blockchain background.",
+    "my_contribution": "Blockchain lead; prepared an agent-ready EVM hackathon starter (Scaffold-ETH 2, Foundry, Next.js, CI/CD, gated deploys).",
+    "start": "2026-09",
+    "end": "2026-10",
+    "status": "completed",
+    "tech_stack": [
+      "Solidity",
+      "Next.js",
+      "TypeScript",
+      "GitHub Actions",
+      "Blockchain / DLT"
+    ],
+    "links": {
+      "repo": "https://github.com/JavierStark/HackathonBlockchain4Good"
+    },
+    "highlights": [
+      "Built in 24 hours, with a team of three, a system that detects humanitarian aid package arrival over an open BLE network and records proof of delivery on-chain for donors; onboarded two teammates with no prior blockchain experience."
+    ]
+  }
+]

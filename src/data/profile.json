@@ -1,0 +1,33 @@
+{
+  "name": "Javier Torralbo",
+  "full_name": "Javier Torralbo Cortés",
+  "headline": "Software Engineer · .NET & Cloud-Native · CKAD · Speaker",
+  "location": "Málaga, Spain",
+  "email": "javiertorralbocortes@gmail.com",
+  "links": {
+    "website": "javiertorralbo.dev",
+    "linkedin": "linkedin.com/in/javiertorralbocortes",
+    "github": "github.com/JavierStark"
+  },
+  "summary": [
+    "Software engineer building cloud-native .NET systems. At Verisk I work on the Impact team: modernizing legacy .NET CI/CD pipelines in Azure DevOps, containerizing applications and test-runner environments, and building a new product from scratch with spec-driven, AI-led development.",
+    "I build software people depend on. Diana, the guide RNA design tool I develop on my own for iGEM UMA, produced guides that the team ordered and tested in the lab. A tokenized bond platform I architected on Canton Network turned into my Bachelor's thesis with ioBuilders.",
+    "I teach what I build. I co-founded the DevOps & Cloud course at the University of Málaga (~30 students per session), ran a CI/CD workshop for 40 students at Hackers Week, and spoke about .NET Aspire to 50+ people at OpenSouthCode. CKAD-certified, two-time Ada Byron regional programming champion, and president of IAESTE Málaga's Computer Science section."
+  ],
+  "availability": [
+    "Málaga, Spain (on-site / hybrid, academic year 2026–27)",
+    "Anywhere (on-site or hybrid, from July 2027)",
+    "Anywhere (remote, any time)"
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "proficiency": "native"
+    },
+    {
+      "language": "English",
+      "proficiency": "full-professional"
+    }
+  ],
+  "thesis": null
+}

@@ -1,0 +1,66 @@
+---
+import projects from '../data/projects.json';
+import Icon from './Icon.astro';
+import { year } from '../lib/format';
+
+const linkLabel: Record<string, string> = { repo: 'Code', demo: 'Live', writeup: 'Write-up' };
+const years = (p: { start?: string | null; end?: string | null; status?: string }) => {
+  const s = year(p.start);
+  const e = p.status === 'active' ? 'now' : year(p.end);
+  return s && e && s !== e ? `${s}–${e}` : s;
+};
+---
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected work</h2>
+    </div>
+    <div class="projects">
+      {projects.map((p, i) => (
+        <article class={`card project reveal ${i === 0 ? 'project--lead' : ''}`}>
+          {p.image
+            ? <img class="project__img" src={`/assets/${p.image}`} alt={p.title} loading="lazy" />
+            : <div class="project__img project__img--blank" aria-hidden="true"><span>{p.title.split(/[ ,(]/)[0]}</span></div>}
+          <div class="project__body">
+            <p class="muted small">{years(p)}</p>
+            <h3>{p.title}</h3>
+            <p class="project__summary">{p.summary}</p>
+            {p.my_contribution && <p class="project__role"><strong>My role:</strong> {p.my_contribution}</p>}
+            {p.highlights.length > 0 && <ul class="project__hl">{p.highlights.slice(0, 3).map((h) => <li>{h}</li>)}</ul>}
+            <div class="chips">{p.tech_stack.slice(0, 8).map((t) => <span class="chip muted">{t}</span>)}</div>
+            <div class="project__links">
+              {Object.entries(p.links).filter(([k, v]) => typeof v === 'string').map(([k, v]) => (
+                <a class="link" href={v as string} target="_blank" rel="noopener">{linkLabel[k] ?? k} <Icon name="external" /></a>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .project { overflow: hidden; display: flex; flex-direction: column; }
+  .project--lead { grid-column: 1 / -1; flex-direction: row; }
+  .project--lead .project__img { width: 45%; aspect-ratio: auto; }
+  .project__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--line); }
+  .project__img--blank { display: grid; place-items: center; background: linear-gradient(135deg, var(--accent-soft), rgba(124, 131, 255, 0.18)); }
+  .project__img--blank span { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; opacity: 0.8; }
+  .project__body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .project h3 { font-size: 1.15rem; }
+  .project__summary { color: var(--text-muted); font-size: 0.95rem; }
+  .project__role { font-size: 0.92rem; }
+  .project__hl { display: grid; gap: 6px; }
+  .project__hl li { padding-left: 18px; position: relative; font-size: 0.9rem; }
+  .project__hl li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
+  .project__links { display: flex; gap: 16px; margin-top: auto; padding-top: 6px; }
+  .small { font-size: 0.85rem; }
+  @media (max-width: 860px) {
+    .projects { grid-template-columns: 1fr; }
+    .project--lead { flex-direction: column; }
+    .project--lead .project__img { width: 100%; aspect-ratio: 16 / 9; }
+  }
+</style>

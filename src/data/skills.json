@@ -1,0 +1,338 @@
+[
+  {
+    "name": "C#",
+    "category": "language",
+    "level": null,
+    "core": true,
+    "last_used": "current"
+  },
+  {
+    "name": "F#",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "C++",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "2025-07"
+  },
+  {
+    "name": "Python",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Go",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "2026-07"
+  },
+  {
+    "name": "TypeScript",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "2026-10"
+  },
+  {
+    "name": "SQL",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "2025-10"
+  },
+  {
+    "name": "Daml",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Solidity",
+    "category": "language",
+    "level": null,
+    "core": false,
+    "last_used": "2026-10"
+  },
+  {
+    "name": "ASP.NET Core",
+    "category": "framework",
+    "level": null,
+    "core": true,
+    "last_used": "current"
+  },
+  {
+    "name": ".NET Aspire",
+    "category": "framework",
+    "level": null,
+    "core": true,
+    "last_used": "current"
+  },
+  {
+    "name": "Blazor",
+    "category": "framework",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Angular",
+    "category": "framework",
+    "level": null,
+    "core": false,
+    "last_used": "2025-12"
+  },
+  {
+    "name": "Next.js",
+    "category": "framework",
+    "level": null,
+    "core": false,
+    "last_used": "2026-10"
+  },
+  {
+    "name": "Flutter",
+    "category": "framework",
+    "level": null,
+    "core": false,
+    "last_used": "2025-09"
+  },
+  {
+    "name": "TensorFlow",
+    "category": "ml-ai",
+    "level": null,
+    "core": false,
+    "last_used": "2025-09"
+  },
+  {
+    "name": "Deep Learning",
+    "category": "ml-ai",
+    "level": null,
+    "core": false,
+    "last_used": "2025-09"
+  },
+  {
+    "name": "Microsoft Azure",
+    "category": "cloud",
+    "level": null,
+    "core": true,
+    "last_used": "2026-05"
+  },
+  {
+    "name": "Oracle APEX",
+    "category": "platform",
+    "level": null,
+    "core": false,
+    "last_used": "2025-10"
+  },
+  {
+    "name": "Firebase",
+    "category": "cloud",
+    "level": null,
+    "core": false,
+    "last_used": "2025-09"
+  },
+  {
+    "name": "Supabase",
+    "category": "platform",
+    "level": null,
+    "core": false,
+    "last_used": "2025-12"
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "data",
+    "level": null,
+    "core": false,
+    "last_used": "2026-02"
+  },
+  {
+    "name": "Redis",
+    "category": "data",
+    "level": null,
+    "core": false,
+    "last_used": "2026-02"
+  },
+  {
+    "name": "Canton Network",
+    "category": "platform",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Stripe",
+    "category": "platform",
+    "level": null,
+    "core": false,
+    "last_used": "2025-12"
+  },
+  {
+    "name": "Docker",
+    "category": "devops",
+    "level": null,
+    "core": true,
+    "last_used": "current"
+  },
+  {
+    "name": "Kubernetes",
+    "category": "devops",
+    "level": null,
+    "core": true,
+    "last_used": "2026-05"
+  },
+  {
+    "name": "GitHub Actions",
+    "category": "devops",
+    "level": null,
+    "core": false,
+    "last_used": "2026-10"
+  },
+  {
+    "name": "OpenTelemetry",
+    "category": "devops",
+    "level": null,
+    "core": false,
+    "last_used": "2026-07"
+  },
+  {
+    "name": "Prometheus",
+    "category": "devops",
+    "level": null,
+    "core": false,
+    "last_used": "2026-07"
+  },
+  {
+    "name": "Grafana",
+    "category": "devops",
+    "level": null,
+    "core": false,
+    "last_used": "2026-07"
+  },
+  {
+    "name": "Podman",
+    "category": "devops",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Azure DevOps",
+    "category": "devops",
+    "level": null,
+    "core": true,
+    "last_used": "current"
+  },
+  {
+    "name": "Google Cloud Platform",
+    "category": "cloud",
+    "level": null,
+    "core": false,
+    "last_used": "2025-09"
+  },
+  {
+    "name": "Oracle Database",
+    "category": "data",
+    "level": null,
+    "core": false,
+    "last_used": "2025-10"
+  },
+  {
+    "name": "k6",
+    "category": "tool",
+    "level": null,
+    "core": false,
+    "last_used": "2026-02"
+  },
+  {
+    "name": "Test-Driven Development",
+    "category": "methodology",
+    "level": null,
+    "core": true,
+    "last_used": "2025-10"
+  },
+  {
+    "name": "Playwright",
+    "category": "tool",
+    "level": null,
+    "core": false,
+    "last_used": "2026-07"
+  },
+  {
+    "name": "Spec-Driven Development",
+    "category": "methodology",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "AI-Assisted Software Development",
+    "category": "methodology",
+    "level": null,
+    "core": true,
+    "last_used": "current"
+  },
+  {
+    "name": "Scrum",
+    "category": "methodology",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Algorithms & Data Structures",
+    "category": "domain",
+    "level": null,
+    "core": false,
+    "last_used": "2025-07"
+  },
+  {
+    "name": "Bioinformatics",
+    "category": "domain",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Blockchain / DLT",
+    "category": "domain",
+    "level": null,
+    "core": false,
+    "last_used": "current"
+  },
+  {
+    "name": "Unity",
+    "category": "framework",
+    "level": null,
+    "core": false,
+    "last_used": "2024-06"
+  },
+  {
+    "name": "Teaching & Mentoring",
+    "category": "communication",
+    "level": null,
+    "core": true,
+    "last_used": "2026-05"
+  },
+  {
+    "name": "Public Speaking",
+    "category": "communication",
+    "level": null,
+    "core": true,
+    "last_used": null
+  },
+  {
+    "name": "Technical Writing",
+    "category": "communication",
+    "level": null,
+    "core": false,
+    "last_used": null
+  }
+]

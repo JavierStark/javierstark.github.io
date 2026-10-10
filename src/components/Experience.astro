@@ -1,0 +1,48 @@
+---
+import experience from '../data/experience.json';
+import { fmtRange } from '../lib/format';
+---
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've been building</h2>
+    </div>
+    <ol class="timeline">
+      {experience.map((r) => (
+        <li class="card role reveal">
+          <div class="role__head">
+            <div>
+              <h3>{r.title}</h3>
+              <p class="role__org">
+                {r.organization_url ? <a href={r.organization_url} target="_blank" rel="noopener">{r.organization}</a> : r.organization}
+              </p>
+            </div>
+            <p class="role__meta">
+              <span>{fmtRange(r.start, r.end)}</span>
+              <span class="muted">{[r.location, r.work_mode].filter(Boolean).join(' · ')}</span>
+            </p>
+          </div>
+          {r.summary && <p class="role__summary">{r.summary}</p>}
+          {r.highlights.length > 0 && <ul class="role__hl">{r.highlights.slice(0, 4).map((h) => <li>{h}</li>)}</ul>}
+          {r.tech_stack.length > 0 && <div class="chips">{r.tech_stack.map((t) => <span class="chip muted">{t}</span>)}</div>}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline { display: grid; gap: 16px; position: relative; }
+  .role { padding: 24px 26px; border-left: 3px solid var(--accent); }
+  .role__head { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .role h3 { font-size: 1.2rem; }
+  .role__org { color: var(--accent); font-weight: 600; margin-top: 2px; }
+  .role__org a:hover { text-decoration: underline; }
+  .role__meta { display: grid; text-align: right; font-size: 0.88rem; }
+  .role__summary { color: var(--text-muted); margin-top: 12px; }
+  .role__hl { margin: 14px 0 16px; display: grid; gap: 8px; }
+  .role__hl li { padding-left: 18px; position: relative; font-size: 0.95rem; }
+  .role__hl li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
+  @media (max-width: 640px) { .role__meta { text-align: left; } }
+</style>

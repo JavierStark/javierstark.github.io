@@ -1,0 +1,30 @@
+---
+import profile from '../data/profile.json';
+import Icon from './Icon.astro';
+import { linkUrl } from '../lib/format';
+---
+<section id="contact">
+  <div class="wrap">
+    <div class="card contact reveal">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something.</h2>
+      <p class="muted">The fastest way to reach me is email. I reply to every message.</p>
+      <div class="contact__cta">
+        <a class="btn primary" href={`mailto:${profile.email}`}><Icon name="mail" /> {profile.email}</a>
+        {profile.links.linkedin && <a class="btn" href={linkUrl(profile.links.linkedin)} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>}
+        {profile.links.github && <a class="btn" href={linkUrl(profile.links.github)} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>}
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="wrap footer">
+  <small class="muted">© {new Date().getFullYear()} {profile.full_name}</small>
+  <small class="muted">Content generated from a verified career database.</small>
+</footer>
+
+<style>
+  .contact { padding: 48px 32px; text-align: center; background: linear-gradient(135deg, var(--accent-soft), rgba(124, 131, 255, 0.1)), var(--bg-card); }
+  .contact h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 8px 0 10px; }
+  .contact__cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 40px 0; }
+</style>

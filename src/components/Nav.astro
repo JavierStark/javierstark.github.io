@@ -1,0 +1,32 @@
+---
+import profile from '../data/profile.json';
+const links = [
+  ['#about', 'About'], ['#experience', 'Experience'], ['#speaking', 'Speaking'],
+  ['#projects', 'Projects'], ['#awards', 'Awards'], ['#skills', 'Skills'], ['#contact', 'Contact'],
+];
+---
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="nav__brand">{profile.name}</a>
+    <nav aria-label="Sections">
+      <ul>
+        {links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--line); }
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
+  .nav__brand { font-family: var(--font-head); font-weight: 700; white-space: nowrap; }
+  ul { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
+  ul::-webkit-scrollbar { display: none; }
+  ul a { font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; transition: color .2s; }
+  ul a:hover { color: var(--accent); }
+  @media (max-width: 720px) {
+    .nav__brand { display: none; }
+    .nav__inner { justify-content: flex-start; }
+    ul { gap: 18px; }
+  }
+</style>
