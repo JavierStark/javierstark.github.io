@@ -1,33 +1,36 @@
 ---
-import projects from '../data/projects.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import Icon from './Icon.astro';
 import { firstSentence, year } from '../lib/format';
 
-const linkLabel: Record<string, string> = { repo: 'Code', demo: 'Live', writeup: 'Write-up' };
-const label = (k: string, url: string) => (url.includes('igem.wiki') ? 'iGEM wiki' : linkLabel[k] ?? k);
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const projects = data(lang, 'projects');
+const linkLabel: Record<string, string> = { repo: s.projects.code, demo: s.projects.live, writeup: s.projects.writeup };
+const label = (k: string, url: string) => (url.includes('igem.wiki') ? s.projects.igem : linkLabel[k] ?? k);
 const years = (p: { start?: string | null; end?: string | null; status?: string }) => {
   const s = year(p.start);
-  const e = p.status === 'active' ? 'now' : year(p.end);
+  const e = p.status === 'active' ? s.now : year(p.end);
   return s && e && s !== e ? `${s}–${e}` : s;
 };
 ---
 <section id="projects">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Projects</p>
-      <h2>Selected work</h2>
+      <p class="eyebrow">{s.projects.eyebrow}</p>
+      <h2>{s.projects.title}</h2>
     </div>
     <div class="projects">
-      {projects.map((p, i) => {
+      {projects.map((p: any, i: number) => {
         const rest = (p.summary ?? '').slice(firstSentence(p.summary ?? '').length).trim();
         const hasMore = Boolean(rest || p.my_contribution || p.highlights.length > 0);
         const more = hasMore && (
           <details class={`more ${i === 0 ? 'project__more--wide' : ''}`}>
-            <summary>See details</summary>
+            <summary>{s.projects.details}</summary>
             <div class="more__body">
               {rest && <p class="project__summary">{rest}</p>}
               {p.my_contribution && <p class="project__role">{p.my_contribution}</p>}
-              {p.highlights.length > 0 && <ul class="project__hl">{p.highlights.map((h) => <li>{h}</li>)}</ul>}
+              {p.highlights.length > 0 && <ul class="project__hl">{p.highlights.map((h: string) => <li>{h}</li>)}</ul>}
             </div>
           </details>
         );
@@ -40,7 +43,7 @@ const years = (p: { start?: string | null; end?: string | null; status?: string 
               <p class="muted small">{years(p)}</p>
               <h3>{p.title}</h3>
               <p class="project__summary">{firstSentence(p.summary ?? '')}</p>
-              <div class="chips">{p.tech_stack.slice(0, 8).map((t) => <span class="chip muted">{t}</span>)}</div>
+              <div class="chips">{p.tech_stack.slice(0, 8).map((t: string) => <span class="chip muted">{t}</span>)}</div>
               <div class="project__links">
                 {Object.entries(p.links).filter(([k, v]) => typeof v === 'string').map(([k, v]) => (
                   <a class="link" href={v as string} target="_blank" rel="noopener">{label(k, v as string)} <Icon name="external" /></a>

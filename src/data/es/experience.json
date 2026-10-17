@@ -1,0 +1,141 @@
+[
+  {
+    "id": "role-2026-verisk-software-engineering-intern",
+    "title": "Desarrollador de software en prácticas",
+    "organization": "Verisk Specialty Business Solutions",
+    "organization_url": "https://www.verisk.com",
+    "employment_type": "internship",
+    "location": "Málaga, España",
+    "work_mode": "híbrido",
+    "start": "2026-07",
+    "end": null,
+    "current": true,
+    "tier": "primary",
+    "summary": "Desarrollador de software en prácticas en el equipo Impact de Verisk: modernizo CI/CD de .NET heredado, contenerizo aplicaciones e infraestructura de ejecución de pruebas, y construyo un producto nuevo con desarrollo guiado por especificaciones e IA.",
+    "highlights": [
+      "Modernizo pipelines CI/CD de .NET heredado en Azure DevOps y migro aplicaciones a tecnologías .NET más recientes y a .NET Aspire.",
+      "Contenerizo aplicaciones con Docker y Podman y construyo la infraestructura de los entornos de ejecución de pruebas.",
+      "Desarrollo un producto nuevo desde cero con desarrollo guiado por especificaciones mediante OpenSpec y técnicas de ingeniería guiada por IA."
+    ],
+    "tech_stack": [
+      "C#",
+      "ASP.NET Core",
+      ".NET Aspire",
+      "Docker",
+      "Podman",
+      "Azure DevOps",
+      "Desarrollo guiado por especificaciones",
+      "Desarrollo de software asistido por IA",
+      "Scrum"
+    ],
+    "projects": []
+  },
+  {
+    "id": "role-2025-iaeste-malaga-president",
+    "title": "Presidente y tesorero, sección de Informática",
+    "organization": "IAESTE LC Málaga",
+    "organization_url": "https://iaeste.org",
+    "employment_type": "volunteer",
+    "location": "Málaga, España",
+    "work_mode": "híbrido",
+    "start": "2025-03",
+    "end": null,
+    "current": true,
+    "tier": "primary",
+    "summary": "Presidente y tesorero de la sección de Informática de IAESTE Málaga; reconstruí las webs local y nacional en React, automaticé una incorporación de socios sin papel y conforme al RGPD, y estoy construyendo un CRM de captación de prácticas.",
+    "highlights": [
+      "Reconstruí en React la web nacional de IAESTE España y la de IAESTE LC Málaga, abandonando WordPress y reduciendo los costes recurrentes en 400 € al año en la web nacional y casi 200 € al año en la local, un ahorro importante para una organización estudiantil.",
+      "Logré que la incorporación de unos 50 socios nuevos al año sea totalmente digital y conforme al RGPD de principio a fin, automatizando el registro y los correos de bienvenida con JavaScript y Google Sheets, y eliminando formularios en papel y firmas manuscritas.",
+      "Construyo un CRM propio para seguir a las empresas que contacta la junta con el fin de conseguir ofertas de prácticas."
+    ],
+    "tech_stack": [
+      "React",
+      "JavaScript",
+      "Google Sheets"
+    ],
+    "projects": []
+  },
+  {
+    "id": "role-2025-igem-uma",
+    "title": "Desarrollador de software",
+    "organization": "iGEM UMA",
+    "organization_url": "https://2026.igem.wiki/uma-malaga",
+    "employment_type": "volunteer",
+    "location": "Málaga, España",
+    "work_mode": "híbrido",
+    "start": "2025-03",
+    "end": null,
+    "current": true,
+    "tier": "primary",
+    "summary": "Único desarrollador de Diana, el software de diseño de ARN guía del equipo iGEM, cuyas guías diseñadas se encargaron y probaron en el laboratorio.",
+    "highlights": [
+      "Construí Diana como único desarrollador: una aplicación Blazor Server (.NET 9), biblioteca F# y CLI que convierten variantes de enfermedades (HGVS o rsID) en espaciadores de ARN guía CRISPR-Cas13 ordenados por puntuación según contenido en GC, homopolímeros, alineamientos de off-target con Bowtie y plegamiento de ARN con ViennaRNA.",
+      "El equipo científico de iGEM UMA encargó y probó en el laboratorio los ARN guía diseñados con Diana.",
+      "Implementé pooling combinatorio de guías (modelos 2D fragmentado, 2D matricial y 3D) sobre placas de 96/384 pocillos, que decodifica los pocillos positivos hasta las guías implicadas y marca las colisiones ambiguas.",
+      "Añadí la detección de sitios de restricción (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) y una exportación CSV de oligos lista para pedir, de modo que los diseños pasan directamente a síntesis.",
+      "Contenericé Diana con una build Docker de dos imágenes que verifica el checksum e incorpora el índice GRCh38, se ejecuta sin root y con health check, evitando la ralentización de más de 10 veces en el alineamiento de un índice montado."
+    ],
+    "tech_stack": [
+      "C#",
+      "F#",
+      "Blazor",
+      "Docker",
+      "Bioinformática"
+    ],
+    "projects": [
+      {
+        "title": "Diana, diseño de precisión de ARN guía (software de iGEM UMA-Málaga 2026)",
+        "href": "#project-diana",
+        "external": false
+      }
+    ]
+  },
+  {
+    "id": "role-2025-karunya-research-intern",
+    "title": "Investigador en prácticas",
+    "organization": "Karunya Institute of Technology and Sciences",
+    "organization_url": "https://www.karunya.edu",
+    "employment_type": "internship",
+    "location": "Coimbatore, India",
+    "work_mode": "presencial",
+    "start": "2025-07",
+    "end": "2025-09",
+    "current": false,
+    "tier": "primary",
+    "summary": "Prácticas internacionales de investigación en India construyendo un pipeline de deep learning en la nube para predecir crisis epilépticas preictales a partir de datos de EEG.",
+    "highlights": [
+      "Seleccionado a través del intercambio internacional IAESTE para unas prácticas de investigación remuneradas de 8 semanas en el Karunya Institute of Technology and Sciences (India), con el respaldo de una recomendación de un catedrático de la UMA.",
+      "Desarrollé un pipeline de deep learning basado en CNN para predecir crisis epilépticas preictales sobre grabaciones EEG reales de pacientes (conjunto de datos CHB-MIT).",
+      "Diseñé flujos de trabajo sobre Google Cloud para el preprocesado de EEG y el entrenamiento de modelos a escala."
+    ],
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "TensorFlow",
+      "Google Cloud Platform"
+    ],
+    "projects": []
+  },
+  {
+    "id": "role-2020-freelance-cs-tutor",
+    "title": "Profesor particular de informática (autónomo)",
+    "organization": "Autónomo",
+    "organization_url": null,
+    "employment_type": "contract",
+    "location": "España",
+    "work_mode": "en remoto",
+    "start": "2020",
+    "end": "2024",
+    "current": false,
+    "tier": "primary",
+    "summary": "Enseñé programación e informática a más de 15 estudiantes recurrentes, la mayoría durante varias clases a lo largo de un curso completo.",
+    "highlights": [
+      "Enseñé informática y programación de forma particular a más de 15 estudiantes recurrentes, la mayoría de los cuales repitió con varias clases a lo largo de un curso académico."
+    ],
+    "tech_stack": [
+      "Docencia y mentoría",
+      "JavaScript"
+    ],
+    "projects": []
+  }
+]

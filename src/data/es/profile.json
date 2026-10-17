@@ -1,0 +1,33 @@
+{
+  "name": "Javier Torralbo",
+  "full_name": "Javier Torralbo Cortés",
+  "headline": "Ingeniero de software · .NET y Cloud-Native · CKAD · Ponente",
+  "location": "Málaga, España",
+  "email": "javiertorralbocortes@gmail.com",
+  "links": {
+    "website": "javiertorralbo.dev",
+    "linkedin": "linkedin.com/in/javiertorralbocortes",
+    "github": "github.com/JavierStark"
+  },
+  "summary": [
+    "Ingeniero de software que construye sistemas .NET cloud-native. En Verisk trabajo en el equipo Impact: modernizo pipelines CI/CD de .NET heredado en Azure DevOps, contenerizo aplicaciones y entornos de ejecución de pruebas, y construyo un producto nuevo desde cero con desarrollo guiado por especificaciones e IA.",
+    "Construyo software del que depende la gente. Diana, la herramienta de diseño de ARN guía que desarrollo en solitario para iGEM UMA, generó guías que el equipo encargó y probó en el laboratorio. Una plataforma de bonos tokenizados que diseñé sobre Canton Network se convirtió en mi Trabajo Fin de Grado con ioBuilders.",
+    "Enseño lo que construyo. Cofundé el curso de DevOps y Cloud de la Universidad de Málaga (~30 estudiantes por sesión), impartí un taller de CI/CD para 40 estudiantes en Hackers Week y hablé de .NET Aspire ante más de 50 personas en OpenSouthCode. Certificado CKAD, dos veces campeón regional de programación Ada Byron y presidente de la sección de Informática de IAESTE Málaga."
+  ],
+  "availability": [
+    "Málaga, España (presencial o híbrido, desde enero de 2027)",
+    "Cualquier lugar (presencial o híbrido, desde julio de 2027)",
+    "Cualquier lugar (en remoto, cuando sea)"
+  ],
+  "languages": [
+    {
+      "language": "Español",
+      "proficiency": "nativo"
+    },
+    {
+      "language": "Inglés",
+      "proficiency": "profesional completo"
+    }
+  ],
+  "thesis": null
+}

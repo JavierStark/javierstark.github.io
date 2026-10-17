@@ -1,12 +1,18 @@
 ---
 import '../styles/global.css';
-import profile from '../data/profile.json';
-import experience from '../data/experience.json';
-import education from '../data/education.json';
-import skills from '../data/skills.json';
+import { data, strings, type Lang } from '../lib/i18n';
+import { ui } from '../i18n/ui';
 import { linkUrl } from '../lib/format';
 
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const profile = data(lang, 'profile');
+const experience = data(lang, 'experience');
+const education = data(lang, 'education');
+const skills = data(lang, 'skills');
+
 const site = 'https://javiertorralbo.dev/';
+const pageUrl = `${site.replace(/\/$/, '')}${s.home}`;
 const role = profile.headline?.split('·')[0]?.trim() ?? 'Software Engineer';
 const title = `${profile.name} · ${role}`;
 // ~155 chars: what LinkedIn, Google and Slack show under the title.
@@ -20,33 +26,38 @@ const personLd = {
   '@type': 'Person',
   name: profile.full_name,
   alternateName: profile.name,
-  url: site,
+  url: pageUrl,
+  inLanguage: lang,
   image: `${site}assets/about-portrait.jpg`,
   description: profile.headline,
   address: { '@type': 'PostalAddress', addressLocality: 'Málaga', addressCountry: 'ES' },
   sameAs: Object.entries(profile.links).filter(([k]) => k !== 'website').map(([, v]) => linkUrl(v as string)),
-  worksFor: experience.filter((r) => r.current && r.employment_type !== 'volunteer').map((r) => ({ '@type': 'Organization', name: r.organization })),
-  alumniOf: education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.institution })),
-  knowsAbout: skills.filter((s) => s.core).map((s) => s.name),
+  worksFor: experience.filter((r: any) => r.current && r.employment_type !== 'volunteer').map((r: any) => ({ '@type': 'Organization', name: r.organization })),
+  alumniOf: education.map((e: any) => ({ '@type': 'CollegeOrUniversity', name: e.institution })),
+  knowsAbout: skills.filter((k: any) => k.core).map((k: any) => k.name),
 };
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={s.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={profile.full_name} />
-    <link rel="canonical" href={site} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" hreflang="en" href={`${site}`} />
+    <link rel="alternate" hreflang="es" href={`${site}es/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#0f1020" />
     <!-- Link previews (LinkedIn, WhatsApp, Slack, Discord, Facebook) -->
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content={profile.name} />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content={site} />
+    <meta property="og:locale" content={s.locale} />
+    <meta property="og:locale:alternate" content={lang === 'es' ? ui.en.locale : ui.es.locale} />
+    <meta property="og:url" content={pageUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -64,6 +75,12 @@ const personLd = {
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogAlt} />
     <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+    <!-- Visitors who chose Spanish before land on /es/ when they open the English root. -->
+    <script is:inline define:vars={{ isRoot: lang === 'en' }}>
+      try {
+        if (isRoot && localStorage.getItem('lang') === 'es') location.replace('/es/' + location.hash);
+      } catch (e) {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -74,6 +91,11 @@ const personLd = {
     <script>
       // Reveal sections on scroll; content stays visible without JS.
       document.documentElement.classList.add('js');
+
+      // Remember the language the visitor picks with the switcher.
+      document.querySelector<HTMLAnchorElement>('.nav__lang')?.addEventListener('click', (e) => {
+        try { localStorage.setItem('lang', (e.currentTarget as HTMLElement).dataset.lang ?? 'en'); } catch {}
+      });
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
       }, { threshold: 0.12 });

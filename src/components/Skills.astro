@@ -1,34 +1,38 @@
 ---
-import skills from '../data/skills.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import TechIcon from './TechIcon.astro';
 import { skillIcon } from '../lib/icons';
 
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const skills = data(lang, 'skills');
+
 // Display groups over the database skill categories; core skills first within each group.
 const groups: [string, string[]][] = [
-  ['Languages', ['language']],
-  ['.NET, frameworks & libraries', ['framework', 'library']],
-  ['Cloud, DevOps & platform', ['cloud', 'devops', 'platform']],
-  ['Data & AI', ['data', 'ml-ai']],
-  ['Practices', ['methodology']],
-  ['Domains', ['domain']],
-  ['Communication', ['communication', 'leadership']],
+  [s.skills.groups[0], ['language']],
+  [s.skills.groups[1], ['framework', 'library']],
+  [s.skills.groups[2], ['cloud', 'devops', 'platform']],
+  [s.skills.groups[3], ['data', 'ml-ai']],
+  [s.skills.groups[4], ['methodology']],
+  [s.skills.groups[5], ['domain']],
+  [s.skills.groups[6], ['communication', 'leadership']],
 ];
 const byGroup = groups
-  .map(([label, cats]) => [label, skills.filter((s) => cats.includes(s.category)).sort((a, b) => Number(b.core) - Number(a.core))] as const)
+  .map(([label, cats]) => [label, skills.filter((k: any) => cats.includes(k.category)).sort((a: any, b: any) => Number(b.core) - Number(a.core))] as const)
   .filter(([, list]) => list.length > 0);
 ---
 <section id="skills">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Skills</p>
-      <h2>Toolbox</h2>
-      <p>Only skills backed by work listed on this page. Highlighted ones are my core stack.</p>
+      <p class="eyebrow">{s.skills.eyebrow}</p>
+      <h2>{s.skills.title}</h2>
+      <p>{s.skills.lead}</p>
     </div>
     <div class="skills">
       {byGroup.map(([label, list]) => (
         <div class="card group reveal">
           <h3>{label}</h3>
-          <div class="chips">{list.map((s) => <span class={`chip skill ${s.core ? 'core' : 'muted'}`}><TechIcon icon={skillIcon(s.name)} />{s.name}</span>)}</div>
+          <div class="chips">{list.map((k: any) => <span class={`chip skill ${k.core ? 'core' : 'muted'}`}><TechIcon icon={skillIcon(k.name)} />{k.name}</span>)}</div>
         </div>
       ))}
     </div>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "pub-2026-opensouthcode-aspire",
+    "type": "talk",
+    "title": "Aspire: orquestación, DevEx y observabilidad con IA integrada",
+    "venue": "OpenSouthCode 2026, La Térmica, Málaga",
+    "date": "2026-06-26",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7477719132122206208/",
+    "summary": "Charla de 45 minutos sobre .NET Aspire como pegamento de las arquitecturas distribuidas: sistemas multiagente de IA, servicios políglotas, observabilidad completa con OpenTelemetry y despliegue en Kubernetes/AKS. Mi charla más concurrida hasta la fecha, con sala llena.",
+    "featured": true,
+    "image": "opensouthcode-2026-audience.jpg",
+    "audience": "50+ asistentes"
+  },
+  {
+    "id": "pub-2026-devops-cloud-course",
+    "type": "course",
+    "title": "Curso de DevOps y Cloud (1.ª edición), coorganizador y ponente",
+    "venue": "ETSI Informática, Universidad de Málaga",
+    "date": "2026-04",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7460569690021629952/",
+    "summary": "Cuatro sesiones semanales sobre Docker, Kubernetes, AWS/Azure, GitHub Actions y platform engineering, con ponentes invitados de la industria; la última sesión, abierta al público junto a GitHub Community España.",
+    "featured": true,
+    "image": "devops-course-docker-session.jpg",
+    "audience": "~30 estudiantes por sesión"
+  },
+  {
+    "id": "pub-2026-hackers-week-workshop",
+    "type": "talk",
+    "title": "Taller: llevar una Minimal API de C# a producción con GitHub Actions y Azure",
+    "venue": "Hackers Week, ETSI Informática, Universidad de Málaga (con Alejandro Cerezo Contreras)",
+    "date": "2026-03",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7439671435201064960/",
+    "summary": "Taller práctico de CI/CD que cierra la brecha entre el código que funciona en local y el software desplegado de forma profesional. Aula llena.",
+    "featured": true,
+    "image": "hackers-week-2026-workshop.jpg",
+    "audience": "40 estudiantes"
+  },
+  {
+    "id": "pub-2026-dotnetmalaga-fsharp",
+    "type": "talk",
+    "title": "Ciencia de datos con F#",
+    "venue": "Meetup de la comunidad dotnetMÁLAGA, en Verisk, Málaga",
+    "date": "2026-01-21",
+    "url": "https://www.linkedin.com/feed/update/urn:li:activity:7420046300596871168/",
+    "summary": "Mi primera charla técnica en una comunidad. Cómo el tipado fuerte y los pipelines funcionales de F# hacen el análisis de datos más seguro y rápido que los flujos típicos en Python, con ejemplos del análisis de datos biológicos de iGEM UMA.",
+    "featured": true,
+    "image": "javier-speaking-wide.jpg",
+    "audience": null
+  }
+]

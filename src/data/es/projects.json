@@ -1,0 +1,149 @@
+[
+  {
+    "id": "proj-disease-mutations-app",
+    "slug": "diana",
+    "title": "Diana, diseño de precisión de ARN guía (software de iGEM UMA-Málaga 2026)",
+    "kind": "research",
+    "order": 1,
+    "image": "projects/diana.svg",
+    "summary": "Aplicación web, biblioteca F# y CLI que convierten variantes de enfermedades en espaciadores de ARN guía CRISPR-Cas13 ordenados, marcan sitios de restricción, exportan oligos listos para pedir y planifican pooling combinatorio de guías en placas de 96/384 pocillos. Entregable oficial de software del equipo iGEM UMA-Málaga 2026.",
+    "my_contribution": "Único desarrollador, construyendo el software para los científicos del equipo.",
+    "start": "2025-10",
+    "end": null,
+    "status": "active",
+    "tech_stack": [
+      "C#",
+      "F#",
+      "Blazor",
+      "Docker",
+      "Python",
+      "Bioinformática"
+    ],
+    "links": {
+      "repo": "https://gitlab.igem.org/2026/software/uma-malaga/diana-grna-designer",
+      "writeup": "https://2026.igem.wiki/uma-malaga/software",
+      "other": [
+        "https://github.com/JavierStark/DiseaseMutationsApp"
+      ]
+    },
+    "highlights": [
+      "Construí Diana como único desarrollador: una aplicación Blazor Server (.NET 9), biblioteca F# y CLI que convierten variantes de enfermedades (HGVS o rsID) en espaciadores de ARN guía CRISPR-Cas13 ordenados por puntuación según contenido en GC, homopolímeros, alineamientos de off-target con Bowtie y plegamiento de ARN con ViennaRNA.",
+      "El equipo científico de iGEM UMA encargó y probó en el laboratorio los ARN guía diseñados con Diana.",
+      "Implementé pooling combinatorio de guías (modelos 2D fragmentado, 2D matricial y 3D) sobre placas de 96/384 pocillos, que decodifica los pocillos positivos hasta las guías implicadas y marca las colisiones ambiguas.",
+      "Añadí la detección de sitios de restricción (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) y una exportación CSV de oligos lista para pedir, de modo que los diseños pasan directamente a síntesis.",
+      "Contenericé Diana con una build Docker de dos imágenes que verifica el checksum e incorpora el índice GRCh38, se ejecuta sin root y con health check, evitando la ralentización de más de 10 veces en el alineamiento de un índice montado."
+    ]
+  },
+  {
+    "id": "proj-canton-bond-platform",
+    "slug": "canton-bond-platform",
+    "title": "Plataforma de bonos digitales tokenizados sobre Canton Network (UMA Blockchain Technologies × ioBuilders)",
+    "kind": "academic",
+    "order": 2,
+    "image": "projects/canton.svg",
+    "summary": "Proyecto final del curso de Tecnologías Blockchain de la Universidad de Málaga (impartido por NICS Lab; 18 estudiantes en 6 equipos con mentores de empresas colaboradoras), construido con ioBuilders. Una red Canton en Docker con un contrato de bono tokenizado CIP-056 en Daml, un backend REST en Go sobre la Ledger API gRPC, un frontend web para emitir, transferir, quemar y liquidar bonos con asignaciones DvP, un listener de eventos del ledger y un stack completo de observabilidad.",
+    "my_contribution": "Responsable de la capa Canton, blockchain y Daml, la arquitectura del sistema, la orquestación con .NET Aspire y la telemetría.",
+    "start": "2026-05",
+    "end": "2026-07",
+    "status": "completed",
+    "tech_stack": [
+      "Daml",
+      "Canton Network",
+      "Go",
+      ".NET Aspire",
+      "Docker",
+      "OpenTelemetry",
+      "Prometheus",
+      "Grafana",
+      "Playwright",
+      "Blockchain / DLT"
+    ],
+    "links": {
+      "repo": "https://github.com/JavierStark/Project-CantonDaml-IoBuilders-UMA"
+    },
+    "highlights": [
+      "Diseñé la arquitectura y construí la capa Canton/Daml de una plataforma de bonos tokenizados sobre una red Canton local (sequencer, mediator, synchronizer, tres participantes) con un contrato Daml CIP-056 y flujos de emisión, transferencia, quema y liquidación DvP expuestos mediante un backend REST en Go sobre la Ledger API gRPC.",
+      "Orquesté la plataforma con .NET Aspire y la instrumenté con OpenTelemetry, Prometheus, Tempo y Grafana; el ciclo de vida del bono está cubierto por pruebas end-to-end con Playwright.",
+      "Derivó en un Trabajo Fin de Grado sobre Canton Network desarrollado en colaboración con ioBuilders."
+    ]
+  },
+  {
+    "id": "proj-cudeca-watt",
+    "slug": "cudeca-watt",
+    "title": "CUDECA WATT, plataforma de donaciones y eventos (caso de estudio para la Fundación Cudeca)",
+    "kind": "academic",
+    "order": 3,
+    "image": "projects/cudeca.jpg",
+    "summary": "Proyecto de la asignatura «Análisis y Diseño de Aplicaciones» (Universidad de Málaga) sobre un caso de uso real de la Fundación Cudeca, una ONG de cuidados paliativos. Donaciones con certificados fiscales, venta de entradas con validación por QR, membresías y panel de administración. No es un sistema comercial ni de producción.",
+    "my_contribution": "Responsable del backend, el CI/CD y la arquitectura.",
+    "start": "2025-10",
+    "end": "2025-12",
+    "status": "completed",
+    "tech_stack": [
+      "C#",
+      "ASP.NET Core",
+      "Supabase",
+      "PostgreSQL",
+      "Stripe",
+      "Docker",
+      "Microsoft Azure",
+      "GitHub Actions",
+      "Angular",
+      "Scrum"
+    ],
+    "links": {
+      "repo": "https://github.com/JavierStark/Proyecto-ADAp-WATT"
+    },
+    "highlights": [
+      "Fui responsable del backend, el CI/CD y la arquitectura de CUDECA WATT, una plataforma full-stack de donaciones y eventos construida sobre un caso de uso real de una ONG (Minimal API de ASP.NET Core 9, Supabase, Stripe, certificados fiscales con QuestPDF, entradas con QR).",
+      "Tras meses de análisis de requisitos y diseño de arquitectura, el equipo completó toda la implementación en 23 días con Scrum.",
+      "Configuré CI/CD con GitHub Actions que desplegaba automáticamente cada cambio de backend y frontend en Azure Web Apps desde el primer día, y mantuve la documentación de la API con Swagger/Scalar siempre activa para que el equipo de frontend nunca quedara bloqueado por cambios en la API."
+    ]
+  },
+  {
+    "id": "proj-devops-cloud-course",
+    "slug": "devops-cloud-course",
+    "title": "Curso de DevOps y Cloud, 1.ª edición (ETSI Informática, Universidad de Málaga)",
+    "kind": "volunteer",
+    "order": 4,
+    "image": "projects/devops-course.svg",
+    "summary": "Curso práctico de cuatro semanas y cuatro sesiones para estudiantes de ingeniería informática, coorganizado e impartido junto a Alejandro Cerezo Contreras. Cubrió contenerización con Docker, orquestación con Kubernetes, despliegue en la nube en AWS y Azure, GitHub Actions y platform engineering, con ponentes invitados de la industria (organizador de la comunidad Docker Sevilla, un módulo de platform engineering con Azure y Terraform, un caso de estudio en la nube de un gemelo digital de Fórmula 1). La última sesión se abrió al público junto a GitHub Community España.",
+    "my_contribution": "Coorganizador y ponente (temario, sesiones, ponentes invitados, web del curso).",
+    "start": "2026-04",
+    "end": "2026-05",
+    "status": "completed",
+    "tech_stack": [
+      "Docker",
+      "Kubernetes",
+      "Microsoft Azure",
+      "GitHub Actions",
+      "Docencia y mentoría"
+    ],
+    "links": {
+      "demo": "https://javiertorralbo.dev/CursoDevopsCloud/"
+    },
+    "highlights": [
+      "Cofundé, organicé e impartí el primer curso de DevOps y Cloud de la Escuela de Ingeniería Informática de la Universidad de Málaga, un programa de cuatro semanas sobre Docker, Kubernetes, despliegue en AWS/Azure, GitHub Actions y platform engineering, con ponentes invitados de la industria."
+    ]
+  },
+  {
+    "id": "proj-blockchain4good-hackathon",
+    "slug": "blockchain4good-hackathon",
+    "title": "Verificación on-chain de la entrega de ayuda, Blockchain For Good Hackathon 2026",
+    "kind": "hackathon",
+    "order": 5,
+    "image": "projects/aid-delivery.svg",
+    "summary": "Hackathon de 24 horas organizado por la Cátedra Fintech y la Fundación Kareema. Un equipo de tres construyó un sistema de seguimiento de donaciones que detecta, mediante una red BLE abierta, cuándo llega físicamente un paquete de ayuda humanitaria y registra la prueba en blockchain para que los donantes verifiquen su impacto. Javier fue el responsable de blockchain del equipo; sus compañeros no tenían experiencia previa en blockchain.",
+    "my_contribution": "Responsable de blockchain, guiando a dos compañeros nuevos en blockchain a través de contratos inteligentes y tokens durante las 24 horas.",
+    "start": "2026-09",
+    "end": "2026-10",
+    "status": "completed",
+    "tech_stack": [
+      "Blockchain / DLT"
+    ],
+    "links": {},
+    "highlights": [
+      "Construí en 24 horas, con un equipo de tres personas, un sistema que detecta la llegada de paquetes de ayuda humanitaria mediante una red BLE abierta y registra la prueba de entrega en blockchain para los donantes; incorporé a dos compañeros sin experiencia previa en blockchain."
+    ]
+  }
+]

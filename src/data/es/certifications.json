@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Azure DevOps Essentials (certificado del curso)",
+    "issuer": "LinkedIn Learning",
+    "date": "2026-07",
+    "expires": null,
+    "credential_id": null,
+    "credential_url": null
+  },
+  {
+    "name": "CKAD: Certified Kubernetes Application Developer",
+    "issuer": "The Linux Foundation / CNCF",
+    "date": "2026-03",
+    "expires": "2028-03",
+    "credential_id": "LF-5tilrd521z",
+    "credential_url": null
+  },
+  {
+    "name": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    "issuer": "Oracle",
+    "date": "2026-03",
+    "expires": "2028-03",
+    "credential_id": null,
+    "credential_url": null
+  },
+  {
+    "name": "Introduction to Kubernetes (LFS158)",
+    "issuer": "The Linux Foundation",
+    "date": "2026-01",
+    "expires": null,
+    "credential_id": "LF-httluz2anl",
+    "credential_url": null
+  },
+  {
+    "name": "Visión por computador para inspección industrial",
+    "issuer": "NVIDIA Deep Learning Institute",
+    "date": "2026-01",
+    "expires": null,
+    "credential_id": null,
+    "credential_url": null
+  },
+  {
+    "name": "Fundamentos de Deep Learning",
+    "issuer": "NVIDIA Deep Learning Institute",
+    "date": "2025-11",
+    "expires": null,
+    "credential_id": null,
+    "credential_url": null
+  },
+  {
+    "name": "Fundamentos de computación acelerada con CUDA C++ moderno",
+    "issuer": "NVIDIA Deep Learning Institute",
+    "date": "2025-10",
+    "expires": null,
+    "credential_id": null,
+    "credential_url": null
+  },
+  {
+    "name": "IAESTE Global Trailblazer (prácticas internacionales completadas)",
+    "issuer": "IAESTE",
+    "date": "2025-09",
+    "expires": null,
+    "credential_id": null,
+    "credential_url": null
+  },
+  {
+    "name": "C1 Advanced (CAE)",
+    "issuer": "Cambridge English",
+    "date": "2022",
+    "expires": null,
+    "credential_id": null,
+    "credential_url": null
+  }
+]

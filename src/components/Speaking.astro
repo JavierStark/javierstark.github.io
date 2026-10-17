@@ -1,38 +1,42 @@
 ---
-import talks from '../data/talks.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import Icon from './Icon.astro';
 import { fmtDate } from '../lib/format';
 import { existsSync } from 'node:fs';
 
-const label: Record<string, string> = { talk: 'Talk', course: 'Course' };
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const talks = data(lang, 'talks');
+const label: Record<string, string> = { talk: s.speaking.talk, course: s.speaking.course };
+const aboutLabel: Record<string, string> = { talk: s.speaking.aboutTalk, course: s.speaking.aboutCourse };
 // Only render photos that exist in public/assets (no broken images if a file is missing).
 const photo = (name?: string | null) => (name && existsSync(`public/assets/${name}`) ? `/assets/${name}` : null);
 // Talks with photos first; within each group, newest first (data is already date-sorted).
-const ordered = [...talks.filter((t) => photo(t.image)), ...talks.filter((t) => !photo(t.image))];
+const ordered = [...talks.filter((t: any) => photo(t.image)), ...talks.filter((t: any) => !photo(t.image))];
 ---
 <section id="speaking">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Speaking & teaching</p>
-      <h2>Sharing what I learn</h2>
-      <p>Conference talks, hands-on workshops and a university course I co-founded.</p>
+      <p class="eyebrow">{s.speaking.eyebrow}</p>
+      <h2>{s.speaking.title}</h2>
+      <p>{s.speaking.lead}</p>
     </div>
     <div class="talks">
-      {ordered.map((t) => (
+      {ordered.map((t: any) => (
         <article class={`card talk reveal ${photo(t.image) ? 'talk--photo' : ''}`}>
           {photo(t.image) && <img class="talk__img" src={photo(t.image)} alt={`${t.title}, ${t.venue}`} loading="lazy" />}
           <div class="talk__body">
             <div class="talk__top">
-              <span class="chip"><Icon name="mic" /> {label[t.type] ?? 'Talk'}</span>
-              <span class="muted small">{fmtDate(t.date)}</span>
+              <span class="chip"><Icon name="mic" /> {label[t.type] ?? s.speaking.talk}</span>
+              <span class="muted small">{fmtDate(t.date, lang)}</span>
             </div>
             <h3>{t.title}</h3>
             <p class="talk__venue">{t.venue}</p>
             {t.audience && <p class="talk__aud">{t.audience}</p>}
-            {t.url && <a class="link small post" href={t.url} target="_blank" rel="noopener">Read the post on LinkedIn <Icon name="external" /></a>}
+            {t.url && <a class="link small post" href={t.url} target="_blank" rel="noopener">{s.speaking.readPost} <Icon name="external" /></a>}
             {t.summary && (
               <details class="more">
-                <summary>About this {label[t.type]?.toLowerCase() ?? 'talk'}</summary>
+                <summary>{aboutLabel[t.type] ?? s.speaking.aboutTalk}</summary>
                 <p class="muted small more__body">{t.summary}</p>
               </details>
             )}

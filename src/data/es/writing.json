@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pub-2026-canton-article-1",
+    "type": "article",
+    "title": "Canton: una blockchain diferente (Serie Canton, parte 1)",
+    "venue": "LinkedIn",
+    "date": "2026-10-03",
+    "url": "https://www.linkedin.com/pulse/canton-different-blockchain-javier-torralbo-cort%C3%A9s-t0hle/",
+    "summary": "Por qué las cadenas públicas y permisionadas fallan en privacidad institucional y cómo la solución de Canton (subtransacciones need-to-know, synchronizers y el lenguaje Daml) lo resuelve. Primera parte de la serie de artículos que conforma mi Trabajo Fin de Grado con ioBuilders.",
+    "featured": true,
+    "image": "canton-series-part-1.jpg",
+    "audience": null
+  }
+]

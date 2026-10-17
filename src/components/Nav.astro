@@ -1,18 +1,25 @@
 ---
-import profile from '../data/profile.json';
+import { data, strings, otherLang, type Lang } from '../lib/i18n';
+import { ui } from '../i18n/ui';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const profile = data(lang, 'profile');
+const s = strings(lang);
 const links = [
-  ['#about', 'About'], ['#experience', 'Experience'], ['#writing', 'Writing'], ['#speaking', 'Speaking'],
-  ['#projects', 'Projects'], ['#awards', 'Awards'], ['#skills', 'Skills'], ['#contact', 'Contact'],
+  ['#about', s.nav.about], ['#experience', s.nav.experience], ['#writing', s.nav.writing], ['#speaking', s.nav.speaking],
+  ['#projects', s.nav.projects], ['#awards', s.nav.awards], ['#skills', s.nav.skills], ['#contact', s.nav.contact],
 ];
+const other = otherLang(lang);
 ---
 <header class="nav">
   <div class="wrap nav__inner">
     <a href="#top" class="nav__brand">{profile.name}</a>
-    <nav aria-label="Sections">
+    <nav aria-label={s.navLabel}>
       <ul>
         {links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
       </ul>
     </nav>
+    <a class="nav__lang" href={ui[other].home} hreflang={other} lang={other} aria-label={s.switchLabel} data-lang={other}>{s.switchCode}</a>
   </div>
 </header>
 
@@ -21,6 +28,8 @@ const links = [
   .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 60px; }
   .nav__brand { font-family: var(--font-head); font-weight: 700; white-space: nowrap; }
   nav { min-width: 0; }
+  .nav__lang { flex: none; font-size: 0.8rem; font-weight: 600; letter-spacing: .06em; color: var(--text-muted); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; transition: color .2s, border-color .2s; }
+  .nav__lang:hover { color: var(--accent); border-color: var(--accent); }
   ul { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
   ul::-webkit-scrollbar { display: none; }
   ul a { font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; transition: color .2s; }
@@ -29,6 +38,7 @@ const links = [
     .nav__brand { display: none; }
     .nav__inner { justify-content: flex-start; }
     nav { flex: 1; }
+    .nav__inner { gap: 12px; }
     ul { gap: 18px; padding-right: 24px; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
   }
 </style>

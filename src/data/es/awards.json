@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pub-2025-malackathon-honorable-mention",
+    "type": "award",
+    "title": "Mención de honor, Malackathon 2025",
+    "venue": "Universidad de Málaga",
+    "date": "2025-10",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2025-ada-byron-national",
+    "type": "award",
+    "title": "Clasificados para la final nacional de Ada Byron 2025 (equipo Turing Incomplete)",
+    "venue": "Universidad Complutense de Madrid",
+    "date": "2025-07",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2025-ada-byron",
+    "type": "award",
+    "title": "1.er puesto en el concurso regional de programación Ada Byron (categoría Andalucía) y ganador absoluto en la UMA",
+    "venue": "Universidad de Málaga",
+    "date": "2025-04",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2024-malackathon-indra-award",
+    "type": "award",
+    "title": "Premio a la Excelencia en Desarrollo y Buenas Prácticas (Calidad), patrocinado por Indra, Malackathon 2024",
+    "venue": "Universidad de Málaga",
+    "date": "2024-10",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": "malackathon-2024-indra-award.jpg",
+    "audience": null
+  },
+  {
+    "id": "pub-2024-malaga-jam-special-award",
+    "type": "award",
+    "title": "Premio especial, Málaga Jam Weekend 16",
+    "venue": "Polo Nacional de Contenidos Digitales, Málaga",
+    "date": "2024-06",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2024-ada-byron",
+    "type": "award",
+    "title": "1.er puesto en el concurso regional de programación Ada Byron (categoría Andalucía) y ganador absoluto en la UMA",
+    "venue": "Universidad de Málaga",
+    "date": "2024-04",
+    "url": null,
+    "summary": null,
+    "featured": null,
+    "image": null,
+    "audience": null
+  }
+]

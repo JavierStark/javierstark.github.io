@@ -1,8 +1,12 @@
 ---
-import writing from '../data/writing.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import Icon from './Icon.astro';
 import { fmtDate } from '../lib/format';
 import { existsSync } from 'node:fs';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const writing = data(lang, 'writing');
 
 const cover = (name?: string | null) => (name && existsSync(`public/assets/${name}`) ? `/assets/${name}` : null);
 ---
@@ -10,21 +14,21 @@ const cover = (name?: string | null) => (name && existsSync(`public/assets/${nam
   <section id="writing">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Writing</p>
-        <h2>Articles</h2>
-        <p>I'm writing my Bachelor's thesis in the open, as a series of technical articles on Canton Network.</p>
+        <p class="eyebrow">{s.writing.eyebrow}</p>
+        <h2>{s.writing.title}</h2>
+        <p>{s.writing.lead}</p>
       </div>
       <div class="articles">
-        {writing.map((w) => (
+        {writing.map((w: any) => (
           <a class="card article reveal" href={w.url} target="_blank" rel="noopener">
             {cover(w.image)
-              ? <img class="article__cover" src={cover(w.image)} alt={`Cover: ${w.title}`} width="1600" height="836" loading="lazy" />
+              ? <img class="article__cover" src={cover(w.image)} alt={`${s.writing.cover} ${w.title}`} width="1600" height="836" loading="lazy" />
               : <div class="article__cover article__cover--blank" aria-hidden="true"><Icon name="book" /></div>}
             <div class="article__body">
-              <p class="muted small"><Icon name="book" /> {fmtDate(w.date)} · {w.venue}</p>
+              <p class="muted small"><Icon name="book" /> {fmtDate(w.date, lang)} · {w.venue}</p>
               <h3>{w.title}</h3>
               <p class="muted">{w.summary}</p>
-              <span class="link">Read the article <Icon name="external" /></span>
+              <span class="link">{s.writing.read} <Icon name="external" /></span>
             </div>
           </a>
         ))}

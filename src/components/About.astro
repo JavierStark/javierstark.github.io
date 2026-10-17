@@ -1,35 +1,39 @@
 ---
-import profile from '../data/profile.json';
-import talks from '../data/talks.json';
-import projects from '../data/projects.json';
-import awards from '../data/awards.json';
-import certifications from '../data/certifications.json';
+import { data, strings, type Lang } from '../lib/i18n';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const profile = data(lang, 'profile');
+const talks = data(lang, 'talks');
+const projects = data(lang, 'projects');
+const awards = data(lang, 'awards');
+const certifications = data(lang, 'certifications');
 
 // Every figure below is counted from the generated data, never typed by hand.
 const stats = [
-  [talks.length, 'talks, workshops & courses'],
-  [projects.length, 'featured projects'],
-  [awards.length, 'awards & distinctions'],
-  [certifications.length, 'certifications'],
+  [talks.length, s.about.stats[0]],
+  [projects.length, s.about.stats[1]],
+  [awards.length, s.about.stats[2]],
+  [certifications.length, s.about.stats[3]],
 ];
 ---
 <section id="about">
   <div class="wrap about reveal">
     <div class="section-head">
-      <p class="eyebrow">About</p>
-      <h2>I build software, then teach it.</h2>
+      <p class="eyebrow">{s.about.eyebrow}</p>
+      <h2>{s.about.title}</h2>
     </div>
     <div class="about__grid">
       <aside class="about__side">
-        <img class="about__photo" src="/assets/about-portrait.jpg" alt={`Portrait of ${profile.full_name}`} width="800" height="800" loading="lazy" />
+        <img class="about__photo" src="/assets/about-portrait.jpg" alt={`${s.about.portrait} ${profile.full_name}`} width="800" height="800" loading="lazy" />
         <div class="card avail">
-          <h3>Availability</h3>
-          <ul>{profile.availability.map((a) => <li>{a}</li>)}</ul>
-          <p class="muted langs">{profile.languages.map((l) => `${l.language} (${l.proficiency.replace('-', ' ')})`).join(' · ')}</p>
+          <h3>{s.about.availability}</h3>
+          <ul>{profile.availability.map((a: string) => <li>{a}</li>)}</ul>
+          <p class="muted langs">{profile.languages.map((l: any) => `${l.language} (${l.proficiency.replace('-', ' ')})`).join(' · ')}</p>
         </div>
       </aside>
       <div class="about__text">
-        {profile.summary.map((p) => <p>{p}</p>)}
+        {profile.summary.map((p: string) => <p>{p}</p>)}
       </div>
     </div>
     <dl class="stats">

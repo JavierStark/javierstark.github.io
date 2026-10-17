@@ -1,8 +1,12 @@
 ---
-import profile from '../data/profile.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import Icon from './Icon.astro';
 import { linkUrl } from '../lib/format';
 import { existsSync } from 'node:fs';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const profile = data(lang, 'profile');
 
 const CV = 'Javier-Torralbo-CV.pdf';
 const hasCv = existsSync(`public/${CV}`);
@@ -10,16 +14,16 @@ const hasCv = existsSync(`public/${CV}`);
 <section id="contact">
   <div class="wrap">
     <div class="card contact reveal">
-      <p class="eyebrow">Contact</p>
-      <h2>Let's build something.</h2>
-      <p class="muted">Email is the fastest way to reach me.</p>
+      <p class="eyebrow">{s.contact.eyebrow}</p>
+      <h2>{s.contact.title}</h2>
+      <p class="muted">{s.contact.lead}</p>
       <p class="contact__email" id="contact-email">{profile.email}</p>
       <div class="contact__cta">
-        <button type="button" class="btn primary copy" data-copy={profile.email} aria-describedby="contact-email">
-          <span class="copy__idle"><Icon name="copy" /> Copy email</span>
-          <span class="copy__done" aria-hidden="true"><Icon name="check" /> Copied!</span>
+        <button type="button" class="btn primary copy" data-copy={profile.email} data-copied-msg={s.contact.copiedStatus} data-manual-msg={s.contact.manual} aria-describedby="contact-email">
+          <span class="copy__idle"><Icon name="copy" /> {s.contact.copy}</span>
+          <span class="copy__done" aria-hidden="true"><Icon name="check" /> {s.contact.copied}</span>
         </button>
-        {hasCv && <a class="btn" href={`/${CV}`} download={CV}><Icon name="download" /> Download CV</a>}
+        {hasCv && <a class="btn" href={`/${CV}`} download={CV}><Icon name="download" /> {s.hero.cv}</a>}
         {profile.links.linkedin && <a class="btn" href={linkUrl(profile.links.linkedin)} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>}
         {profile.links.github && <a class="btn" href={linkUrl(profile.links.github)} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>}
       </div>
@@ -42,7 +46,7 @@ const hasCv = existsSync(`public/${CV}`);
     try {
       await navigator.clipboard.writeText(email);
       btn.classList.add('is-copied');
-      if (status) status.textContent = `${email} copied to clipboard`;
+      if (status) status.textContent = `${email} ${btn.dataset.copiedMsg ?? ''}`;
     } catch {
       // Clipboard blocked (permissions / insecure context): select the address so it can be copied manually.
       if (emailEl) {
@@ -52,7 +56,7 @@ const hasCv = existsSync(`public/${CV}`);
         sel?.removeAllRanges();
         sel?.addRange(range);
       }
-      if (status) status.textContent = 'Press Ctrl+C (or ⌘C) to copy the selected address';
+      if (status) status.textContent = btn.dataset.manualMsg ?? '';
       hold = 6000;
     }
     window.clearTimeout(reset);

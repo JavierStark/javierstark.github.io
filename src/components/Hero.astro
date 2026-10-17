@@ -1,40 +1,44 @@
 ---
-import profile from '../data/profile.json';
-import experience from '../data/experience.json';
-import talks from '../data/talks.json';
-import writing from '../data/writing.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import Icon from './Icon.astro';
 import { firstSentence, linkUrl } from '../lib/format';
 import { existsSync } from 'node:fs';
 
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const profile = data(lang, 'profile');
+const experience = data(lang, 'experience');
+const talks = data(lang, 'talks');
+const writing = data(lang, 'writing');
+
 const CV = 'Javier-Torralbo-CV.pdf';
 const hasCv = existsSync(`public/${CV}`);
 
-const current = experience.filter((r) => r.current).slice(0, 3);
-const heroTalk = talks.find((t) => t.id === 'pub-2026-opensouthcode-aspire');
+const current = experience.filter((r: any) => r.current).slice(0, 3);
+const heroTalk = talks.find((t: any) => t.id === 'pub-2026-opensouthcode-aspire');
 const latest = writing[0];
 ---
 <section id="top" class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text reveal">
-      <p class="hero__status"><span class="status__item"><span class="dot"></span> Open to opportunities</span><span class="status__item"><Icon name="pin" /> {profile.location} · remote worldwide</span></p>
+      <p class="hero__status"><span class="status__item"><span class="dot"></span> {s.hero.open}</span><span class="status__item"><Icon name="pin" /> {profile.location} · {s.hero.remote}</span></p>
       <h1>{profile.name}</h1>
       <p class="hero__headline">{profile.headline}</p>
       <p class="hero__lead">{firstSentence(profile.summary[0])}</p>
       <ul class="hero__now">
-        {current.map((r) => <li><strong>{r.title}</strong> <span class="muted">· {r.organization}</span></li>)}
+        {current.map((r: any) => <li><strong>{r.title}</strong> <span class="muted">· {r.organization}</span></li>)}
       </ul>
-      {latest && <a class="hero__article" href="#writing"><span class="chip">New article</span> {latest.title} →</a>}
+      {latest && <a class="hero__article" href="#writing"><span class="chip">{s.hero.newArticle}</span> {latest.title} →</a>}
       <div class="hero__cta">
-        {hasCv && <a class="btn primary" href={`/${CV}`} download={CV}><Icon name="download" /> Download CV</a>}
-        <a class={`btn ${hasCv ? '' : 'primary'}`} href="#contact"><Icon name="mail" /> Get in touch</a>
+        {hasCv && <a class="btn primary" href={`/${CV}`} download={CV}><Icon name="download" /> {s.hero.cv}</a>}
+        <a class={`btn ${hasCv ? '' : 'primary'}`} href="#contact"><Icon name="mail" /> {s.hero.touch}</a>
         {profile.links.linkedin && <a class="btn" href={linkUrl(profile.links.linkedin)} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>}
         {profile.links.github && <a class="btn" href={linkUrl(profile.links.github)} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>}
       </div>
     </div>
     <figure class="hero__photo reveal">
-      <img src="/assets/opensouthcode-2026-hero.jpg" alt={`${profile.name} speaking at OpenSouthCode 2026`} width="600" height="750" fetchpriority="high" />
-      {heroTalk && <figcaption>Speaking at {heroTalk.venue}</figcaption>}
+      <img src="/assets/opensouthcode-2026-hero.jpg" alt={`${profile.name} ${s.hero.photoAlt}`} width="600" height="750" fetchpriority="high" />
+      {heroTalk && <figcaption>{s.hero.speakingAt} {heroTalk.venue}</figcaption>}
     </figure>
   </div>
 </section>

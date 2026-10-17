@@ -1,16 +1,20 @@
 ---
-import experience from '../data/experience.json';
+import { data, strings, type Lang } from '../lib/i18n';
 import { fmtRange } from '../lib/format';
 import Icon from './Icon.astro';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const s = strings(lang);
+const experience = data(lang, 'experience');
 ---
 <section id="experience">
   <div class="wrap">
     <div class="section-head reveal">
-      <p class="eyebrow">Experience</p>
-      <h2>Where I've been building</h2>
+      <p class="eyebrow">{s.experience.eyebrow}</p>
+      <h2>{s.experience.title}</h2>
     </div>
     <ol class="timeline">
-      {experience.map((r) => (
+      {experience.map((r: any) => (
         <li class="card role reveal">
           <div class="role__head">
             <div>
@@ -20,21 +24,21 @@ import Icon from './Icon.astro';
               </p>
             </div>
             <p class="role__meta">
-              <span>{fmtRange(r.start, r.end)}</span>
+              <span>{fmtRange(r.start, r.end, lang)}</span>
               <span class="muted">{[r.location, r.work_mode].filter(Boolean).join(' · ')}</span>
             </p>
           </div>
           {r.summary && <p class="role__summary">{r.summary}</p>}
           {r.projects.length > 0 && (
-            <p class="role__projects">Project:{' '}
-              {r.projects.map((p) => <a class="link" href={p.href} target={p.external ? '_blank' : undefined} rel={p.external ? 'noopener' : undefined}>{p.title.split(',')[0]} {p.external ? <Icon name="external" /> : '→'}</a>)}
+            <p class="role__projects">{s.experience.project}{' '}
+              {r.projects.map((p: any) => <a class="link" href={p.href} target={p.external ? '_blank' : undefined} rel={p.external ? 'noopener' : undefined}>{p.title.split(',')[0]} {p.external ? <Icon name="external" /> : '→'}</a>)}
             </p>
           )}
-          {r.tech_stack.length > 0 && <div class="chips role__chips">{r.tech_stack.map((t) => <span class="chip muted">{t}</span>)}</div>}
+          {r.tech_stack.length > 0 && <div class="chips role__chips">{r.tech_stack.map((t: string) => <span class="chip muted">{t}</span>)}</div>}
           {r.highlights.length > 0 && (
             <details class="more">
-              <summary>See what I did · {r.highlights.length}</summary>
-              <ul class="role__hl more__body">{r.highlights.map((h) => <li>{h}</li>)}</ul>
+              <summary>{s.experience.see} · {r.highlights.length}</summary>
+              <ul class="role__hl more__body">{r.highlights.map((h: string) => <li>{h}</li>)}</ul>
             </details>
           )}
         </li>
