@@ -72,11 +72,11 @@
     "summary": "Sole developer of Diana, the guide RNA design software of iGEM UMA-Malaga 2026, a 12-person team that won a gold medal and earned three nominations at the Grand Jamboree.",
     "highlights": [
       "At the iGEM 2026 Grand Jamboree in Paris, among about 460 competing teams, iGEM UMA-Malaga won a gold medal and was nominated for Best Software (for Diana, which I built as sole developer), Best Diagnostics Project and Best Alternative Platform.",
-      "Built Diana as sole developer, a Blazor Server (.NET 9) app, F# library and CLI that convert disease variants (HGVS or rsID) into ranked CRISPR-Cas13 guide RNA spacers scored by GC content, homopolymers, Bowtie off-target alignments and ViennaRNA RNA folding.",
+      "Built Diana as sole developer: a Blazor (.NET 9) web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNAs, scored on off-target risk and RNA folding.",
       "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
-      "Implemented combinatorial guide pooling (2D fragmented, 2D matrix and 3D models) onto 96/384-well plates, decoding positive wells back to the implicated guides and flagging ambiguous collisions.",
-      "Added restriction-site flagging (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) and an order-ready oligo CSV export so designs go straight to synthesis.",
-      "Containerized Diana with a two-image Docker build that checksum-verifies and bakes in the GRCh38 index and runs as non-root with a health check, avoiding the more than 10x alignment slowdown of a mounted index."
+      "Implemented pooled screening, so many guides can be tested together on lab plates and positive wells are traced back to the individual guides.",
+      "Added restriction-site checks and an order-ready export, so designs go straight to synthesis.",
+      "Containerized Diana with Docker for reproducible deployment."
     ],
     "tech_stack": [
       "C#",

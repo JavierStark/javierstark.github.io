@@ -6,7 +6,7 @@
     "kind": "research",
     "order": 1,
     "image": "projects/diana.svg",
-    "summary": "Nominado a Mejor Software en el iGEM 2026 Grand Jamboree: aplicación web, biblioteca F# y CLI que convierten variantes de enfermedades en espaciadores de ARN guía CRISPR-Cas13 ordenados, marcan sitios de restricción, exportan oligos listos para pedir y planifican pooling combinatorio de guías en placas de 96/384 pocillos. Entregable oficial de software del equipo iGEM UMA-Málaga 2026, que ganó una medalla de oro y fue también nominado a Mejor Proyecto de Diagnóstico y Mejor Plataforma Alternativa.",
+    "summary": "Nominado a Mejor Software en el iGEM 2026 Grand Jamboree: una aplicación web, biblioteca F# y CLI que convierten variantes de enfermedades en ARN guía CRISPR-Cas13 ordenados y listos para pedir, y planifican el cribado agrupado en el laboratorio. Entregable oficial de software del equipo iGEM UMA-Málaga 2026, que ganó una medalla de oro y fue también nominado a Mejor Proyecto de Diagnóstico y Mejor Plataforma Alternativa.",
     "my_contribution": "Único desarrollador, construyendo el software para los científicos del equipo.",
     "start": "2025-10",
     "end": "2026-11",
@@ -27,11 +27,11 @@
       ]
     },
     "highlights": [
-      "Construí Diana como único desarrollador: una aplicación Blazor Server (.NET 9), biblioteca F# y CLI que convierten variantes de enfermedades (HGVS o rsID) en espaciadores de ARN guía CRISPR-Cas13 ordenados por puntuación según contenido en GC, homopolímeros, alineamientos de off-target con Bowtie y plegamiento de ARN con ViennaRNA.",
+      "Construí Diana como único desarrollador: una aplicación web Blazor (.NET 9), biblioteca F# y CLI que convierten variantes de enfermedades en ARN guía CRISPR-Cas13 ordenados, puntuados según el riesgo de off-target y el plegamiento del ARN.",
       "El equipo científico de iGEM UMA encargó y probó en el laboratorio los ARN guía diseñados con Diana.",
-      "Implementé pooling combinatorio de guías (modelos 2D fragmentado, 2D matricial y 3D) sobre placas de 96/384 pocillos, que decodifica los pocillos positivos hasta las guías implicadas y marca las colisiones ambiguas.",
-      "Añadí la detección de sitios de restricción (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) y una exportación CSV de oligos lista para pedir, de modo que los diseños pasan directamente a síntesis.",
-      "Contenericé Diana con una build Docker de dos imágenes que verifica el checksum e incorpora el índice GRCh38, se ejecuta sin root y con health check, evitando la ralentización de más de 10 veces en el alineamiento de un índice montado."
+      "Implementé el cribado agrupado: muchas guías se prueban juntas en placas de laboratorio y los pocillos positivos se trazan hasta las guías individuales.",
+      "Añadí comprobaciones de sitios de restricción y una exportación lista para pedir, de modo que los diseños pasan directamente a síntesis.",
+      "Contenericé Diana con Docker para un despliegue reproducible."
     ]
   },
   {

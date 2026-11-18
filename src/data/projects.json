@@ -6,7 +6,7 @@
     "kind": "research",
     "order": 1,
     "image": "projects/diana.svg",
-    "summary": "Nominated for Best Software at the iGEM 2026 Grand Jamboree: web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNA spacers, flag restriction sites, export order-ready oligos and plan combinatorial guide pooling on 96/384-well plates. Official software deliverable of iGEM team UMA-Malaga 2026, which won a gold medal and was also nominated for Best Diagnostics Project and Best Alternative Platform.",
+    "summary": "Nominated for Best Software at the iGEM 2026 Grand Jamboree: a web app, F# library and CLI that turn disease variants into ranked, order-ready CRISPR-Cas13 guide RNAs and plan pooled screening in the lab. Official software deliverable of iGEM team UMA-Malaga 2026, which won a gold medal and was also nominated for Best Diagnostics Project and Best Alternative Platform.",
     "my_contribution": "Sole developer, building the software for the team's scientists.",
     "start": "2025-10",
     "end": "2026-11",
@@ -27,11 +27,11 @@
       ]
     },
     "highlights": [
-      "Built Diana as sole developer, a Blazor Server (.NET 9) app, F# library and CLI that convert disease variants (HGVS or rsID) into ranked CRISPR-Cas13 guide RNA spacers scored by GC content, homopolymers, Bowtie off-target alignments and ViennaRNA RNA folding.",
+      "Built Diana as sole developer: a Blazor (.NET 9) web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNAs, scored on off-target risk and RNA folding.",
       "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
-      "Implemented combinatorial guide pooling (2D fragmented, 2D matrix and 3D models) onto 96/384-well plates, decoding positive wells back to the implicated guides and flagging ambiguous collisions.",
-      "Added restriction-site flagging (BsaI, BsmBI, SapI, BbsI, EcoRI, PstI, XbaI, SpeI, EcoRV, NotI) and an order-ready oligo CSV export so designs go straight to synthesis.",
-      "Containerized Diana with a two-image Docker build that checksum-verifies and bakes in the GRCh38 index and runs as non-root with a health check, avoiding the more than 10x alignment slowdown of a mounted index."
+      "Implemented pooled screening, so many guides can be tested together on lab plates and positive wells are traced back to the individual guides.",
+      "Added restriction-site checks and an order-ready export, so designs go straight to synthesis.",
+      "Containerized Diana with Docker for reproducible deployment."
     ]
   },
   {
