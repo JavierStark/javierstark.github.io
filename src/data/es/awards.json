@@ -1,5 +1,53 @@
 [
   {
+    "id": "pub-2026-igem-best-software-nominee",
+    "type": "award",
+    "title": "Nominado a Mejor Software (Undergraduate), iGEM 2026 Grand Jamboree",
+    "venue": "iGEM Grand Jamboree, París (equipo UMA-Malaga, por Diana)",
+    "date": "2026-11",
+    "url": "https://competition.igem.org/results/2026?tab=special-prizes",
+    "summary": "Diana, el software de diseño de ARN guía que construí como único desarrollador, valió al equipo una nominación a Mejor Software. Cinco equipos undergraduate fueron reconocidos en la categoría: dos ganadores y tres nominados.",
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2026-igem-gold-medal",
+    "type": "award",
+    "title": "Medalla de oro, iGEM 2026 Grand Jamboree (equipo UMA-Malaga)",
+    "venue": "iGEM Foundation, París",
+    "date": "2026-11",
+    "url": "https://competition.igem.org/results/2026?tab=medals",
+    "summary": "El proyecto del equipo, FRIDA, un test de detección de enfermedades raras basado en CRISPR, ganó una medalla de oro en la sección undergraduate, una de las 226 medallas de oro concedidas entre todas las secciones.",
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2026-igem-best-diagnostics-nominee",
+    "type": "award",
+    "title": "Nominado a Mejor Proyecto de Diagnóstico, iGEM 2026 Grand Jamboree",
+    "venue": "iGEM Grand Jamboree, París (equipo UMA-Malaga)",
+    "date": "2026-11",
+    "url": "https://competition.igem.org/results/2026?tab=village-awards",
+    "summary": "FRIDA fue uno de los cinco equipos preseleccionados a Mejor Proyecto de Diagnóstico: un ganador y cuatro nominados, sumando las secciones undergraduate y overgraduate.",
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
+    "id": "pub-2026-igem-best-alt-platform-nominee",
+    "type": "award",
+    "title": "Nominado a Mejor Plataforma Alternativa (Undergraduate), iGEM 2026 Grand Jamboree",
+    "venue": "iGEM Grand Jamboree, París (equipo UMA-Malaga)",
+    "date": "2026-11",
+    "url": "https://competition.igem.org/results/2026?tab=special-prizes",
+    "summary": "Uno de los tres equipos preseleccionados a Mejor Plataforma Alternativa en la sección undergraduate: un ganador y dos nominados.",
+    "featured": null,
+    "image": null,
+    "audience": null
+  },
+  {
     "id": "pub-2025-malackathon-honorable-mention",
     "type": "award",
     "title": "Mención de honor, Malackathon 2025",
