@@ -71,9 +71,10 @@
     "tier": "primary",
     "summary": "Sole developer of Diana, the guide RNA design software of iGEM UMA-Malaga 2026, a 12-person team that won a gold medal and earned three nominations at the Grand Jamboree.",
     "highlights": [
-      "At the iGEM 2026 Grand Jamboree in Paris, among about 460 competing teams, iGEM UMA-Malaga won a gold medal and was nominated for Best Software (for Diana, which I built as sole developer), Best Diagnostics Project and Best Alternative Platform.",
+      "At the iGEM 2026 Grand Jamboree in Paris, among more than 430 teams, iGEM UMA-Malaga won a gold medal and was nominated for Best Software (for Diana, which I built as sole developer), Best Diagnostics Project and Best Alternative Platform.",
       "Built Diana as sole developer: a Blazor (.NET 9) web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNAs, scored on off-target risk and RNA folding.",
       "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
+      "Released Diana as free, open-source software (MIT license) that wet-lab scientists use from a browser, with no coding and with their data staying on their own computer.",
       "Implemented pooled screening, so many guides can be tested together on lab plates and positive wells are traced back to the individual guides.",
       "Added restriction-site checks and an order-ready export, so designs go straight to synthesis.",
       "Containerized Diana with Docker for reproducible deployment."

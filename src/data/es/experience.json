@@ -71,9 +71,10 @@
     "tier": "primary",
     "summary": "Único desarrollador de Diana, el software de diseño de ARN guía de iGEM UMA-Malaga 2026, un equipo de 12 personas que ganó una medalla de oro y obtuvo tres nominaciones en el Grand Jamboree.",
     "highlights": [
-      "En el iGEM 2026 Grand Jamboree de París, entre unos 460 equipos participantes, iGEM UMA-Malaga ganó una medalla de oro y fue nominado a Mejor Software (por Diana, que construí como único desarrollador), Mejor Proyecto de Diagnóstico y Mejor Plataforma Alternativa.",
+      "En el iGEM 2026 Grand Jamboree de París, entre más de 430 equipos, iGEM UMA-Malaga ganó una medalla de oro y fue nominado a Mejor Software (por Diana, que construí como único desarrollador), Mejor Proyecto de Diagnóstico y Mejor Plataforma Alternativa.",
       "Construí Diana como único desarrollador: una aplicación web Blazor (.NET 9), biblioteca F# y CLI que convierten variantes de enfermedades en ARN guía CRISPR-Cas13 ordenados, puntuados según el riesgo de off-target y el plegamiento del ARN.",
       "El equipo científico de iGEM UMA encargó y probó en el laboratorio los ARN guía diseñados con Diana.",
+      "Publiqué Diana como software gratuito y de código abierto (licencia MIT) que los científicos de laboratorio usan desde el navegador, sin programar y con sus datos en su propio ordenador.",
       "Implementé el cribado agrupado: muchas guías se prueban juntas en placas de laboratorio y los pocillos positivos se trazan hasta las guías individuales.",
       "Añadí comprobaciones de sitios de restricción y una exportación lista para pedir, de modo que los diseños pasan directamente a síntesis.",
       "Contenericé Diana con Docker para un despliegue reproducible."

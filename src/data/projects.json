@@ -29,6 +29,7 @@
     "highlights": [
       "Built Diana as sole developer: a Blazor (.NET 9) web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNAs, scored on off-target risk and RNA folding.",
       "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
+      "Released Diana as free, open-source software (MIT license) that wet-lab scientists use from a browser, with no coding and with their data staying on their own computer.",
       "Implemented pooled screening, so many guides can be tested together on lab plates and positive wells are traced back to the individual guides.",
       "Added restriction-site checks and an order-ready export, so designs go straight to synthesis.",
       "Containerized Diana with Docker for reproducible deployment."
