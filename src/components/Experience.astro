@@ -34,6 +34,11 @@ const experience = data(lang, 'experience');
               {r.projects.map((p: any) => <a class="link" href={p.href} target={p.external ? '_blank' : undefined} rel={p.external ? 'noopener' : undefined}>{p.title.split(',')[0]} {p.external ? <Icon name="external" /> : '→'}</a>)}
             </p>
           )}
+          {r.links && r.links.length > 0 && (
+            <p class="role__links">
+              {r.links.map((l: any) => <a class="link" href={l.url} target="_blank" rel="noopener">{l.label} <Icon name="external" /></a>)}
+            </p>
+          )}
           {r.tech_stack.length > 0 && <div class="chips role__chips">{r.tech_stack.map((t: string) => <span class="chip muted">{t}</span>)}</div>}
           {r.highlights.length > 0 && (
             <details class="more">
@@ -58,6 +63,7 @@ const experience = data(lang, 'experience');
   .role__summary { color: var(--text-muted); margin-top: 12px; }
   .role__chips { margin-top: 14px; }
   .role__projects { margin-top: 10px; font-size: 0.92rem; display: flex; gap: 10px; flex-wrap: wrap; }
+  .role__links { margin-top: 10px; font-size: 0.92rem; display: flex; gap: 6px 14px; flex-wrap: wrap; }
   .role__hl { display: grid; gap: 8px; }
   .role__hl li { padding-left: 18px; position: relative; font-size: 0.95rem; }
   .role__hl li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); }
