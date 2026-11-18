@@ -28,6 +28,7 @@
       "Desarrollo de software asistido por IA",
       "Scrum"
     ],
+    "links": [],
     "projects": []
   },
   {
@@ -53,13 +54,14 @@
       "JavaScript",
       "Google Sheets"
     ],
+    "links": [],
     "projects": []
   },
   {
     "id": "role-2025-igem-uma",
     "title": "Desarrollador de software",
     "organization": "iGEM UMA",
-    "organization_url": "https://2026.igem.wiki/uma-malaga",
+    "organization_url": "https://2026.igem.wiki/uma-malaga/",
     "employment_type": "volunteer",
     "location": "Málaga, España",
     "work_mode": "híbrido",
@@ -69,10 +71,10 @@
     "tier": "primary",
     "summary": "Único desarrollador de Diana, el software de diseño de ARN guía de iGEM UMA-Malaga 2026, un equipo de 12 personas que ganó una medalla de oro y fue nominado a Mejor Software, Mejor Proyecto de Diagnóstico y Mejor Plataforma Alternativa en el Grand Jamboree.",
     "highlights": [
-      "Diana, que construí como único desarrollador, valió a iGEM UMA-Malaga una nominación a Mejor Software (sección undergraduate) en el iGEM 2026 Grand Jamboree, con cinco equipos reconocidos en la categoría: dos ganadores y tres nominados.",
-      "iGEM UMA-Malaga ganó una medalla de oro en la sección universitaria (undergraduate) del iGEM 2026 Grand Jamboree de París, una de las 226 medallas de oro concedidas entre todas las secciones.",
-      "iGEM UMA-Malaga fue nominado a Mejor Proyecto de Diagnóstico en el iGEM 2026 Grand Jamboree, uno de los cinco equipos preseleccionados (un ganador y cuatro nominados, sumando las secciones undergraduate y overgraduate).",
-      "iGEM UMA-Malaga fue nominado a Mejor Plataforma Alternativa (sección undergraduate) en el iGEM 2026 Grand Jamboree, uno de los tres equipos preseleccionados (un ganador y dos nominados).",
+      "Diana, que construí como único desarrollador, valió a iGEM UMA-Malaga una nominación a Mejor Software en el iGEM 2026 Grand Jamboree, entre unos 460 equipos participantes.",
+      "iGEM UMA-Malaga ganó una medalla de oro en el iGEM 2026 Grand Jamboree de París.",
+      "iGEM UMA-Malaga fue nominado a Mejor Proyecto de Diagnóstico en el iGEM 2026 Grand Jamboree, entre unos 460 equipos participantes.",
+      "iGEM UMA-Malaga fue nominado a Mejor Plataforma Alternativa en el iGEM 2026 Grand Jamboree, entre unos 460 equipos participantes.",
       "Construí Diana como único desarrollador: una aplicación Blazor Server (.NET 9), biblioteca F# y CLI que convierten variantes de enfermedades (HGVS o rsID) en espaciadores de ARN guía CRISPR-Cas13 ordenados por puntuación según contenido en GC, homopolímeros, alineamientos de off-target con Bowtie y plegamiento de ARN con ViennaRNA.",
       "El equipo científico de iGEM UMA encargó y probó en el laboratorio los ARN guía diseñados con Diana.",
       "Implementé pooling combinatorio de guías (modelos 2D fragmentado, 2D matricial y 3D) sobre placas de 96/384 pocillos, que decodifica los pocillos positivos hasta las guías implicadas y marca las colisiones ambiguas.",
@@ -85,6 +87,24 @@
       "Blazor",
       "Docker",
       "Bioinformática"
+    ],
+    "links": [
+      {
+        "label": "Wiki del equipo",
+        "url": "https://2026.igem.wiki/uma-malaga/"
+      },
+      {
+        "label": "Nominado a Mejor Software",
+        "url": "https://competition.igem.org/results/2026?tab=special-prizes#best-software"
+      },
+      {
+        "label": "Nominado a Mejor Proyecto de Diagnóstico",
+        "url": "https://competition.igem.org/results/2026?tab=village-awards#diagnostics"
+      },
+      {
+        "label": "Nominado a Mejor Plataforma Alternativa",
+        "url": "https://competition.igem.org/results/2026?tab=special-prizes#best-alternative-platform"
+      }
     ],
     "projects": [
       {
@@ -118,6 +138,7 @@
       "TensorFlow",
       "Google Cloud Platform"
     ],
+    "links": [],
     "projects": []
   },
   {
@@ -140,6 +161,7 @@
       "Docencia y mentoría",
       "JavaScript"
     ],
+    "links": [],
     "projects": []
   }
 ]

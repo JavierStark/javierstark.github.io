@@ -6,7 +6,7 @@
     "kind": "research",
     "order": 1,
     "image": "projects/diana.svg",
-    "summary": "Nominado a Mejor Software en el iGEM 2026 Grand Jamboree: aplicación web, biblioteca F# y CLI que convierten variantes de enfermedades en espaciadores de ARN guía CRISPR-Cas13 ordenados, marcan sitios de restricción, exportan oligos listos para pedir y planifican pooling combinatorio de guías en placas de 96/384 pocillos. Entregable oficial de software del equipo iGEM UMA-Málaga 2026.",
+    "summary": "Nominado a Mejor Software en el iGEM 2026 Grand Jamboree: aplicación web, biblioteca F# y CLI que convierten variantes de enfermedades en espaciadores de ARN guía CRISPR-Cas13 ordenados, marcan sitios de restricción, exportan oligos listos para pedir y planifican pooling combinatorio de guías en placas de 96/384 pocillos. Entregable oficial de software del equipo iGEM UMA-Málaga 2026, que ganó una medalla de oro y fue también nominado a Mejor Proyecto de Diagnóstico y Mejor Plataforma Alternativa.",
     "my_contribution": "Único desarrollador, construyendo el software para los científicos del equipo.",
     "start": "2025-10",
     "end": "2026-11",

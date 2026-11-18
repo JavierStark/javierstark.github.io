@@ -6,7 +6,7 @@
     "kind": "research",
     "order": 1,
     "image": "projects/diana.svg",
-    "summary": "Nominated for Best Software at the iGEM 2026 Grand Jamboree: web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNA spacers, flag restriction sites, export order-ready oligos and plan combinatorial guide pooling on 96/384-well plates. Official software deliverable of iGEM team UMA-Malaga 2026.",
+    "summary": "Nominated for Best Software at the iGEM 2026 Grand Jamboree: web app, F# library and CLI that turn disease variants into ranked CRISPR-Cas13 guide RNA spacers, flag restriction sites, export order-ready oligos and plan combinatorial guide pooling on 96/384-well plates. Official software deliverable of iGEM team UMA-Malaga 2026, which won a gold medal and was also nominated for Best Diagnostics Project and Best Alternative Platform.",
     "my_contribution": "Sole developer, building the software for the team's scientists.",
     "start": "2025-10",
     "end": "2026-11",

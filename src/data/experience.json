@@ -28,6 +28,7 @@
       "AI-Assisted Software Development",
       "Scrum"
     ],
+    "links": [],
     "projects": []
   },
   {
@@ -53,13 +54,14 @@
       "JavaScript",
       "Google Sheets"
     ],
+    "links": [],
     "projects": []
   },
   {
     "id": "role-2025-igem-uma",
     "title": "Software Developer",
     "organization": "iGEM UMA",
-    "organization_url": "https://2026.igem.wiki/uma-malaga",
+    "organization_url": "https://2026.igem.wiki/uma-malaga/",
     "employment_type": "volunteer",
     "location": "Málaga, Spain",
     "work_mode": "hybrid",
@@ -69,10 +71,10 @@
     "tier": "primary",
     "summary": "Sole developer of Diana, the guide RNA design software of iGEM UMA-Malaga 2026, a 12-person team that won a gold medal and was nominated for Best Software, Best Diagnostics Project and Best Alternative Platform at the Grand Jamboree.",
     "highlights": [
-      "Diana, which I built as sole developer, earned iGEM UMA-Malaga a nomination for Best Software (undergraduate section) at the iGEM 2026 Grand Jamboree, with five teams recognized in the category, two winners and three nominees.",
-      "iGEM UMA-Malaga won a gold medal in the undergraduate section of the iGEM 2026 Grand Jamboree in Paris, one of 226 gold medals awarded across all sections.",
-      "iGEM UMA-Malaga was nominated for Best Diagnostics Project at the iGEM 2026 Grand Jamboree, one of five teams shortlisted (one winner and four nominees, undergraduate and overgraduate sections combined).",
-      "iGEM UMA-Malaga was nominated for Best Alternative Platform (undergraduate section) at the iGEM 2026 Grand Jamboree, one of three teams shortlisted (one winner and two nominees).",
+      "Diana, which I built as sole developer, earned iGEM UMA-Malaga a nomination for Best Software at the iGEM 2026 Grand Jamboree, among about 460 competing teams.",
+      "iGEM UMA-Malaga won a gold medal at the iGEM 2026 Grand Jamboree in Paris.",
+      "iGEM UMA-Malaga was nominated for Best Diagnostics Project at the iGEM 2026 Grand Jamboree, among about 460 competing teams.",
+      "iGEM UMA-Malaga was nominated for Best Alternative Platform at the iGEM 2026 Grand Jamboree, among about 460 competing teams.",
       "Built Diana as sole developer, a Blazor Server (.NET 9) app, F# library and CLI that convert disease variants (HGVS or rsID) into ranked CRISPR-Cas13 guide RNA spacers scored by GC content, homopolymers, Bowtie off-target alignments and ViennaRNA RNA folding.",
       "Guide RNAs designed with Diana were ordered and tested in the wet lab by the iGEM UMA scientific team.",
       "Implemented combinatorial guide pooling (2D fragmented, 2D matrix and 3D models) onto 96/384-well plates, decoding positive wells back to the implicated guides and flagging ambiguous collisions.",
@@ -85,6 +87,24 @@
       "Blazor",
       "Docker",
       "Bioinformatics"
+    ],
+    "links": [
+      {
+        "label": "Team wiki",
+        "url": "https://2026.igem.wiki/uma-malaga/"
+      },
+      {
+        "label": "Best Software nominee",
+        "url": "https://competition.igem.org/results/2026?tab=special-prizes#best-software"
+      },
+      {
+        "label": "Best Diagnostics Project nominee",
+        "url": "https://competition.igem.org/results/2026?tab=village-awards#diagnostics"
+      },
+      {
+        "label": "Best Alternative Platform nominee",
+        "url": "https://competition.igem.org/results/2026?tab=special-prizes#best-alternative-platform"
+      }
     ],
     "projects": [
       {
@@ -118,6 +138,7 @@
       "TensorFlow",
       "Google Cloud Platform"
     ],
+    "links": [],
     "projects": []
   },
   {
@@ -140,6 +161,7 @@
       "Teaching & Mentoring",
       "JavaScript"
     ],
+    "links": [],
     "projects": []
   }
 ]

@@ -11,7 +11,7 @@
   },
   "summary": [
     "Software engineer building cloud-native .NET systems. At Verisk I work on the Impact team: modernizing legacy .NET CI/CD pipelines in Azure DevOps, containerizing applications and test-runner environments, and building a new product from scratch with spec-driven, AI-led development.",
-    "I build software people depend on. Diana, the guide RNA design tool I developed on my own for iGEM UMA, produced guides that the team ordered and tested in the lab, and was nominated for Best Software at the 2026 Grand Jamboree, where the team won a gold medal. A tokenized bond platform I architected on Canton Network turned into my Bachelor's thesis with ioBuilders.",
+    "I build software people depend on. A tokenized bond platform I architected on Canton Network turned into my Bachelor's thesis with ioBuilders. Diana, the guide RNA design tool I developed on my own for iGEM UMA, produced guides that the team ordered and tested in the lab, and was nominated for Best Software at the 2026 Grand Jamboree, where the team won a gold medal.",
     "I teach what I build. I co-founded the DevOps & Cloud course at the University of Málaga (~30 students per session), ran a CI/CD workshop for 40 students at Hackers Week, and spoke about .NET Aspire to 50+ people at OpenSouthCode. CKAD-certified, two-time Ada Byron regional programming champion, and president of IAESTE Málaga's Computer Science section."
   ],
   "availability": [
